@@ -1,0 +1,24 @@
+1. API data NOP
+2. API foto persil ke AWS
+3. link foto aws update ke data NOP
+
+
+
+submit button > API 1 jalan sampe data jadi > API 2 upload ke aws menghasilkan link > link dimasukkan ke data NOP yang sudah jadi
+
+
+webgis:
+1. cek data NOP sudah ada di database apa belum
+2. cek jumlah foto di database
+3. proses upload dilakukan per satu file
+
+drag & drop foto di webgis > cek masing2 foto apakah penamaannya sudah sesuai (NOP 18 digit angka) > cek data NOP sudah ada di database apa belum berdasarkan nama file fotonya > cek jumlah foto yang ada di NOP tersebut, max 2 foto/link > jika aman semua, upload fotonya.
+
+
+result:
+1 API upload untuk foto, outputnya link. untuk dipakai di WEBGis dan Pendataan
+untuk webgis ada tambahan API sendiri untuk memasukkan link fotonya ke data NOP di database pendataan
+
+upload foto di webgis dilakukan 1 per 1, setiap proses upload yang gagal akan dilewati dan dilanjutkan dengan upload foto yang lain.
+foto yang gagal diupload nanti akan diberitahu melalui toast
+
