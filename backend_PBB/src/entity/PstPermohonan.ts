@@ -1,81 +1,104 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("pst_permohonan_pkey", ["bundelPelayanan", "kdKantor", "kdKanwil", "noUrutPelayanan", "thnPelayanan"], { unique: true })
-@Index("f1_fk", ["kdKantor", "kdKanwil"], {})
-@Entity("pst_permohonan", { schema: "public" })
+@Entity("PST_PERMOHONAN", { schema: "PBB_KUTAI BARAT" })
 export class PstPermohonan {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
-
-  @Column("character", { primary: true, name: "thn_pelayanan", length: 4 })
-  thnPelayanan!: string;
-
-  @Column("character", { primary: true, name: "bundel_pelayanan", length: 4 })
-  bundelPelayanan!: string;
-
-  @Column("character", { primary: true, name: "no_urut_pelayanan", length: 3 })
-  noUrutPelayanan!: string;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
 
   @Column("character", {
-    name: "no_srt_permohonan",
+    name: "KD_TEMPAT_PELAYANAN",
+    nullable: true,
+    length: 3,
+  })
+  kdTempatPelayanan: string | null;
+
+  @Column("character", { name: "THN_PELAYANAN", length: 4 })
+  thnPelayanan: string;
+
+  @Column("character", { name: "BUNDEL_PELAYANAN", length: 4 })
+  bundelPelayanan: string;
+
+  @Column("character", { name: "NO_URUT_PELAYANAN", length: 3 })
+  noUrutPelayanan: string;
+
+  @Column("character", {
+    name: "NO_SRT_PERMOHONAN",
     nullable: true,
     length: 30,
   })
-  noSrtPermohonan!: string | null;
+  noSrtPermohonan: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_surat_permohonan",
+    name: "TGL_SURAT_PERMOHONAN",
     nullable: true,
   })
-  tglSuratPermohonan!: Date | null;
+  tglSuratPermohonan: Date | null;
 
   @Column("character varying", {
-    name: "nama_pemohon",
+    name: "NAMA_PEMOHON",
     nullable: true,
     length: 30,
   })
-  namaPemohon!: string | null;
+  namaPemohon: string | null;
 
   @Column("character varying", {
-    name: "alamat_pemohon",
+    name: "ALAMAT_PEMOHON",
     nullable: true,
-    length: 40,
+    length: 150,
   })
-  alamatPemohon!: string | null;
+  alamatPemohon: string | null;
 
   @Column("character varying", {
-    name: "keterangan_pst",
+    name: "KETERANGAN_PST",
+    nullable: true,
+    length: 150,
+  })
+  keteranganPst: string | null;
+
+  @Column("character varying", {
+    name: "CATATAN_PST",
     nullable: true,
     length: 75,
   })
-  keteranganPst!: string | null;
+  catatanPst: string | null;
 
-  @Column("character varying", {
-    name: "catatan_pst",
-    nullable: true,
-    length: 75,
-  })
-  catatanPst!: string | null;
-
-  @Column("character", {
-    name: "status_kolektif",
-    length: 1,
-    default: () => "'0'",
-  })
-  statusKolektif!: string;
+  @Column("character", { name: "STATUS_KOLEKTIF", nullable: true, length: 1 })
+  statusKolektif: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_terima_dokumen_wp",
-    default: () => "statement_timestamp()",
+    name: "TGL_TERIMA_DOKUMEN_WP",
+    nullable: true,
   })
-  tglTerimaDokumenWp!: Date;
+  tglTerimaDokumenWp: Date | null;
 
-  @Column("timestamp without time zone", { name: "tgl_perkiraan_selesai" })
-  tglPerkiraanSelesai!: Date;
+  @Column("timestamp without time zone", {
+    name: "TGL_PERKIRAAN_SELESAI",
+    nullable: true,
+  })
+  tglPerkiraanSelesai: Date | null;
 
-  @Column("character", { name: "nip_penerima", length: 18 })
-  nipPenerima!: string;
+  @Column("character", { name: "NIP_PENERIMA", nullable: true, length: 30 })
+  nipPenerima: string | null;
+
+  @Column("character", { name: "KD_KPPBB", nullable: true, length: 2 })
+  kdKppbb: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_BUMI",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBumi: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_BANGUNAN",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBangunan: string | null;
 }

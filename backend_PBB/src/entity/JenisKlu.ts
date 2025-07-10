@@ -1,11 +1,10 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("jenis_klu_pkey", ["kdKlu"], { unique: true })
-@Entity("jenis_klu", { schema: "public" })
+@Entity("JENIS_KLU", { schema: "PBB_KUTAI BARAT" })
 export class JenisKlu {
-  @Column("character", { primary: true, name: "kd_klu", length: 5 })
-  kdKlu!: string;
+  @Column("character", { name: "KD_KLU", length: 5 })
+  kdKlu: string;
 
-  @Column("character varying", { name: "ket_klu", nullable: true, length: 110 })
-  ketKlu!: string | null;
+  @Column("character varying", { name: "KET_KLU", nullable: true, length: 110 })
+  ketKlu: string | null;
 }

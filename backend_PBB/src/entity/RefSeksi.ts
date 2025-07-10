@@ -1,20 +1,27 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("ref_seksi_pkey", ["kdSeksi"], { unique: true })
-@Entity("ref_seksi", { schema: "public" })
+@Entity("REF_SEKSI", { schema: "PBB_KUTAI BARAT" })
 export class RefSeksi {
-  @Column("character", { primary: true, name: "kd_seksi", length: 2 })
-  kdSeksi!: string;
+  @Column("character", { name: "KD_SEKSI", length: 2 })
+  kdSeksi: string;
 
-  @Column("character varying", { name: "nm_seksi", length: 75 })
-  nmSeksi!: string;
+  @Column("character varying", { name: "NM_SEKSI", nullable: true, length: 75 })
+  nmSeksi: string | null;
 
-  @Column("character", { name: "no_srt_seksi", length: 2 })
-  noSrtSeksi!: string;
+  @Column("character", { name: "NO_SRT_SEKSI", nullable: true, length: 2 })
+  noSrtSeksi: string | null;
 
-  @Column("character varying", { name: "kode_surat_1", length: 5 })
-  kodeSurat_1!: string;
+  @Column("character varying", {
+    name: "KODE_SURAT_1",
+    nullable: true,
+    length: 5,
+  })
+  kodeSurat_1: string | null;
 
-  @Column("character varying", { name: "kode_surat_2", length: 5 })
-  kodeSurat_2!: string;
+  @Column("character varying", {
+    name: "KODE_SURAT_2",
+    nullable: true,
+    length: 5,
+  })
+  kodeSurat_2: string | null;
 }

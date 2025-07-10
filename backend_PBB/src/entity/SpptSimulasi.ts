@@ -1,186 +1,279 @@
 import { Column, Entity, Index } from "typeorm";
 
-@Index("sppt_simulasi_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSppt"], { unique: true })
-@Entity("sppt_simulasi", { schema: "public" })
+@Index(
+  "SPPT_SIMULASI_PK",
+  [
+    "kdBlok",
+    "kdDati2",
+    "kdJnsOp",
+    "kdKecamatan",
+    "kdKelurahan",
+    "kdPropinsi",
+    "noUrut",
+    "thnPajakSppt",
+  ],
+  { unique: true }
+)
+@Entity("SPPT_SIMULASI", { schema: "PBB_KUTAI BARAT" })
 export class SpptSimulasi {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { primary: true, name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { primary: true, name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { primary: true, name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { primary: true, name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { primary: true, name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("character", { primary: true, name: "thn_pajak_sppt", length: 4 })
-  thnPajakSppt!: string;
+  @Column("character", { primary: true, name: "THN_PAJAK_SPPT", length: 4 })
+  thnPajakSppt: string;
 
-  @Column("smallint", { name: "siklus_sppt" })
-  siklusSppt!: number;
-
-  @Column("character", { name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
-
-  @Column("character", { name: "kd_kantor", length: 2 })
-  kdKantor!: string;
-
-  @Column("character", { name: "kd_tp", length: 2 })
-  kdTp!: string;
-
-  @Column("character varying", { name: "nm_wp_sppt", length: 30 })
-  nmWpSppt!: string;
-
-  @Column("character varying", { name: "jln_wp_sppt", length: 30 })
-  jlnWpSppt!: string;
-
-  @Column("character varying", {
-    name: "blok_kav_no_wp_sppt",
+  @Column("numeric", {
+    name: "SIKLUS_SPPT",
     nullable: true,
-    length: 15,
+    precision: 4,
+    scale: 0,
   })
-  blokKavNoWpSppt!: string | null;
+  siklusSppt: string | null;
 
-  @Column("character", { name: "rw_wp_sppt", nullable: true, length: 2 })
-  rwWpSppt!: string | null;
+  @Column("character", { name: "KD_KANWIL", nullable: true, length: 2 })
+  kdKanwil: string | null;
 
-  @Column("character", { name: "rt_wp_sppt", nullable: true, length: 3 })
-  rtWpSppt!: string | null;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
+
+  @Column("character", { name: "KD_TP", nullable: true, length: 4 })
+  kdTp: string | null;
 
   @Column("character varying", {
-    name: "kelurahan_wp_sppt",
+    name: "NM_WP_SPPT",
     nullable: true,
     length: 30,
   })
-  kelurahanWpSppt!: string | null;
+  nmWpSppt: string | null;
 
   @Column("character varying", {
-    name: "kota_wp_sppt",
+    name: "JLN_WP_SPPT",
     nullable: true,
     length: 30,
   })
-  kotaWpSppt!: string | null;
+  jlnWpSppt: string | null;
 
   @Column("character varying", {
-    name: "kd_pos_wp_sppt",
-    nullable: true,
-    length: 5,
-  })
-  kdPosWpSppt!: string | null;
-
-  @Column("character varying", {
-    name: "npwp_sppt",
+    name: "BLOK_KAV_NO_WP_SPPT",
     nullable: true,
     length: 15,
   })
-  npwpSppt!: string | null;
+  blokKavNoWpSppt: string | null;
+
+  @Column("character", { name: "RW_WP_SPPT", nullable: true, length: 3 })
+  rwWpSppt: string | null;
+
+  @Column("character", { name: "RT_WP_SPPT", nullable: true, length: 3 })
+  rtWpSppt: string | null;
 
   @Column("character varying", {
-    name: "no_persil_sppt",
+    name: "KELURAHAN_WP_SPPT",
+    nullable: true,
+    length: 30,
+  })
+  kelurahanWpSppt: string | null;
+
+  @Column("character varying", {
+    name: "KOTA_WP_SPPT",
+    nullable: true,
+    length: 30,
+  })
+  kotaWpSppt: string | null;
+
+  @Column("character varying", {
+    name: "KD_POS_WP_SPPT",
     nullable: true,
     length: 5,
   })
-  noPersilSppt!: string | null;
+  kdPosWpSppt: string | null;
 
-  @Column("character", {
-    name: "kd_kls_tanah",
-    length: 3,
-    default: () => "'XXX'",
+  @Column("character varying", {
+    name: "NPWP_SPPT",
+    nullable: true,
+    length: 15,
   })
-  kdKlsTanah!: string;
+  npwpSppt: string | null;
+
+  @Column("character varying", {
+    name: "NO_PERSIL_SPPT",
+    nullable: true,
+    length: 5,
+  })
+  noPersilSppt: string | null;
+
+  @Column("character", { name: "KD_KLS_TANAH", nullable: true, length: 3 })
+  kdKlsTanah: string | null;
 
   @Column("character", {
-    name: "thn_awal_kls_tanah",
+    name: "THN_AWAL_KLS_TANAH",
+    nullable: true,
     length: 4,
-    default: () => "'1986'",
   })
-  thnAwalKlsTanah!: string;
+  thnAwalKlsTanah: string | null;
 
-  @Column("character", {
-    name: "kd_kls_bng",
-    length: 3,
-    default: () => "'XXX'",
-  })
-  kdKlsBng!: string;
+  @Column("character", { name: "KD_KLS_BNG", nullable: true, length: 3 })
+  kdKlsBng: string | null;
 
-  @Column("character", {
-    name: "thn_awal_kls_bng",
-    length: 4,
-    default: () => "'1986'",
-  })
-  thnAwalKlsBng!: string;
-
-  @Column("timestamp without time zone", { name: "tgl_jatuh_tempo_sppt" })
-  tglJatuhTempoSppt!: Date;
-
-  @Column("bigint", { name: "luas_bumi_sppt", default: () => "0" })
-  luasBumiSppt!: string;
-
-  @Column("bigint", { name: "luas_bng_sppt", default: () => "0" })
-  luasBngSppt!: string;
-
-  @Column("bigint", { name: "njop_bumi_sppt", default: () => "0" })
-  njopBumiSppt!: string;
-
-  @Column("bigint", { name: "njop_bng_sppt", default: () => "0" })
-  njopBngSppt!: string;
-
-  @Column("bigint", { name: "njop_sppt" })
-  njopSppt!: string;
-
-  @Column("integer", { name: "njoptkp_sppt" })
-  njoptkpSppt!: number;
-
-  @Column("bigint", { name: "pbb_terhutang_sppt" })
-  pbbTerhutangSppt!: string;
-
-  @Column("bigint", { name: "faktor_pengurang_sppt", nullable: true })
-  faktorPengurangSppt!: string | null;
-
-  @Column("bigint", { name: "pbb_yg_harus_dibayar_sppt" })
-  pbbYgHarusDibayarSppt!: string;
-
-  @Column("character", {
-    name: "status_pembayaran_sppt",
-    length: 1,
-    default: () => "'0'",
-  })
-  statusPembayaranSppt!: string;
-
-  @Column("character", {
-    name: "status_tagihan_sppt",
-    length: 1,
-    default: () => "'0'",
-  })
-  statusTagihanSppt!: string;
-
-  @Column("character", {
-    name: "status_cetak_sppt",
-    length: 1,
-    default: () => "'0'",
-  })
-  statusCetakSppt!: string;
-
-  @Column("timestamp without time zone", { name: "tgl_terbit_sppt" })
-  tglTerbitSppt!: Date;
+  @Column("character", { name: "THN_AWAL_KLS_BNG", nullable: true, length: 4 })
+  thnAwalKlsBng: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_cetak_sppt",
-    default: () => "statement_timestamp()",
+    name: "TGL_JATUH_TEMPO_SPPT",
+    nullable: true,
   })
-  tglCetakSppt!: Date;
+  tglJatuhTempoSppt: Date | null;
 
-  @Column("character", { name: "nip_pencetak_sppt", length: 18 })
-  nipPencetakSppt!: string;
+  @Column("numeric", {
+    name: "LUAS_BUMI_SPPT",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBumiSppt: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_BNG_SPPT",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBngSppt: string | null;
+
+  @Column("numeric", {
+    name: "NJOP_BUMI_SPPT",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBumiSppt: string | null;
+
+  @Column("numeric", {
+    name: "NJOP_BNG_SPPT",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBngSppt: string | null;
+
+  @Column("numeric", {
+    name: "NJOP_SPPT",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopSppt: string | null;
+
+  @Column("numeric", {
+    name: "NJOPTKP_SPPT",
+    nullable: true,
+    precision: 8,
+    scale: 0,
+  })
+  njoptkpSppt: string | null;
+
+  @Column("numeric", {
+    name: "PBB_TERHUTANG_SPPT",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  pbbTerhutangSppt: string | null;
+
+  @Column("numeric", {
+    name: "FAKTOR_PENGURANG_SPPT",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  faktorPengurangSppt: string | null;
+
+  @Column("numeric", {
+    name: "PBB_YG_HARUS_DIBAYAR_SPPT",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  pbbYgHarusDibayarSppt: string | null;
+
+  @Column("character", {
+    name: "STATUS_PEMBAYARAN_SPPT",
+    nullable: true,
+    length: 1,
+  })
+  statusPembayaranSppt: string | null;
+
+  @Column("character", {
+    name: "STATUS_TAGIHAN_SPPT",
+    nullable: true,
+    length: 1,
+  })
+  statusTagihanSppt: string | null;
+
+  @Column("character", { name: "STATUS_CETAK_SPPT", nullable: true, length: 1 })
+  statusCetakSppt: string | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_TERBIT_SPPT",
+    nullable: true,
+  })
+  tglTerbitSppt: Date | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_CETAK_SPPT",
+    nullable: true,
+  })
+  tglCetakSppt: Date | null;
+
+  @Column("character", {
+    name: "NIP_PENCETAK_SPPT",
+    nullable: true,
+    length: 30,
+  })
+  nipPencetakSppt: string | null;
+
+  @Column("numeric", {
+    name: "PERSEN_NJKP",
+    nullable: true,
+    precision: 1000,
+    scale: 53,
+  })
+  persenNjkp: string | null;
+
+  @Column("numeric", {
+    name: "NJKP_SPPT",
+    nullable: true,
+    precision: 1000,
+    scale: 53,
+  })
+  njkpSppt: string | null;
+
+  @Column("character", { name: "KD_BANK_TUNGGAL", nullable: true, length: 2 })
+  kdBankTunggal: string | null;
+
+  @Column("character", { name: "KD_BANK_PERSEPSI", nullable: true, length: 2 })
+  kdBankPersepsi: string | null;
+
+  @Column("character", { name: "KD_KPPBB_BANK", nullable: true, length: 2 })
+  kdKppbbBank: string | null;
+
+  @Column("character", { name: "KD_KANWIL_BANK", nullable: true, length: 2 })
+  kdKanwilBank: string | null;
 }

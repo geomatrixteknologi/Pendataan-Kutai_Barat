@@ -1,11 +1,14 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("lookup_group_pkey", ["kdLookupGroup"], { unique: true })
-@Entity("lookup_group", { schema: "public" })
+@Entity("LOOKUP_GROUP", { schema: "PBB_KUTAI BARAT" })
 export class LookupGroup {
-  @Column("character", { primary: true, name: "kd_lookup_group", length: 2 })
-  kdLookupGroup!: string;
+  @Column("character", { name: "KD_LOOKUP_GROUP", length: 2 })
+  kdLookupGroup: string;
 
-  @Column("character varying", { name: "nm_lookup_group", length: 50 })
-  nmLookupGroup!: string;
+  @Column("character varying", {
+    name: "NM_LOOKUP_GROUP",
+    nullable: true,
+    length: 50,
+  })
+  nmLookupGroup: string | null;
 }

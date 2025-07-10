@@ -1,136 +1,205 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("pst_lampiran_pkey", ["bundelPelayanan", "kdKantor", "kdKanwil", "noUrutPelayanan", "thnPelayanan"], { unique: true })
-@Entity("pst_lampiran", { schema: "public" })
+@Entity("PST_LAMPIRAN", { schema: "PBB_KUTAI BARAT" })
 export class PstLampiran {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
 
-  @Column("character", { primary: true, name: "thn_pelayanan", length: 4 })
-  thnPelayanan!: string;
-
-  @Column("character", { primary: true, name: "bundel_pelayanan", length: 4 })
-  bundelPelayanan!: string;
-
-  @Column("character", { primary: true, name: "no_urut_pelayanan", length: 3 })
-  noUrutPelayanan!: string;
-
-  @Column("smallint", {
-    name: "l_permohonan",
+  @Column("character", {
+    name: "KD_TEMPAT_PELAYANAN",
     nullable: true,
-    default: () => "0",
+    length: 2,
   })
-  lPermohonan!: number | null;
+  kdTempatPelayanan: string | null;
 
-  @Column("smallint", {
-    name: "l_surat_kuasa",
+  @Column("character", { name: "THN_PELAYANAN", length: 4 })
+  thnPelayanan: string;
+
+  @Column("character", { name: "BUNDEL_PELAYANAN", length: 4 })
+  bundelPelayanan: string;
+
+  @Column("character", { name: "NO_URUT_PELAYANAN", length: 3 })
+  noUrutPelayanan: string;
+
+  @Column("numeric", {
+    name: "L_PERMOHONAN",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSuratKuasa!: number | null;
+  lPermohonan: string | null;
 
-  @Column("smallint", { name: "l_ktp_wp", nullable: true, default: () => "0" })
-  lKtpWp!: number | null;
-
-  @Column("smallint", {
-    name: "l_sertifikat_tanah",
+  @Column("numeric", {
+    name: "L_SURAT_KUASA",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSertifikatTanah!: number | null;
+  lSuratKuasa: string | null;
 
-  @Column("smallint", { name: "l_sppt", nullable: true, default: () => "0" })
-  lSppt!: number | null;
-
-  @Column("smallint", { name: "l_imb", nullable: true, default: () => "0" })
-  lImb!: number | null;
-
-  @Column("smallint", {
-    name: "l_akte_jual_beli",
+  @Column("numeric", {
+    name: "L_KTP_WP",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lAkteJualBeli!: number | null;
+  lKtpWp: string | null;
 
-  @Column("smallint", {
-    name: "l_sk_pensiun",
+  @Column("numeric", {
+    name: "L_SERTIFIKAT_TANAH",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSkPensiun!: number | null;
+  lSertifikatTanah: string | null;
 
-  @Column("smallint", {
-    name: "l_sppt_stts",
+  @Column("numeric", { name: "L_SPPT", nullable: true, precision: 1, scale: 0 })
+  lSppt: string | null;
+
+  @Column("numeric", { name: "L_IMB", nullable: true, precision: 1, scale: 0 })
+  lImb: string | null;
+
+  @Column("numeric", {
+    name: "L_AKTE_JUAL_BELI",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSpptStts!: number | null;
+  lAkteJualBeli: string | null;
 
-  @Column("smallint", { name: "l_stts", nullable: true, default: () => "0" })
-  lStts!: number | null;
-
-  @Column("smallint", {
-    name: "l_sk_pengurangan",
+  @Column("numeric", {
+    name: "L_SK_PENSIUN",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSkPengurangan!: number | null;
+  lSkPensiun: string | null;
 
-  @Column("smallint", {
-    name: "l_sk_keberatan",
+  @Column("numeric", {
+    name: "L_SPPT_STTS",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSkKeberatan!: number | null;
+  lSpptStts: string | null;
 
-  @Column("smallint", {
-    name: "l_skkp_pbb",
+  @Column("numeric", { name: "L_STTS", nullable: true, precision: 1, scale: 0 })
+  lStts: string | null;
+
+  @Column("numeric", {
+    name: "L_SK_PENGURANGAN",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSkkpPbb!: number | null;
+  lSkPengurangan: string | null;
 
-  @Column("smallint", {
-    name: "l_spmkp_pbb",
+  @Column("numeric", {
+    name: "L_SK_KEBERATAN",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSpmkpPbb!: number | null;
+  lSkKeberatan: string | null;
 
-  @Column("smallint", {
-    name: "l_lain_lain",
+  @Column("numeric", {
+    name: "L_SKKP_PBB",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lLainLain!: number | null;
+  lSkkpPbb: string | null;
 
-  @Column("smallint", {
-    name: "l_sket_tanah",
+  @Column("numeric", {
+    name: "L_SPMKP_PBB",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSketTanah!: number | null;
+  lSpmkpPbb: string | null;
 
-  @Column("smallint", {
-    name: "l_sket_lurah",
+  @Column("numeric", {
+    name: "L_LAIN_LAIN",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lSketLurah!: number | null;
+  lLainLain: string | null;
 
-  @Column("smallint", { name: "l_npwpd", nullable: true, default: () => "0" })
-  lNpwpd!: number | null;
-
-  @Column("smallint", {
-    name: "l_penghasilan",
+  @Column("numeric", {
+    name: "L_SKET_TANAH",
     nullable: true,
-    default: () => "0",
+    precision: 1,
+    scale: 0,
   })
-  lPenghasilan!: number | null;
+  lSketTanah: string | null;
 
-  @Column("smallint", { name: "l_cagar", nullable: true, default: () => "0" })
-  lCagar!: number | null;
+  @Column("numeric", {
+    name: "L_SKET_LURAH",
+    nullable: true,
+    precision: 1,
+    scale: 0,
+  })
+  lSketLurah: string | null;
+
+  @Column("numeric", {
+    name: "L_NPWPD",
+    nullable: true,
+    precision: 1,
+    scale: 0,
+  })
+  lNpwpd: string | null;
+
+  @Column("numeric", {
+    name: "L_PENGHASILAN",
+    nullable: true,
+    precision: 1,
+    scale: 0,
+  })
+  lPenghasilan: string | null;
+
+  @Column("numeric", {
+    name: "L_CAGAR",
+    nullable: true,
+    precision: 1,
+    scale: 0,
+  })
+  lCagar: string | null;
+
+  @Column("numeric", {
+    name: "L_DOK_SPOP",
+    nullable: true,
+    precision: 1,
+    scale: 0,
+  })
+  lDokSpop: string | null;
+
+  @Column("numeric", {
+    name: "L_DOK_LSPOP",
+    nullable: true,
+    precision: 1,
+    scale: 0,
+  })
+  lDokLspop: string | null;
+
+  @Column("numeric", {
+    name: "L_PENGANTAR_KEL",
+    nullable: true,
+    precision: 1,
+    scale: 0,
+  })
+  lPengantarKel: string | null;
+
+  @Column("character varying", {
+    name: "NO_SURAT_PENGANTAR_MUTASI",
+    nullable: true,
+    length: 20,
+  })
+  noSuratPengantarMutasi: string | null;
+
+  @Column("character", { name: "KD_KPPBB", nullable: true, length: 2 })
+  kdKppbb: string | null;
 }

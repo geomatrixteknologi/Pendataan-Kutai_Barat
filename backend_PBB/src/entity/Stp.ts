@@ -1,124 +1,102 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
-import { PembayaranStp } from "./PembayaranStp";
-import { TempatPembayaran } from "./TempatPembayaran";
-import { DatObjekPajak } from "./DatObjekPajak";
-import { Pegawai } from "./Pegawai";
-import { TtrStp } from "./TtrStp";
+import { Column, Entity, Index } from "typeorm";
 
-@Index("stp_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "tglTerbitStp"], { unique: true })
-@Entity("stp", { schema: "public" })
+@Index("STP_PK", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakStp"], { unique: true })
+@Entity("STP", { schema: "PBB_KUTAI BARAT" })
 export class Stp {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
   kdPropinsi!: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
+  @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
   kdDati2!: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
+  @Column("character", { primary: true, name: "KD_KECAMATAN", length: 3 })
   kdKecamatan!: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
+  @Column("character", { primary: true, name: "KD_KELURAHAN", length: 3 })
   kdKelurahan!: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
+  @Column("character", { primary: true, name: "KD_BLOK", length: 3 })
   kdBlok!: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
+  @Column("character", { primary: true, name: "NO_URUT", length: 4 })
   noUrut!: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
+  @Column("character", { primary: true, name: "KD_JNS_OP", length: 1 })
   kdJnsOp!: string;
 
+  @Column("character", { primary: true, name: "THN_PAJAK_STP", length: 4 })
+  thnPajakStp!: string;
+
+  @Column("character", { name: "KD_KANWIL", nullable: true, length: 2 })
+  kdKanwil!: string | null;
+
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor!: string | null;
+
+  @Column("character", { name: "KD_TP", nullable: true, length: 4 })
+  kdTp!: string | null;
+
   @Column("timestamp without time zone", {
-    primary: true,
-    name: "tgl_terbit_stp",
-  })
-  tglTerbitStp!: Date;
-
-  @Column("character varying", { name: "no_stp", nullable: true, length: 30 })
-  noStp!: string | null;
-
-  @Column("character", {
-    name: "kd_jns_ketetapan",
-    length: 1,
-    default: () => "'0'",
-  })
-  kdJnsKetetapan!: string;
-
-  @Column("character varying", {
-    name: "no_srt_ketetapan",
+    name: "TGL_JATUH_TEMPO_STP",
     nullable: true,
-    length: 30,
   })
-  noSrtKetetapan!: string | null;
+  tglJatuhTempoStp!: Date | null;
 
-  @Column("character", { name: "thn_pajak_ketetapan", length: 4 })
-  thnPajakKetetapan!: string;
-
-  @Column("bigint", { name: "pbb_ketetapan_awal" })
-  pbbKetetapanAwal!: string;
-
-  @Column("bigint", { name: "pengurangan_pbb", nullable: true })
-  penguranganPbb!: string | null;
-
-  @Column("bigint", { name: "pengurangan_denda_skp", nullable: true })
-  penguranganDendaSkp!: string | null;
-
-  @Column("bigint", { name: "jml_pbb_telah_dibayar", nullable: true })
-  jmlPbbTelahDibayar!: string | null;
-
-  @Column("bigint", { name: "jml_pbb_kurang_bayar" })
-  jmlPbbKurangBayar!: string;
-
-  @Column("bigint", { name: "denda_stp" })
-  dendaStp!: string;
-
-  @Column("bigint", { name: "pengurangan_denda_sppt", nullable: true })
-  penguranganDendaSppt!: string | null;
-
-  @Column("bigint", { name: "pbb_yg_harus_dibayar_stp" })
-  pbbYgHarusDibayarStp!: string;
-
-  @Column("timestamp without time zone", { name: "tgl_jatuh_tempo_stp" })
-  tglJatuhTempoStp!: Date;
-
-  @Column("character", {
-    name: "status_pembayaran_stp",
-    length: 1,
-    default: () => "'0'",
+  @Column("numeric", {
+    name: "JML_LAMBAT_BULAN_DENDA_STP",
+    nullable: true,
+    precision: 2,
+    scale: 0,
   })
-  statusPembayaranStp!: string;
+  jmlLambatBulanDendaStp!: string | null;
 
-  @Column("timestamp without time zone", { name: "tgl_cetak_stp" })
-  tglCetakStp!: Date;
+  @Column("numeric", {
+    name: "SISA_PAJAK_TERHUTANG_STP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  sisaPajakTerhutangStp!: string | null;
 
-  @OneToMany(() => PembayaranStp, (pembayaranStp) => pembayaranStp.stp)
-  pembayaranStps!: PembayaranStp[];
+  @Column("numeric", {
+    name: "RUPIAH_DENDA_STP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  rupiahDendaStp!: string | null;
 
-  @ManyToOne(() => TempatPembayaran, (tempatPembayaran) => tempatPembayaran.stps)
-  @JoinColumn([
-    { name: "kd_kanwil", referencedColumnName: "kdKanwil" },
-    { name: "kd_kantor", referencedColumnName: "kdKantor" },
-    { name: "kd_tp", referencedColumnName: "kdTp" },
-  ])
-  tempatPembayaran!: TempatPembayaran;
+  @Column("numeric", {
+    name: "JML_PAJAK_TERHUTANG_STP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  jmlPajakTerhutangStp!: string | null;
 
-  @ManyToOne(() => DatObjekPajak, (datObjekPajak) => datObjekPajak.stps)
-  @JoinColumn([
-    { name: "kd_propinsi", referencedColumnName: "kdPropinsi" },
-    { name: "kd_dati2", referencedColumnName: "kdDati2" },
-    { name: "kd_kecamatan", referencedColumnName: "kdKecamatan" },
-    { name: "kd_kelurahan", referencedColumnName: "kdKelurahan" },
-    { name: "kd_blok", referencedColumnName: "kdBlok" },
-    { name: "no_urut", referencedColumnName: "noUrut" },
-    { name: "kd_jns_op", referencedColumnName: "kdJnsOp" },
-  ])
-  datObjekPajak!: DatObjekPajak;
+  @Column("numeric", {
+    name: "PERSETUJUAN_STP_KP_PBB",
+    nullable: true,
+    precision: 1,
+    scale: 0,
+  })
+  persetujuanStpKpPbb!: string | null;
 
-  @ManyToOne(() => Pegawai, (pegawai) => pegawai.stps)
-  @JoinColumn([{ name: "nip_pencetak_stp", referencedColumnName: "nip" }])
-  nipPencetakStp!: Pegawai;
+  @Column("timestamp without time zone", {
+    name: "TGL_TERBIT_STP",
+    nullable: true,
+  })
+  tglTerbitStp!: Date | null;
 
-  @OneToOne(() => TtrStp, (ttrStp) => ttrStp.stp)
-  ttrStp!: TtrStp;
+  @Column("timestamp without time zone", {
+    name: "TGL_CETAK_STP",
+    nullable: true,
+  })
+  tglCetakStp!: Date | null;
+
+  @Column("character", { name: "NIP_PENCETAK_STP", nullable: true, length: 30 })
+  nipPencetakStp!: string | null;
+
+  @Column("character", { name: "KD_JNS_KETETAPAN", nullable: true, length: 1 })
+  kdJnsKetetapan!: string | null;
 }

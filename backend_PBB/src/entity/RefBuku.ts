@@ -1,20 +1,29 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("ref_buku_pkey", ["kdBuku", "thnAkhir", "thnAwal"], { unique: true })
-@Entity("ref_buku", { schema: "public" })
+@Entity("REF_BUKU", { schema: "PBB_KUTAI BARAT" })
 export class RefBuku {
-  @Column("character", { primary: true, name: "thn_awal", length: 4 })
-  thnAwal!: string;
+  @Column("character", { name: "THN_AWAL", length: 4 })
+  thnAwal: string;
 
-  @Column("character", { primary: true, name: "thn_akhir", length: 4 })
-  thnAkhir!: string;
+  @Column("character", { name: "THN_AKHIR", length: 4 })
+  thnAkhir: string;
 
-  @Column("character", { primary: true, name: "kd_buku", length: 1 })
-  kdBuku!: string;
+  @Column("character", { name: "KD_BUKU", length: 1 })
+  kdBuku: string;
 
-  @Column("bigint", { name: "nilai_min_buku" })
-  nilaiMinBuku!: string;
+  @Column("numeric", {
+    name: "NILAI_MIN_BUKU",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  nilaiMinBuku: string | null;
 
-  @Column("bigint", { name: "nilai_max_buku" })
-  nilaiMaxBuku!: string;
+  @Column("numeric", {
+    name: "NILAI_MAX_BUKU",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  nilaiMaxBuku: string | null;
 }

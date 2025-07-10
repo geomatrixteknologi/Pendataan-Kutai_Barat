@@ -1,119 +1,214 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("x5_1_ak", ["hisIndeksPerubahanSkpKb", "kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSkpKb"], { unique: true })
-@Index("his_skp_kurang_bayar_pkey", ["hisIndeksPerubahanSkpKb", "kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSkpKb"], { unique: true })
-@Index("x5_2_ak", ["hisIndeksPerubahanSkpKb", "jnsSk", "kdBlok", "kdDati2", "kdJnsOp", "kdKantor", "kdKanwil", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSkpKb"], { unique: true })
-@Index("x5_l6_fk", ["jnsSk", "kdKantor", "kdKanwil", "noSk"], {})
-@Entity("his_skp_kurang_bayar", { schema: "public" })
+@Entity("HIS_SKP_KURANG_BAYAR", { schema: "PBB_KUTAI BARAT" })
 export class HisSkpKurangBayar {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("character", { primary: true, name: "thn_pajak_skp_kb", length: 4 })
-  thnPajakSkpKb!: string;
+  @Column("character", { name: "THN_PAJAK_SKP_KB", length: 4 })
+  thnPajakSkpKb: string;
 
-  @Column("smallint", { primary: true, name: "his_indeks_perubahan_skp_kb" })
-  hisIndeksPerubahanSkpKb!: number;
+  @Column("numeric", {
+    name: "HIS_INDEKS_PERUBAHAN_SKP_KB",
+    precision: 4,
+    scale: 0,
+  })
+  hisIndeksPerubahanSkpKb: string;
 
-  @Column("smallint", { name: "his_siklus_skp_kb" })
-  hisSiklusSkpKb!: number;
+  @Column("numeric", {
+    name: "HIS_SIKLUS_SKP_KB",
+    nullable: true,
+    precision: 4,
+    scale: 0,
+  })
+  hisSiklusSkpKb: string | null;
 
-  @Column("character", { name: "kd_kanwil", nullable: true, length: 2 })
-  kdKanwil!: string | null;
+  @Column("character", { name: "KD_KANWIL", nullable: true, length: 2 })
+  kdKanwil: string | null;
 
-  @Column("character", { name: "kd_kantor", nullable: true, length: 2 })
-  kdKantor!: string | null;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
 
-  @Column("character", { name: "jns_sk", nullable: true, length: 1 })
-  jnsSk!: string | null;
+  @Column("character", { name: "JNS_SK", nullable: true, length: 1 })
+  jnsSk: string | null;
 
-  @Column("character", { name: "no_sk", nullable: true, length: 30 })
-  noSk!: string | null;
+  @Column("character", { name: "NO_SK", nullable: true, length: 100 })
+  noSk: string | null;
 
-  @Column("character", { name: "his_kd_tp", length: 2 })
-  hisKdTp!: string;
+  @Column("character", { name: "HIS_KD_TP", nullable: true, length: 4 })
+  hisKdTp: string | null;
 
-  @Column("character", { name: "his_kd_kls_tanah", length: 3 })
-  hisKdKlsTanah!: string;
+  @Column("character", { name: "HIS_KD_KLS_TANAH", nullable: true, length: 3 })
+  hisKdKlsTanah: string | null;
 
-  @Column("character", { name: "his_thn_awal_kls_tanah", length: 4 })
-  hisThnAwalKlsTanah!: string;
+  @Column("character", {
+    name: "HIS_THN_AWAL_KLS_TANAH",
+    nullable: true,
+    length: 4,
+  })
+  hisThnAwalKlsTanah: string | null;
 
-  @Column("character", { name: "his_kd_kls_bng", length: 3 })
-  hisKdKlsBng!: string;
+  @Column("character", { name: "HIS_KD_KLS_BNG", nullable: true, length: 3 })
+  hisKdKlsBng: string | null;
 
-  @Column("character", { name: "his_thn_awal_kls_bng", length: 4 })
-  hisThnAwalKlsBng!: string;
+  @Column("character", {
+    name: "HIS_THN_AWAL_KLS_BNG",
+    nullable: true,
+    length: 4,
+  })
+  hisThnAwalKlsBng: string | null;
 
-  @Column("timestamp without time zone", { name: "his_tgl_jatuh_tempo_skp_kb" })
-  hisTglJatuhTempoSkpKb!: Date;
+  @Column("timestamp without time zone", {
+    name: "HIS_TGL_JATUH_TEMPO_SKP_KB",
+    nullable: true,
+  })
+  hisTglJatuhTempoSkpKb: Date | null;
 
-  @Column("bigint", { name: "his_luas_bumi_skp_kb" })
-  hisLuasBumiSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_LUAS_BUMI_SKP_KB",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  hisLuasBumiSkpKb: string | null;
 
-  @Column("bigint", { name: "his_luas_bng_skp_kb" })
-  hisLuasBngSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_LUAS_BNG_SKP_KB",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  hisLuasBngSkpKb: string | null;
 
-  @Column("bigint", { name: "his_njop_bumi_skp_kb" })
-  hisNjopBumiSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_NJOP_BUMI_SKP_KB",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hisNjopBumiSkpKb: string | null;
 
-  @Column("bigint", { name: "his_njop_bng_skp_kb" })
-  hisNjopBngSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_NJOP_BNG_SKP_KB",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hisNjopBngSkpKb: string | null;
 
-  @Column("bigint", { name: "his_njop_skp_kb" })
-  hisNjopSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_NJOP_SKP_KB",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hisNjopSkpKb: string | null;
 
-  @Column("integer", { name: "his_njoptkp_skp_kb" })
-  hisNjoptkpSkpKb!: number;
+  @Column("numeric", {
+    name: "HIS_NJOPTKP_SKP_KB",
+    nullable: true,
+    precision: 8,
+    scale: 0,
+  })
+  hisNjoptkpSkpKb: string | null;
 
-  @Column("numeric", { name: "his_njkp_skp_kb", precision: 5, scale: 2 })
-  hisNjkpSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_NJKP_SKP_KB",
+    nullable: true,
+    precision: 5,
+    scale: 2,
+  })
+  hisNjkpSkpKb: string | null;
 
-  @Column("bigint", { name: "his_pbb_terhutang_skp_kb" })
-  hisPbbTerhutangSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_PBB_TERHUTANG_SKP_KB",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hisPbbTerhutangSkpKb: string | null;
 
-  @Column("bigint", { name: "his_besar_denda_skp_kb" })
-  hisBesarDendaSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_BESAR_DENDA_SKP_KB",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  hisBesarDendaSkpKb: string | null;
 
-  @Column("bigint", { name: "his_faktor_pengurang_skp_kb", nullable: true })
-  hisFaktorPengurangSkpKb!: string | null;
+  @Column("numeric", {
+    name: "HIS_FAKTOR_PENGURANG_SKP_KB",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  hisFaktorPengurangSkpKb: string | null;
 
-  @Column("bigint", { name: "his_pbb_yg_harus_dibyr_skp_kb" })
-  hisPbbYgHarusDibyrSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_PBB_YG_HARUS_DIBYR_SKP_KB",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hisPbbYgHarusDibyrSkpKb: string | null;
 
-  @Column("bigint", { name: "his_pbb_sppt" })
-  hisPbbSppt!: string;
+  @Column("numeric", {
+    name: "HIS_PBB_SPPT",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hisPbbSppt: string | null;
 
-  @Column("bigint", { name: "his_selisih_pembayaran_skp_kb" })
-  hisSelisihPembayaranSkpKb!: string;
+  @Column("numeric", {
+    name: "HIS_SELISIH_PEMBAYARAN_SKP_KB",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  hisSelisihPembayaranSkpKb: string | null;
 
-  @Column("character", { name: "his_status_pembayaran_skp_kb", length: 1 })
-  hisStatusPembayaranSkpKb!: string;
+  @Column("character", {
+    name: "HIS_STATUS_PEMBAYARAN_SKP_KB",
+    nullable: true,
+    length: 1,
+  })
+  hisStatusPembayaranSkpKb: string | null;
 
-  @Column("timestamp without time zone", { name: "his_tgl_terbit_skp_kb" })
-  hisTglTerbitSkpKb!: Date;
+  @Column("timestamp without time zone", {
+    name: "HIS_TGL_TERBIT_SKP_KB",
+    nullable: true,
+  })
+  hisTglTerbitSkpKb: Date | null;
 
-  @Column("timestamp without time zone", { name: "his_tgl_cetak_skp_kb" })
-  hisTglCetakSkpKb!: Date;
+  @Column("timestamp without time zone", {
+    name: "HIS_TGL_CETAK_SKP_KB",
+    nullable: true,
+  })
+  hisTglCetakSkpKb: Date | null;
 
-  @Column("character", { name: "his_nip_pencetak_skp_kb", length: 18 })
-  hisNipPencetakSkpKb!: string;
+  @Column("character", {
+    name: "HIS_NIP_PENCETAK_SKP_KB",
+    nullable: true,
+    length: 30,
+  })
+  hisNipPencetakSkpKb: string | null;
 }

@@ -1,64 +1,81 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
-import { Ketbatal } from "./Ketbatal";
+import { Column, Entity } from "typeorm";
 
-@Index("pembatalan_sppt_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "pembatalanSpptKe", "thnPajakSppt"], { unique: true })
-@Entity("pembatalan_sppt", { schema: "public" })
+@Entity("PEMBATALAN_SPPT", { schema: "PBB_KUTAI BARAT" })
 export class PembatalanSppt {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("character", { primary: true, name: "thn_pajak_sppt", length: 4 })
-  thnPajakSppt!: string;
+  @Column("character", { name: "THN_PAJAK_SPPT", length: 4 })
+  thnPajakSppt: string;
 
-  @Column("smallint", { primary: true, name: "pembatalan_sppt_ke" })
-  pembatalanSpptKe!: number;
+  @Column("numeric", { name: "PEMBATALAN_SPPT_KE", precision: 2, scale: 0 })
+  pembatalanSpptKe: string;
 
-  @Column("character", { name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_BATAL", nullable: true, length: 2 })
+  kdBatal: string | null;
 
-  @Column("character", { name: "kd_kantor", length: 2 })
-  kdKantor!: string;
+  @Column("character", { name: "KD_KANWIL", nullable: true, length: 2 })
+  kdKanwil: string | null;
 
-  @Column("character", { name: "kd_tp", length: 2 })
-  kdTp!: string;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
 
-  @Column("bigint", { name: "denda_sppt", nullable: true })
-  dendaSppt!: string | null;
+  @Column("character", { name: "KD_TP", nullable: true, length: 3 })
+  kdTp: string | null;
 
-  @Column("bigint", { name: "jml_sppt_yg_dibatalkan" })
-  jmlSpptYgDibatalkan!: string;
+  @Column("numeric", {
+    name: "DENDA_SPPT",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  dendaSppt: string | null;
 
-  @Column("timestamp without time zone", { name: "tgl_pembatalan_sppt" })
-  tglPembatalanSppt!: Date;
+  @Column("numeric", {
+    name: "JML_SPPT_YG_DIBATALKAN",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  jmlSpptYgDibatalkan: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_rekam_btl_sppt",
-    default: () => "statement_timestamp()",
+    name: "TGL_PEMBATALAN_SPPT",
+    nullable: true,
   })
-  tglRekamBtlSppt!: Date;
+  tglPembatalanSppt: Date | null;
 
-  @Column("character", { name: "nip_rekam_btl_sppt", length: 18 })
-  nipRekamBtlSppt!: string;
+  @Column("timestamp without time zone", {
+    name: "TGL_REKAM_BTL_SPPT",
+    nullable: true,
+  })
+  tglRekamBtlSppt: Date | null;
 
-  @ManyToOne(() => Ketbatal, (ketbatal) => ketbatal.pembatalanSppts)
-  @JoinColumn([{ name: "kd_batal", referencedColumnName: "kdBatal" }])
-  kdBatal!: Ketbatal;
+  @Column("character", {
+    name: "NIP_REKAM_BTL_SPPT",
+    nullable: true,
+    length: 30,
+  })
+  nipRekamBtlSppt: string | null;
+
+  @Column("character varying", { name: "NO_BATAL", nullable: true, length: 30 })
+  noBatal: string | null;
 }

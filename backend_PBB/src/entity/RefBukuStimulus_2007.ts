@@ -1,41 +1,60 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("ref_buku_stimulus_2007_pkey", ["kdDati2", "kdKecamatan", "kdKelurahan", "kdPropinsi", "thnPajak"], { unique: true })
-@Entity("ref_buku_stimulus_2007", { schema: "public" })
+@Entity("REF_BUKU_STIMULUS_2007", { schema: "PBB_KUTAI BARAT" })
 export class RefBukuStimulus_2007 {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "thn_pajak", length: 4 })
-  thnPajak!: string;
+  @Column("character", { name: "THN_PAJAK", length: 4 })
+  thnPajak: string;
 
-  @Column("character", { name: "kd_sektor", length: 2 })
-  kdSektor!: string;
+  @Column("character", { name: "KD_SEKTOR", nullable: true, length: 2 })
+  kdSektor: string | null;
 
-  @Column("smallint", { name: "bk_satu", nullable: true })
-  bkSatu!: number | null;
+  @Column("numeric", {
+    name: "BK_SATU",
+    nullable: true,
+    precision: 3,
+    scale: 0,
+  })
+  bkSatu: string | null;
 
-  @Column("smallint", { name: "bk_dua", nullable: true })
-  bkDua!: number | null;
+  @Column("numeric", { name: "BK_DUA", nullable: true, precision: 3, scale: 0 })
+  bkDua: string | null;
 
-  @Column("smallint", { name: "bk_tiga", nullable: true })
-  bkTiga!: number | null;
+  @Column("numeric", {
+    name: "BK_TIGA",
+    nullable: true,
+    precision: 3,
+    scale: 0,
+  })
+  bkTiga: string | null;
 
-  @Column("smallint", { name: "bk_empat", nullable: true })
-  bkEmpat!: number | null;
+  @Column("numeric", {
+    name: "BK_EMPAT",
+    nullable: true,
+    precision: 3,
+    scale: 0,
+  })
+  bkEmpat: string | null;
 
-  @Column("smallint", { name: "bk_lima", nullable: true })
-  bkLima!: number | null;
+  @Column("numeric", {
+    name: "BK_LIMA",
+    nullable: true,
+    precision: 3,
+    scale: 0,
+  })
+  bkLima: string | null;
 
-  @Column("character", { name: "status", length: 1 })
-  status!: string;
+  @Column("character", { name: "STATUS", nullable: true, length: 1 })
+  status: string | null;
 }

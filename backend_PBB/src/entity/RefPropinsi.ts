@@ -1,16 +1,14 @@
-import { Column, Entity, Index, OneToMany } from "typeorm";
-import { RefDati2 } from "./RefDati2";
+import { Column, Entity } from "typeorm";
 
-@Index("ref_propinsi_pkey", ["kdPropinsi"], { unique: true })
-@Index("a1_1_ak", ["kdPropinsi", "nmPropinsi"], { unique: true })
-@Entity("ref_propinsi", { schema: "public" })
+@Entity("REF_PROPINSI", { schema: "PBB_KUTAI BARAT" })
 export class RefPropinsi {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
   kdPropinsi!: string;
 
-  @Column("character varying", { name: "nm_propinsi", length: 30 })
-  nmPropinsi!: string;
-
-  @OneToMany(() => RefDati2, (refDati2) => refDati2.kdPropinsi2)
-  refDatis!: RefDati2[];
+  @Column("character varying", {
+    name: "NM_PROPINSI",
+    nullable: true,
+    length: 30,
+  })
+  nmPropinsi!: string | null;
 }

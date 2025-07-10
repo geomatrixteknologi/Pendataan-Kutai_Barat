@@ -1,35 +1,45 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("a6_1_ak", ["kdKantor", "kdKanwil", "nmKantor"], { unique: true })
-@Index("ref_kantor_pkey", ["kdKantor", "kdKanwil"], { unique: true })
-@Entity("ref_kantor", { schema: "public" })
+@Entity("REF_KANTOR", { schema: "PBB_KUTAI BARAT" })
 export class RefKantor {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
-
-  @Column("character varying", { name: "nm_kantor", length: 30 })
-  nmKantor!: string;
-
-  @Column("character varying", { name: "al_kantor", length: 50 })
-  alKantor!: string;
-
-  @Column("character varying", { name: "kota_terbit", length: 30 })
-  kotaTerbit!: string;
+  @Column("character", { name: "KD_KANTOR", length: 2 })
+  kdKantor: string;
 
   @Column("character varying", {
-    name: "no_faksimili",
+    name: "NM_KANTOR",
+    nullable: true,
+    length: 30,
+  })
+  nmKantor: string | null;
+
+  @Column("character varying", {
+    name: "AL_KANTOR",
+    nullable: true,
+    length: 100,
+  })
+  alKantor: string | null;
+
+  @Column("character varying", {
+    name: "KOTA_TERBIT",
+    nullable: true,
+    length: 30,
+  })
+  kotaTerbit: string | null;
+
+  @Column("character varying", {
+    name: "NO_FAKSIMILI",
     nullable: true,
     length: 50,
   })
-  noFaksimili!: string | null;
+  noFaksimili: string | null;
 
   @Column("character varying", {
-    name: "no_telpon",
+    name: "NO_TELPON",
     nullable: true,
     length: 50,
   })
-  noTelpon!: string | null;
+  noTelpon: string | null;
 }

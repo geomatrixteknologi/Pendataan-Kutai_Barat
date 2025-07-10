@@ -1,63 +1,83 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("dat_transaksi_jual_beli_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "tglTransaksi"], { unique: true })
-@Index("d12_1_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "tglTransaksi"], { unique: true })
-@Entity("dat_transaksi_jual_beli", { schema: "public" })
+@Entity("DAT_TRANSAKSI_JUAL_BELI", { schema: "PBB_KUTAI BARAT" })
 export class DatTransaksiJualBeli {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
+
+  @Column("timestamp without time zone", { name: "TGL_TRANSAKSI" })
+  tglTransaksi: Date;
+
+  @Column("character", { name: "SUMBER_INFORMASI", nullable: true, length: 1 })
+  sumberInformasi: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_BUMI_TRANSAKSI",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBumiTransaksi: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_BNG_TRANSAKSI",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBngTransaksi: string | null;
+
+  @Column("character", { name: "KD_ZNT_TRANSAKSI", nullable: true, length: 2 })
+  kdZntTransaksi: string | null;
+
+  @Column("numeric", {
+    name: "HARGA_BNG_TRANSAKSI",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hargaBngTransaksi: string | null;
+
+  @Column("numeric", {
+    name: "HARGA_BUMI_TRANSAKSI",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hargaBumiTransaksi: string | null;
+
+  @Column("numeric", {
+    name: "HARGA_TOTAL_TRANSAKSI",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hargaTotalTransaksi: string | null;
 
   @Column("timestamp without time zone", {
-    primary: true,
-    name: "tgl_transaksi",
+    name: "TGL_REKAM_TRANSAKSI",
+    nullable: true,
   })
-  tglTransaksi!: Date;
+  tglRekamTransaksi: Date | null;
 
-  @Column("character", { name: "sumber_informasi", length: 1 })
-  sumberInformasi!: string;
-
-  @Column("bigint", { name: "luas_bumi_transaksi", nullable: true })
-  luasBumiTransaksi!: string | null;
-
-  @Column("bigint", { name: "luas_bng_transaksi", nullable: true })
-  luasBngTransaksi!: string | null;
-
-  @Column("character", { name: "kd_znt_transaksi", length: 2 })
-  kdZntTransaksi!: string;
-
-  @Column("bigint", { name: "harga_bng_transaksi", nullable: true })
-  hargaBngTransaksi!: string | null;
-
-  @Column("bigint", { name: "harga_bumi_transaksi", nullable: true })
-  hargaBumiTransaksi!: string | null;
-
-  @Column("bigint", { name: "harga_total_transaksi" })
-  hargaTotalTransaksi!: string;
-
-  @Column("timestamp without time zone", {
-    name: "tgl_rekam_transaksi",
-    default: () => "statement_timestamp()",
-  })
-  tglRekamTransaksi!: Date;
-
-  @Column("character", { name: "nip_perekam", length: 18 })
-  nipPerekam!: string;
+  @Column("character", { name: "NIP_PEREKAM", nullable: true, length: 30 })
+  nipPerekam: string | null;
 }

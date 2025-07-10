@@ -1,45 +1,67 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("his_skp_spop_op_bersama_pkey", ["hisIndeksPerubahanSkpSpop", "kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSkpSpop"], { unique: true })
-@Index("x4_1_ak", ["hisIndeksPerubahanSkpSpop", "kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSkpSpop"], { unique: true })
-@Entity("his_skp_spop_op_bersama", { schema: "public" })
+@Entity("HIS_SKP_SPOP_OP_BERSAMA", { schema: "PBB_KUTAI BARAT" })
 export class HisSkpSpopOpBersama {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("character", { primary: true, name: "thn_pajak_skp_spop", length: 4 })
-  thnPajakSkpSpop!: string;
+  @Column("character", { name: "THN_PAJAK_SKP_SPOP", length: 4 })
+  thnPajakSkpSpop: string;
 
-  @Column("smallint", { primary: true, name: "his_indeks_perubahan_skp_spop" })
-  hisIndeksPerubahanSkpSpop!: number;
+  @Column("numeric", {
+    name: "HIS_INDEKS_PERUBAHAN_SKP_SPOP",
+    precision: 2,
+    scale: 0,
+  })
+  hisIndeksPerubahanSkpSpop: string;
 
-  @Column("bigint", { name: "his_luas_bumi_beban_skp_spop" })
-  hisLuasBumiBebanSkpSpop!: string;
+  @Column("numeric", {
+    name: "HIS_LUAS_BUMI_BEBAN_SKP_SPOP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  hisLuasBumiBebanSkpSpop: string | null;
 
-  @Column("bigint", { name: "his_luas_bng_beban_skp_spop" })
-  hisLuasBngBebanSkpSpop!: string;
+  @Column("numeric", {
+    name: "HIS_LUAS_BNG_BEBAN_SKP_SPOP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  hisLuasBngBebanSkpSpop: string | null;
 
-  @Column("bigint", { name: "his_njop_bumi_beban_skp_spop" })
-  hisNjopBumiBebanSkpSpop!: string;
+  @Column("numeric", {
+    name: "HIS_NJOP_BUMI_BEBAN_SKP_SPOP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hisNjopBumiBebanSkpSpop: string | null;
 
-  @Column("bigint", { name: "his_njop_bng_beban_skp_spop" })
-  hisNjopBngBebanSkpSpop!: string;
+  @Column("numeric", {
+    name: "HIS_NJOP_BNG_BEBAN_SKP_SPOP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  hisNjopBngBebanSkpSpop: string | null;
 }

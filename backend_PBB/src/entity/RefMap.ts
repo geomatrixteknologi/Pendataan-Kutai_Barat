@@ -1,11 +1,10 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("ref_map_pkey", ["kdSektor"], { unique: true })
-@Entity("ref_map", { schema: "public" })
+@Entity("REF_MAP", { schema: "PBB_KUTAI BARAT" })
 export class RefMap {
-  @Column("character", { primary: true, name: "kd_sektor", length: 2 })
-  kdSektor!: string;
+  @Column("character", { name: "KD_SEKTOR", length: 2 })
+  kdSektor: string;
 
-  @Column("character varying", { name: "kd_map", nullable: true, length: 6 })
-  kdMap!: string | null;
+  @Column("character varying", { name: "KD_MAP", nullable: true, length: 6 })
+  kdMap: string | null;
 }

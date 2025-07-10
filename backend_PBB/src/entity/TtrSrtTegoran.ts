@@ -1,35 +1,42 @@
 import { Column, Entity, Index } from "typeorm";
 
-@Index("ttr_srt_tegoran_pkey", ["kdKantor", "kdKanwil", "noSrtTegoran"], {
+@Index("TTR_SRT_TEGORAN_PK", ["kdKantor", "kdKanwil", "noSrtTegoran"], {
   unique: true,
 })
-@Entity("ttr_srt_tegoran", { schema: "public" })
+@Entity("TTR_SRT_TEGORAN", { schema: "PBB_KUTAI BARAT" })
 export class TtrSrtTegoran {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { primary: true, name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
+  @Column("character", { primary: true, name: "KD_KANTOR", length: 2 })
+  kdKantor: string;
 
-  @Column("character", { primary: true, name: "no_srt_tegoran", length: 30 })
-  noSrtTegoran!: string;
+  @Column("character", { primary: true, name: "NO_SRT_TEGORAN", length: 30 })
+  noSrtTegoran: string;
 
-  @Column("timestamp without time zone", { name: "tgl_terima_wp_srt_tegoran" })
-  tglTerimaWpSrtTegoran!: Date;
+  @Column("timestamp without time zone", {
+    name: "TGL_TERIMA_WP_SRT_TEGORAN",
+    nullable: true,
+  })
+  tglTerimaWpSrtTegoran: Date | null;
 
   @Column("character varying", {
-    name: "nm_yg_menerima_srt_tegoran",
+    name: "NM_YG_MENERIMA_SRT_TEGORAN",
     nullable: true,
     length: 30,
   })
-  nmYgMenerimaSrtTegoran!: string | null;
+  nmYgMenerimaSrtTegoran: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_rekam_ttr_srt_tegoran",
-    default: () => "statement_timestamp()",
+    name: "TGL_REKAM_TTR_SRT_TEGORAN",
+    nullable: true,
   })
-  tglRekamTtrSrtTegoran!: Date;
+  tglRekamTtrSrtTegoran: Date | null;
 
-  @Column("character", { name: "nip_rekam_ttr_srt_tegoran", length: 18 })
-  nipRekamTtrSrtTegoran!: string;
+  @Column("character", {
+    name: "NIP_REKAM_TTR_SRT_TEGORAN",
+    nullable: true,
+    length: 30,
+  })
+  nipRekamTtrSrtTegoran: string | null;
 }

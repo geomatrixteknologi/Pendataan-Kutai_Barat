@@ -1,36 +1,42 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("hrg_resource_pkey", ["kdDati2", "kdGroupResource", "kdPropinsi", "kdResource", "thnHrgResource"], { unique: true })
-@Index("c20_1_ak", ["kdDati2", "kdGroupResource", "kdPropinsi", "kdResource", "thnHrgResource"], { unique: true })
-@Entity("hrg_resource", { schema: "public" })
+@Entity("HRG_RESOURCE", { schema: "PBB_KUTAI BARAT" })
 export class HrgResource {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "thn_hrg_resource", length: 4 })
-  thnHrgResource!: string;
+  @Column("character", { name: "THN_HRG_RESOURCE", length: 4 })
+  thnHrgResource: string;
 
-  @Column("character", { primary: true, name: "kd_group_resource", length: 2 })
-  kdGroupResource!: string;
+  @Column("character", { name: "KD_GROUP_RESOURCE", length: 2 })
+  kdGroupResource: string;
 
-  @Column("character", { primary: true, name: "kd_resource", length: 2 })
-  kdResource!: string;
+  @Column("character", { name: "KD_RESOURCE", length: 2 })
+  kdResource: string;
 
-  @Column("character", { name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", nullable: true, length: 2 })
+  kdKanwil: string | null;
 
-  @Column("character", { name: "kd_kantor", length: 2 })
-  kdKantor!: string;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
 
-  @Column("character", { name: "jns_dokumen", length: 1 })
-  jnsDokumen!: string;
+  @Column("character", { name: "JNS_DOKUMEN", nullable: true, length: 1 })
+  jnsDokumen: string | null;
 
-  @Column("character", { name: "no_dokumen", length: 11 })
-  noDokumen!: string;
+  @Column("character", { name: "NO_DOKUMEN", nullable: true, length: 11 })
+  noDokumen: string | null;
 
-  @Column("numeric", { name: "hrg_resource", precision: 10, scale: 2 })
-  hrgResource!: string;
+  @Column("numeric", {
+    name: "HRG_RESOURCE",
+    nullable: true,
+    precision: 10,
+    scale: 2,
+  })
+  hrgResource: string | null;
+
+  @Column("character", { name: "KD_KPPBB", nullable: true, length: 2 })
+  kdKppbb: string | null;
 }

@@ -1,11 +1,14 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("ref_jns_pelayanan_pkey", ["kdJnsPelayanan"], { unique: true })
-@Entity("ref_jns_pelayanan", { schema: "public" })
+@Entity("REF_JNS_PELAYANAN", { schema: "PBB_KUTAI BARAT" })
 export class RefJnsPelayanan {
-  @Column("character", { primary: true, name: "kd_jns_pelayanan", length: 2 })
-  kdJnsPelayanan!: string;
+  @Column("character", { name: "KD_JNS_PELAYANAN", length: 2 })
+  kdJnsPelayanan: string;
 
-  @Column("character varying", { name: "nm_jenis_pelayanan", length: 50 })
-  nmJenisPelayanan!: string;
+  @Column("character varying", {
+    name: "NM_JENIS_PELAYANAN",
+    nullable: true,
+    length: 50,
+  })
+  nmJenisPelayanan: string | null;
 }

@@ -1,58 +1,90 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("denda_administrasi_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnDenda"], { unique: true })
-@Entity("denda_administrasi", { schema: "public" })
+@Entity("DENDA_ADMINISTRASI", { schema: "PBB_KUTAI BARAT" })
 export class DendaAdministrasi {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("character", { primary: true, name: "thn_denda", length: 4 })
-  thnDenda!: string;
+  @Column("character", { name: "THN_DENDA", length: 4 })
+  thnDenda: string;
 
-  @Column("bigint", { name: "pokok_denda_adm", nullable: true })
-  pokokDendaAdm!: string | null;
+  @Column("numeric", {
+    name: "POKOK_DENDA_ADM",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  pokokDendaAdm: string | null;
 
-  @Column("bigint", { name: "pengurangan_denda", nullable: true })
-  penguranganDenda!: string | null;
+  @Column("numeric", {
+    name: "PENGURANGAN_DENDA",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  penguranganDenda: string | null;
 
-  @Column("bigint", { name: "denda_adm_stlh_pengurangan", nullable: true })
-  dendaAdmStlhPengurangan!: string | null;
+  @Column("numeric", {
+    name: "DENDA_ADM_STLH_PENGURANGAN",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  dendaAdmStlhPengurangan: string | null;
 
   @Column("character", {
-    name: "status_tagihan_denda",
+    name: "STATUS_TAGIHAN_DENDA",
     nullable: true,
     length: 1,
   })
-  statusTagihanDenda!: string | null;
+  statusTagihanDenda: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_rekam_denda",
+    name: "TGL_REKAM_DENDA",
     nullable: true,
   })
-  tglRekamDenda!: Date | null;
+  tglRekamDenda: Date | null;
 
   @Column("character", {
-    name: "nip_perekam_denda",
+    name: "NIP_PEREKAM_DENDA",
     nullable: true,
-    length: 18,
+    length: 30,
   })
-  nipPerekamDenda!: string | null;
+  nipPerekamDenda: string | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_AWAL_BERLAKU",
+    nullable: true,
+  })
+  tglAwalBerlaku: Date | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_AKHIR_BERLAKU",
+    nullable: true,
+  })
+  tglAkhirBerlaku: Date | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_APPROVE",
+    nullable: true,
+  })
+  tglApprove: Date | null;
 }

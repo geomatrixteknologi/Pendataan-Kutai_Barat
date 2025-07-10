@@ -1,71 +1,76 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("e13_2_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdKlsBng", "kdPropinsi", "noUrut", "thnPajakSkpSpop"], { unique: true })
-@Index("e13_1_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdKlsTanah", "kdPropinsi", "noUrut", "thnPajakSkpSpop"], { unique: true })
-@Index("skp_spop_op_bersama_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSkpSpop"], { unique: true })
-@Entity("skp_spop_op_bersama", { schema: "public" })
+@Entity("SKP_SPOP_OP_BERSAMA", { schema: "PBB_KUTAI BARAT" })
 export class SkpSpopOpBersama {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("character", { primary: true, name: "thn_pajak_skp_spop", length: 4 })
-  thnPajakSkpSpop!: string;
+  @Column("character", { name: "THN_PAJAK_SKP_SPOP", length: 4 })
+  thnPajakSkpSpop: string;
 
-  @Column("character", {
-    name: "kd_kls_tanah",
-    length: 3,
-    default: () => "'XXX'",
-  })
-  kdKlsTanah!: string;
+  @Column("character", { name: "KD_KLS_TANAH", nullable: true, length: 3 })
+  kdKlsTanah: string | null;
 
   @Column("character", {
-    name: "thn_awal_kls_tanah",
+    name: "THN_AWAL_KLS_TANAH",
+    nullable: true,
     length: 4,
-    default: () => "'1986'",
   })
-  thnAwalKlsTanah!: string;
+  thnAwalKlsTanah: string | null;
 
-  @Column("character", {
-    name: "kd_kls_bng",
-    length: 3,
-    default: () => "'XXX'",
+  @Column("character", { name: "KD_KLS_BNG", nullable: true, length: 3 })
+  kdKlsBng: string | null;
+
+  @Column("character", { name: "THN_AWAL_KLS_BNG", nullable: true, length: 4 })
+  thnAwalKlsBng: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_BUMI_BEBAN_SKP_SPOP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
   })
-  kdKlsBng!: string;
+  luasBumiBebanSkpSpop: string | null;
 
-  @Column("character", {
-    name: "thn_awal_kls_bng",
-    length: 4,
-    default: () => "'1986'",
+  @Column("numeric", {
+    name: "LUAS_BNG_BEBAN_SKP_SPOP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
   })
-  thnAwalKlsBng!: string;
+  luasBngBebanSkpSpop: string | null;
 
-  @Column("bigint", { name: "luas_bumi_beban_skp_spop", default: () => "0" })
-  luasBumiBebanSkpSpop!: string;
+  @Column("numeric", {
+    name: "NJOP_BUMI_BEBAN_SKP_SPOP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBumiBebanSkpSpop: string | null;
 
-  @Column("bigint", { name: "luas_bng_beban_skp_spop", default: () => "0" })
-  luasBngBebanSkpSpop!: string;
-
-  @Column("bigint", { name: "njop_bumi_beban_skp_spop", default: () => "0" })
-  njopBumiBebanSkpSpop!: string;
-
-  @Column("bigint", { name: "njop_bng_beban_skp_spop", default: () => "0" })
-  njopBngBebanSkpSpop!: string;
+  @Column("numeric", {
+    name: "NJOP_BNG_BEBAN_SKP_SPOP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBngBebanSkpSpop: string | null;
 }

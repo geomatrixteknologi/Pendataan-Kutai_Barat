@@ -1,44 +1,50 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("dokumen_pkey", ["jnsDokumen", "kdKantor", "kdKanwil", "noDokumen"], {
-  unique: true,
-})
-@Entity("dokumen", { schema: "public" })
+@Entity("DOKUMEN", { schema: "PBB_KUTAI BARAT" })
 export class Dokumen {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
 
-  @Column("character", { primary: true, name: "jns_dokumen", length: 1 })
-  jnsDokumen!: string;
+  @Column("character", { name: "JNS_DOKUMEN", length: 1 })
+  jnsDokumen: string;
 
-  @Column("character", { primary: true, name: "no_dokumen", length: 11 })
-  noDokumen!: string;
-
-  @Column("timestamp without time zone", { name: "tgl_pendataan_dok" })
-  tglPendataanDok!: Date;
-
-  @Column("character", { name: "nip_pendata_dok", nullable: true, length: 18 })
-  nipPendataDok!: string | null;
-
-  @Column("timestamp without time zone", { name: "tgl_pemeriksaan_dok" })
-  tglPemeriksaanDok!: Date;
-
-  @Column("character", {
-    name: "nip_pemeriksa_dok",
-    nullable: true,
-    length: 18,
-  })
-  nipPemeriksaDok!: string | null;
+  @Column("character", { name: "NO_DOKUMEN", length: 11 })
+  noDokumen: string;
 
   @Column("timestamp without time zone", {
-    name: "tgl_perekaman_dok",
-    default: () => "statement_timestamp()",
+    name: "TGL_PENDATAAN_DOK",
+    nullable: true,
   })
-  tglPerekamanDok!: Date;
+  tglPendataanDok: Date | null;
 
-  @Column("character", { name: "nip_perekam_dok", nullable: true, length: 18 })
-  nipPerekamDok!: string | null;
+  @Column("character", { name: "NIP_PENDATA_DOK", nullable: true, length: 30 })
+  nipPendataDok: string | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_PEMERIKSAAN_DOK",
+    nullable: true,
+  })
+  tglPemeriksaanDok: Date | null;
+
+  @Column("character", {
+    name: "NIP_PEMERIKSA_DOK",
+    nullable: true,
+    length: 30,
+  })
+  nipPemeriksaDok: string | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_PEREKAMAN_DOK",
+    nullable: true,
+  })
+  tglPerekamanDok: Date | null;
+
+  @Column("character", { name: "NIP_PEREKAM_DOK", nullable: true, length: 30 })
+  nipPerekamDok: string | null;
+
+  @Column("character", { name: "KD_KPPBB", nullable: true, length: 2 })
+  kdKppbb: string | null;
 }

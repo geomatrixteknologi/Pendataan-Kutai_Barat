@@ -29,6 +29,8 @@ export const lantaiBangunanOptions: Record<string, string> = { "1": "MARMER", "2
 
 export const langitLangitBangunanOptions: Record<string, string> = { "1": "AKUSTIK / JATI", "2": "TRIPLEK / ASBES BAMBU", "3": "TIDAK ADA" };
 
+export const statusPekerjaanWpOptions: Record<string, string> = { "1": "PNS", "2": "ABRI", "3": "PENSIUNAN", "4": "BADAN", "5": "LAINNYA" };
+
 export function getKeyByContainsValue<T extends Record<string | number, string>>(object: T, searchValue: string): keyof T | undefined {
   const normalizedSearch = String(searchValue)?.toLowerCase().trim();
 

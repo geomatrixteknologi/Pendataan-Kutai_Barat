@@ -1,17 +1,21 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("adj_luas_pkey", ["kdBngLantai", "kdJpb", "tipeBng"], { unique: true })
-@Entity("adj_luas", { schema: "public" })
+@Entity("ADJ_LUAS", { schema: "PBB_KUTAI BARAT" })
 export class AdjLuas {
-  @Column("character", { primary: true, name: "kd_jpb", length: 2 })
-  kdJpb!: string;
+  @Column("character", { name: "KD_JPB", length: 2 })
+  kdJpb: string;
 
-  @Column("character", { primary: true, name: "tipe_bng", length: 5 })
-  tipeBng!: string;
+  @Column("character", { name: "TIPE_BNG", length: 5 })
+  tipeBng: string;
 
-  @Column("character", { primary: true, name: "kd_bng_lantai", length: 8 })
-  kdBngLantai!: string;
+  @Column("character", { name: "KD_BNG_LANTAI", length: 8 })
+  kdBngLantai: string;
 
-  @Column("numeric", { name: "pct_adj_luas", precision: 5, scale: 2 })
-  pctAdjLuas!: string;
+  @Column("numeric", {
+    name: "PCT_ADJ_LUAS",
+    nullable: true,
+    precision: 5,
+    scale: 2,
+  })
+  pctAdjLuas: string | null;
 }

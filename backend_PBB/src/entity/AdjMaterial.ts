@@ -1,20 +1,33 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("adj_material_pkey", ["kdKegiatan", "kdPekerjaan"], { unique: true })
-@Entity("adj_material", { schema: "public" })
+@Entity("ADJ_MATERIAL", { schema: "PBB_KUTAI BARAT" })
 export class AdjMaterial {
-  @Column("character", { primary: true, name: "kd_pekerjaan", length: 2 })
-  kdPekerjaan!: string;
+  @Column("character", { name: "KD_PEKERJAAN", length: 2 })
+  kdPekerjaan: string;
 
-  @Column("character", { primary: true, name: "kd_kegiatan", length: 2 })
-  kdKegiatan!: string;
+  @Column("character", { name: "KD_KEGIATAN", length: 2 })
+  kdKegiatan: string;
 
-  @Column("numeric", { name: "pct_adj_mtrl_1", precision: 5, scale: 2 })
-  pctAdjMtrl_1!: string;
+  @Column("numeric", {
+    name: "PCT_ADJ_MTRL_1",
+    nullable: true,
+    precision: 5,
+    scale: 2,
+  })
+  pctAdjMtrl_1: string | null;
 
-  @Column("numeric", { name: "pct_adj_mtrl_2", precision: 5, scale: 2 })
-  pctAdjMtrl_2!: string;
+  @Column("numeric", {
+    name: "PCT_ADJ_MTRL_2",
+    nullable: true,
+    precision: 5,
+    scale: 2,
+  })
+  pctAdjMtrl_2: string | null;
 
-  @Column("character varying", { name: "deskripsi_adj", length: 50 })
-  deskripsiAdj!: string;
+  @Column("character varying", {
+    name: "DESKRIPSI_ADJ",
+    nullable: true,
+    length: 50,
+  })
+  deskripsiAdj: string | null;
 }

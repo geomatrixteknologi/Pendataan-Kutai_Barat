@@ -6,30 +6,20 @@ import { RefDati2 } from "./entity/RefDati2";
 import { RefKelurahan } from "./entity/RefKelurahan";
 import { DatPetaBlok } from "./entity/DatPetaBlok";
 import { DatZnt } from "./entity/DatZnt";
-import { PenghapusanOpSe14 } from "./entity/PenghapusanOpSe14";
 import { DatNir } from "./entity/DatNir";
 import { DatPetaZnt } from "./entity/DatPetaZnt";
 import { DatOpBumi } from "./entity/DatOpBumi";
 import { DatObjekPajak } from "./entity/DatObjekPajak";
 import { Pegawai } from "./entity/Pegawai";
 import { DafnomOp } from "./entity/DafnomOp";
-import { DafnomPiutang } from "./entity/DafnomPiutang";
-import { KeputusanAngsuranPbb } from "./entity/KeputusanAngsuranPbb";
 import { Sppt } from "./entity/Sppt";
 import { PembayaranSppt } from "./entity/PembayaranSppt";
-import { SspPbbSppt } from "./entity/SspPbbSppt";
 import { KelasBangunan } from "./entity/KelasBangunan";
-import { Skp } from "./entity/Skp";
-import { PembayaranSkp } from "./entity/PembayaranSkp";
 import { TempatPembayaran } from "./entity/TempatPembayaran";
 import { PembayaranStp } from "./entity/PembayaranStp";
 import { Stp } from "./entity/Stp";
-import { TtrStp } from "./entity/TtrStp";
 import { KelasTanah } from "./entity/KelasTanah";
-import { SkpOpBersama } from "./entity/SkpOpBersama";
-import { TtrSkp } from "./entity/TtrSkp";
 import { SpptOpBersama } from "./entity/SpptOpBersama";
-import { RincianAngsuranPbb } from "./entity/RincianAngsuranPbb";
 import { DatSubjekPajak } from "./entity/DatSubjekPajak";
 import { DatOpBangunan } from "./entity/DatOpBangunan";
 import { DatSubjekPajakNjoptkp } from "./entity/DatSubjekPajakNjoptkp";
@@ -73,7 +63,7 @@ import { RefPropinsi } from "./entity/RefPropinsi";
 
 dotenv.config();
 
-const { DB_HOST, DB_PORT, DB_USERNAME, DB_PASSWORD, DB_DATABASE } = process.env;
+const { DB_HOST, DB_PORT, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_SCHEMA } = process.env;
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -82,16 +72,18 @@ export const AppDataSource = new DataSource({
   username: DB_USERNAME,
   password: DB_PASSWORD,
   database: DB_DATABASE,
-
+  schema: DB_SCHEMA,
   synchronize: false,
   logging: true,
-  ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : false,
+  // ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : false,
+  ssl: {
+    rejectUnauthorized: false, // untuk sementara (non-production)
+  },
   entities: [
     RefKecamatan,
     RefDati2,
     RefKelurahan,
     DatPetaBlok,
-    PenghapusanOpSe14,
     DatZnt,
     DatNir,
     DatPetaZnt,
@@ -99,23 +91,14 @@ export const AppDataSource = new DataSource({
     DatObjekPajak,
     Pegawai,
     DafnomOp,
-    DafnomPiutang,
-    KeputusanAngsuranPbb,
     Sppt,
     PembayaranSppt,
-    SspPbbSppt,
     KelasBangunan,
-    Skp,
-    PembayaranSkp,
     TempatPembayaran,
     PembayaranStp,
     Stp,
-    TtrStp,
     KelasTanah,
-    SkpOpBersama,
-    TtrSkp,
     SpptOpBersama,
-    RincianAngsuranPbb,
     DatSubjekPajak,
     DatOpBangunan,
     DatSubjekPajakNjoptkp,
@@ -157,6 +140,7 @@ export const AppDataSource = new DataSource({
     DbkbStandard,
     RefPropinsi,
   ],
+  // entities: [],
   migrations: ["src/migrations/*.ts"],
   subscribers: ["src/subscriber/*.ts"],
 });

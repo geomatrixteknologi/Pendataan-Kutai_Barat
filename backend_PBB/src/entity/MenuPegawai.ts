@@ -1,18 +1,13 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("menu_pegawai_pkey", ["nip"], { unique: true })
-@Entity("menu_pegawai", { schema: "public" })
+@Entity("MENU_PEGAWAI", { schema: "PBB_KUTAI BARAT" })
 export class MenuPegawai {
-  @Column("character", { primary: true, name: "nip", length: 18 })
-  nip!: string;
+  @Column("character", { name: "NIP", length: 30 })
+  nip: string;
 
-  @Column("character varying", { name: "menu", length: 255 })
-  menu!: string;
+  @Column("character varying", { name: "MENU", nullable: true, length: 255 })
+  menu: string | null;
 
-  @Column("timestamp without time zone", {
-    name: "tgl_update",
-    nullable: true,
-    default: () => "statement_timestamp()",
-  })
-  tglUpdate!: Date | null;
+  @Column("timestamp without time zone", { name: "TGL_UPDATE", nullable: true })
+  tglUpdate: Date | null;
 }

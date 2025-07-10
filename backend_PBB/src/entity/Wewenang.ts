@@ -1,11 +1,15 @@
 import { Column, Entity, Index } from "typeorm";
 
-@Index("wewenang_pkey", ["kdWewenang"], { unique: true })
-@Entity("wewenang", { schema: "public" })
+@Index("WEWENANG_PK", ["kdWewenang"], { unique: true })
+@Entity("WEWENANG", { schema: "PBB_KUTAI BARAT" })
 export class Wewenang {
-  @Column("character", { primary: true, name: "kd_wewenang", length: 2 })
-  kdWewenang!: string;
+  @Column("character", { name: "KD_WEWENANG", length: 2 })
+  kdWewenang: string;
 
-  @Column("character varying", { name: "nm_wewenang", length: 30 })
-  nmWewenang!: string;
+  @Column("character varying", {
+    name: "NM_WEWENANG",
+    nullable: true,
+    length: 30,
+  })
+  nmWewenang: string | null;
 }

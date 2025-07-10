@@ -1,14 +1,17 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("ref_umum_pkey", ["kdRef"], { unique: true })
-@Entity("ref_umum", { schema: "public" })
+@Entity("REF_UMUM", { schema: "PBB_KUTAI BARAT" })
 export class RefUmum {
-  @Column("bigint", { primary: true, name: "kd_ref" })
-  kdRef!: string;
+  @Column("numeric", { name: "KD_REF", precision: 1000, scale: 53 })
+  kdRef: string;
 
-  @Column("character varying", { name: "keterangan", length: 100 })
-  keterangan!: string;
+  @Column("character varying", {
+    name: "KETERANGAN",
+    nullable: true,
+    length: 100,
+  })
+  keterangan: string | null;
 
-  @Column("character varying", { name: "nm_ref", length: 250 })
-  nmRef!: string;
+  @Column("character varying", { name: "NM_REF", nullable: true, length: 250 })
+  nmRef: string | null;
 }

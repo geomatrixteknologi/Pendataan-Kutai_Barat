@@ -1,23 +1,32 @@
 import { Column, Entity, Index } from "typeorm";
 
-@Index("vol_kegiatan_pkey", ["kdBngLantai", "kdJpb", "kdKegiatan", "kdPekerjaan", "tipeBng"], { unique: true })
-@Entity("vol_kegiatan", { schema: "public" })
+@Index(
+  "VOL_KEGIATAN_PK",
+  ["kdBngLantai", "kdJpb", "kdKegiatan", "kdPekerjaan", "tipeBng"],
+  { unique: true }
+)
+@Entity("VOL_KEGIATAN", { schema: "PBB_KUTAI BARAT" })
 export class VolKegiatan {
-  @Column("character", { primary: true, name: "kd_jpb", length: 2 })
-  kdJpb!: string;
+  @Column("character", { name: "KD_JPB", length: 2 })
+  kdJpb: string;
 
-  @Column("character", { primary: true, name: "tipe_bng", length: 5 })
-  tipeBng!: string;
+  @Column("character", { name: "TIPE_BNG", length: 5 })
+  tipeBng: string;
 
-  @Column("character", { primary: true, name: "kd_bng_lantai", length: 8 })
-  kdBngLantai!: string;
+  @Column("character", { name: "KD_BNG_LANTAI", length: 8 })
+  kdBngLantai: string;
 
-  @Column("character", { primary: true, name: "kd_pekerjaan", length: 2 })
-  kdPekerjaan!: string;
+  @Column("character", { name: "KD_PEKERJAAN", length: 2 })
+  kdPekerjaan: string;
 
-  @Column("character", { primary: true, name: "kd_kegiatan", length: 2 })
-  kdKegiatan!: string;
+  @Column("character", { name: "KD_KEGIATAN", length: 2 })
+  kdKegiatan: string;
 
-  @Column("numeric", { name: "vol_kegiatan", precision: 10, scale: 4 })
-  volKegiatan!: string;
+  @Column("numeric", {
+    name: "VOL_KEGIATAN",
+    nullable: true,
+    precision: 10,
+    scale: 4,
+  })
+  volKegiatan: string | null;
 }

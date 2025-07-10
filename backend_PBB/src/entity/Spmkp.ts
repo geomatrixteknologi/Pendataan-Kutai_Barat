@@ -1,66 +1,81 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("j2_1_ak", ["bundelPelayanan", "kdBlokPemohon", "kdDati2Pemohon", "kdJnsOpPemohon", "kdKantor", "kdKanwil", "kdKecamatanPemohon", "kdKelurahanPemohon", "kdPropinsiPemohon", "noUrutPelayanan", "noUrutPemohon", "thnPelayanan"], {
-  unique: true,
-})
-@Index("spmkp_pkey", ["kdKantor", "kdKanwil", "noSpmkp"], { unique: true })
-@Entity("spmkp", { schema: "public" })
+@Entity("SPMKP", { schema: "PBB_KUTAI BARAT" })
 export class Spmkp {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
+  @Column("character", { name: "KD_KANTOR", length: 2 })
+  kdKantor: string;
 
-  @Column("character", { primary: true, name: "no_spmkp", length: 30 })
-  noSpmkp!: string;
+  @Column("character", { name: "NO_SPMKP", length: 30 })
+  noSpmkp: string;
 
-  @Column("timestamp without time zone", { name: "tgl_spmkp" })
-  tglSpmkp!: Date;
+  @Column("timestamp without time zone", { name: "TGL_SPMKP", nullable: true })
+  tglSpmkp: Date | null;
 
-  @Column("character", { name: "thn_pelayanan", length: 4 })
-  thnPelayanan!: string;
+  @Column("character", { name: "THN_PELAYANAN", nullable: true, length: 4 })
+  thnPelayanan: string | null;
 
-  @Column("character", { name: "bundel_pelayanan", length: 4 })
-  bundelPelayanan!: string;
+  @Column("character", { name: "BUNDEL_PELAYANAN", nullable: true, length: 4 })
+  bundelPelayanan: string | null;
 
-  @Column("character", { name: "no_urut_pelayanan", length: 3 })
-  noUrutPelayanan!: string;
+  @Column("character", { name: "NO_URUT_PELAYANAN", nullable: true, length: 3 })
+  noUrutPelayanan: string | null;
 
-  @Column("character", { name: "kd_propinsi_pemohon", length: 2 })
-  kdPropinsiPemohon!: string;
+  @Column("character", {
+    name: "KD_PROPINSI_PEMOHON",
+    nullable: true,
+    length: 2,
+  })
+  kdPropinsiPemohon: string | null;
 
-  @Column("character", { name: "kd_dati2_pemohon", length: 2 })
-  kdDati2Pemohon!: string;
+  @Column("character", { name: "KD_DATI2_PEMOHON", nullable: true, length: 2 })
+  kdDati2Pemohon: string | null;
 
-  @Column("character", { name: "kd_kecamatan_pemohon", length: 3 })
-  kdKecamatanPemohon!: string;
+  @Column("character", {
+    name: "KD_KECAMATAN_PEMOHON",
+    nullable: true,
+    length: 3,
+  })
+  kdKecamatanPemohon: string | null;
 
-  @Column("character", { name: "kd_kelurahan_pemohon", length: 3 })
-  kdKelurahanPemohon!: string;
+  @Column("character", {
+    name: "KD_KELURAHAN_PEMOHON",
+    nullable: true,
+    length: 3,
+  })
+  kdKelurahanPemohon: string | null;
 
-  @Column("character", { name: "kd_blok_pemohon", length: 3 })
-  kdBlokPemohon!: string;
+  @Column("character", { name: "KD_BLOK_PEMOHON", nullable: true, length: 3 })
+  kdBlokPemohon: string | null;
 
-  @Column("character", { name: "no_urut_pemohon", length: 4 })
-  noUrutPemohon!: string;
+  @Column("character", { name: "NO_URUT_PEMOHON", nullable: true, length: 4 })
+  noUrutPemohon: string | null;
 
-  @Column("character", { name: "kd_jns_op_pemohon", length: 1 })
-  kdJnsOpPemohon!: string;
-
-  @Column("character varying", { name: "no_rek_wp", length: 20 })
-  noRekWp!: string;
+  @Column("character", { name: "KD_JNS_OP_PEMOHON", nullable: true, length: 1 })
+  kdJnsOpPemohon: string | null;
 
   @Column("character varying", {
-    name: "nm_bank_wp",
+    name: "NO_REK_WP",
+    nullable: true,
+    length: 20,
+  })
+  noRekWp: string | null;
+
+  @Column("character varying", {
+    name: "NM_BANK_WP",
     nullable: true,
     length: 30,
   })
-  nmBankWp!: string | null;
+  nmBankWp: string | null;
 
-  @Column("timestamp without time zone", { name: "tgl_rekam_spmkp" })
-  tglRekamSpmkp!: Date;
+  @Column("timestamp without time zone", {
+    name: "TGL_REKAM_SPMKP",
+    nullable: true,
+  })
+  tglRekamSpmkp: Date | null;
 
-  @Column("character", { name: "nip_rekam_spmkp", length: 18 })
-  nipRekamSpmkp!: string;
+  @Column("character", { name: "NIP_REKAM_SPMKP", nullable: true, length: 30 })
+  nipRekamSpmkp: string | null;
 }

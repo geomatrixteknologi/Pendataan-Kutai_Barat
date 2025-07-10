@@ -1,146 +1,125 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index(
-  "keputusan_keberatan_pbb_pkey",
-  ["bundelPelayanan", "kdBlokPemohon", "kdDati2Pemohon", "kdJnsOpPemohon", "kdKantor", "kdKanwil", "kdKecamatanPemohon", "kdKelurahanPemohon", "kdPropinsiPemohon", "noUrutPelayanan", "noUrutPemohon", "thnPelayanan"],
-  { unique: true }
-)
-@Index(
-  "h1_2_ak",
-  [
-    "bundelPelayanan",
-    "kdBlokPemohon",
-    "kdDati2Pemohon",
-    "kdJnsOpPemohon",
-    "kdKantor",
-    "kdKanwil",
-    "kdKecamatanPemohon",
-    "kdKelurahanPemohon",
-    "kdPropinsiPemohon",
-    "nipPencetakSkKeberatan",
-    "noUrutPelayanan",
-    "noUrutPemohon",
-    "thnPelayanan",
-  ],
-  { unique: true }
-)
-@Index("h1_3_ak", ["bundelPelayanan", "kdBlokPemohon", "kdDati2Pemohon", "kdJnsOpPemohon", "kdKantor", "kdKanwil", "kdKecamatanPemohon", "kdKelurahanPemohon", "kdPropinsiPemohon", "noUrutPelayanan", "noUrutPemohon", "thnPelayanan"], {
-  unique: true,
-})
-@Index(
-  "h1_1_ak",
-  ["bundelPelayanan", "jnsKeputusan", "kdBlokPemohon", "kdDati2Pemohon", "kdJnsOpPemohon", "kdKantor", "kdKanwil", "kdKecamatanPemohon", "kdKelurahanPemohon", "kdPropinsiPemohon", "noUrutPelayanan", "noUrutPemohon", "thnPelayanan"],
-  { unique: true }
-)
-@Index("h1_l6_fk", ["jnsSk", "kdKantor", "kdKanwil", "noSk"], {})
-@Entity("keputusan_keberatan_pbb", { schema: "public" })
+@Entity("KEPUTUSAN_KEBERATAN_PBB", { schema: "PBB_KUTAI BARAT" })
 export class KeputusanKeberatanPbb {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
-
-  @Column("character", { primary: true, name: "thn_pelayanan", length: 4 })
-  thnPelayanan!: string;
-
-  @Column("character", { primary: true, name: "bundel_pelayanan", length: 4 })
-  bundelPelayanan!: string;
-
-  @Column("character", { primary: true, name: "no_urut_pelayanan", length: 3 })
-  noUrutPelayanan!: string;
+  @Column("character", { name: "KD_KANTOR", length: 2 })
+  kdKantor: string;
 
   @Column("character", {
-    primary: true,
-    name: "kd_propinsi_pemohon",
+    name: "KD_TEMPAT_PELAYANAN",
+    nullable: true,
     length: 2,
   })
-  kdPropinsiPemohon!: string;
+  kdTempatPelayanan: string | null;
 
-  @Column("character", { primary: true, name: "kd_dati2_pemohon", length: 2 })
-  kdDati2Pemohon!: string;
+  @Column("character", { name: "THN_PELAYANAN", length: 4 })
+  thnPelayanan: string;
+
+  @Column("character", { name: "BUNDEL_PELAYANAN", length: 4 })
+  bundelPelayanan: string;
+
+  @Column("character", { name: "NO_URUT_PELAYANAN", length: 3 })
+  noUrutPelayanan: string;
+
+  @Column("character", { name: "KD_PROPINSI_PEMOHON", length: 2 })
+  kdPropinsiPemohon: string;
+
+  @Column("character", { name: "KD_DATI2_PEMOHON", length: 2 })
+  kdDati2Pemohon: string;
+
+  @Column("character", { name: "KD_KECAMATAN_PEMOHON", length: 3 })
+  kdKecamatanPemohon: string;
+
+  @Column("character", { name: "KD_KELURAHAN_PEMOHON", length: 3 })
+  kdKelurahanPemohon: string;
+
+  @Column("character", { name: "KD_BLOK_PEMOHON", length: 3 })
+  kdBlokPemohon: string;
+
+  @Column("character", { name: "NO_URUT_PEMOHON", length: 4 })
+  noUrutPemohon: string;
+
+  @Column("character", { name: "KD_JNS_OP_PEMOHON", length: 1 })
+  kdJnsOpPemohon: string;
+
+  @Column("character", { name: "JNS_SK", nullable: true, length: 1 })
+  jnsSk: string | null;
+
+  @Column("character", { name: "NO_SK", nullable: true, length: 100 })
+  noSk: string | null;
+
+  @Column("character", { name: "JNS_KEPUTUSAN", nullable: true, length: 1 })
+  jnsKeputusan: string | null;
+
+  @Column("character", { name: "KD_KLS_TANAH", nullable: true, length: 3 })
+  kdKlsTanah: string | null;
 
   @Column("character", {
-    primary: true,
-    name: "kd_kecamatan_pemohon",
-    length: 3,
-  })
-  kdKecamatanPemohon!: string;
-
-  @Column("character", {
-    primary: true,
-    name: "kd_kelurahan_pemohon",
-    length: 3,
-  })
-  kdKelurahanPemohon!: string;
-
-  @Column("character", { primary: true, name: "kd_blok_pemohon", length: 3 })
-  kdBlokPemohon!: string;
-
-  @Column("character", { primary: true, name: "no_urut_pemohon", length: 4 })
-  noUrutPemohon!: string;
-
-  @Column("character", { primary: true, name: "kd_jns_op_pemohon", length: 1 })
-  kdJnsOpPemohon!: string;
-
-  @Column("character", { name: "jns_sk", length: 1 })
-  jnsSk!: string;
-
-  @Column("character", { name: "no_sk", length: 30 })
-  noSk!: string;
-
-  @Column("character", { name: "jns_keputusan", length: 1 })
-  jnsKeputusan!: string;
-
-  @Column("character", {
-    name: "kd_kls_tanah",
-    length: 3,
-    default: () => "'XXX'",
-  })
-  kdKlsTanah!: string;
-
-  @Column("character", {
-    name: "thn_awal_kls_tanah",
+    name: "THN_AWAL_KLS_TANAH",
+    nullable: true,
     length: 4,
-    default: () => "'1986'",
   })
-  thnAwalKlsTanah!: string;
+  thnAwalKlsTanah: string | null;
 
-  @Column("character", {
-    name: "kd_kls_bng",
-    length: 3,
-    default: () => "'XXX'",
+  @Column("character", { name: "KD_KLS_BNG", nullable: true, length: 3 })
+  kdKlsBng: string | null;
+
+  @Column("character", { name: "THN_AWAL_KLS_BNG", nullable: true, length: 4 })
+  thnAwalKlsBng: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_BUMI_SK_KEBERATAN",
+    nullable: true,
+    precision: 12,
+    scale: 0,
   })
-  kdKlsBng!: string;
+  luasBumiSkKeberatan: string | null;
 
-  @Column("character", {
-    name: "thn_awal_kls_bng",
-    length: 4,
-    default: () => "'1986'",
+  @Column("numeric", {
+    name: "LUAS_BNG_SK_KEBERATAN",
+    nullable: true,
+    precision: 12,
+    scale: 0,
   })
-  thnAwalKlsBng!: string;
+  luasBngSkKeberatan: string | null;
 
-  @Column("bigint", { name: "luas_bumi_sk_keberatan", default: () => "0" })
-  luasBumiSkKeberatan!: string;
+  @Column("numeric", {
+    name: "NJOP_BUMI_SK_KEBERATAN",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBumiSkKeberatan: string | null;
 
-  @Column("bigint", { name: "luas_bng_sk_keberatan", default: () => "0" })
-  luasBngSkKeberatan!: string;
+  @Column("numeric", {
+    name: "NJOP_BNG_SK_KEBERATAN",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBngSkKeberatan: string | null;
 
-  @Column("bigint", { name: "njop_bumi_sk_keberatan", default: () => "0" })
-  njopBumiSkKeberatan!: string;
-
-  @Column("bigint", { name: "njop_bng_sk_keberatan", default: () => "0" })
-  njopBngSkKeberatan!: string;
-
-  @Column("bigint", { name: "pbb_sk_keberatan" })
-  pbbSkKeberatan!: string;
+  @Column("numeric", {
+    name: "PBB_SK_KEBERATAN",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  pbbSkKeberatan: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_cetak_sk_keberatan",
-    default: () => "statement_timestamp()",
+    name: "TGL_CETAK_SK_KEBERATAN",
+    nullable: true,
   })
-  tglCetakSkKeberatan!: Date;
+  tglCetakSkKeberatan: Date | null;
 
-  @Column("character", { name: "nip_pencetak_sk_keberatan", length: 18 })
-  nipPencetakSkKeberatan!: string;
+  @Column("character", {
+    name: "NIP_PENCETAK_SK_KEBERATAN",
+    nullable: true,
+    length: 30,
+  })
+  nipPencetakSkKeberatan: string | null;
 }

@@ -1,35 +1,41 @@
-import { Column, Entity, Index, OneToMany } from "typeorm";
-import { Skp } from "./Skp";
-import { SkpOpBersama } from "./SkpOpBersama";
-import { Sppt } from "./Sppt";
+import { Column, Entity } from "typeorm";
 
-@Index("kelas_tanah_pkey", ["kdKlsTanah", "thnAwalKlsTanah"], { unique: true })
-@Entity("kelas_tanah", { schema: "public" })
+@Entity("KELAS_TANAH", { schema: "PBB_KUTAI BARAT" })
 export class KelasTanah {
-  @Column("character", { primary: true, name: "kd_kls_tanah", length: 3 })
+  @Column("character", { primary: true, name: "KD_KLS_TANAH", length: 3 })
   kdKlsTanah!: string;
 
-  @Column("character", { primary: true, name: "thn_awal_kls_tanah", length: 4 })
+  @Column("character", { primary: true, name: "THN_AWAL_KLS_TANAH", length: 4 })
   thnAwalKlsTanah!: string;
 
-  @Column("character", { name: "thn_akhir_kls_tanah", length: 4 })
-  thnAkhirKlsTanah!: string;
+  @Column("character", {
+    name: "THN_AKHIR_KLS_TANAH",
+    nullable: true,
+    length: 4,
+  })
+  thnAkhirKlsTanah!: string | null;
 
-  @Column("numeric", { name: "nilai_min_tanah", precision: 8, scale: 2 })
-  nilaiMinTanah!: string;
+  @Column("numeric", {
+    name: "NILAI_MIN_TANAH",
+    nullable: true,
+    precision: 8,
+    scale: 2,
+  })
+  nilaiMinTanah!: string | null;
 
-  @Column("numeric", { name: "nilai_max_tanah", precision: 8, scale: 2 })
-  nilaiMaxTanah!: string;
+  @Column("numeric", {
+    name: "NILAI_MAX_TANAH",
+    nullable: true,
+    precision: 8,
+    scale: 2,
+  })
+  nilaiMaxTanah!: string | null;
 
-  @Column("numeric", { name: "nilai_per_m2_tanah", precision: 8, scale: 2 })
-  nilaiPerM2Tanah!: string;
-
-  @OneToMany(() => Skp, (skp) => skp.kelasTanah)
-  skps!: Skp[];
-
-  @OneToMany(() => SkpOpBersama, (skpOpBersama) => skpOpBersama.kelasTanah)
-  skpOpBersamas!: SkpOpBersama[];
-
-  @OneToMany(() => Sppt, (sppt) => sppt.kelasTanah)
-  sppts!: Sppt[];
+  @Column("numeric", {
+    name: "NILAI_PER_M2_TANAH",
+    nullable: true,
+    precision: 8,
+    scale: 2,
+  })
+  nilaiPerM2Tanah!: string | null;
 }

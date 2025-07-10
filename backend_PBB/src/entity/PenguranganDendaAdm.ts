@@ -1,111 +1,83 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index(
-  "i1_2_ak",
-  [
-    "bundelPelayanan",
-    "kdBlokPemohon",
-    "kdDati2Pemohon",
-    "kdJnsOpPemohon",
-    "kdKantor",
-    "kdKanwil",
-    "kdKecamatanPemohon",
-    "kdKelurahanPemohon",
-    "kdPropinsiPemohon",
-    "noUrutPelayanan",
-    "noUrutPemohon",
-    "thnPelayanan",
-    "thnPenguranganDendaAdm",
-  ],
-  { unique: true }
-)
-@Index(
-  "i1_1_ak",
-  [
-    "bundelPelayanan",
-    "kdBlokPemohon",
-    "kdDati2Pemohon",
-    "kdJnsOpPemohon",
-    "kdKantor",
-    "kdKanwil",
-    "kdKecamatanPemohon",
-    "kdKelurahanPemohon",
-    "kdPropinsiPemohon",
-    "noUrutPelayanan",
-    "noUrutPemohon",
-    "thnPelayanan",
-    "thnPenguranganDendaAdm",
-  ],
-  { unique: true }
-)
-@Index(
-  "pengurangan_denda_adm_pkey",
-  ["bundelPelayanan", "kdBlokPemohon", "kdDati2Pemohon", "kdJnsOpPemohon", "kdKantor", "kdKanwil", "kdKecamatanPemohon", "kdKelurahanPemohon", "kdPropinsiPemohon", "noUrutPelayanan", "noUrutPemohon", "thnPelayanan"],
-  { unique: true }
-)
-@Index("i1_l6_fk", ["jnsSk", "kdKantor", "kdKanwil", "noSk"], {})
-@Entity("pengurangan_denda_adm", { schema: "public" })
+@Entity("PENGURANGAN_DENDA_ADM", { schema: "PBB_KUTAI BARAT" })
 export class PenguranganDendaAdm {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
-
-  @Column("character", { primary: true, name: "thn_pelayanan", length: 4 })
-  thnPelayanan!: string;
-
-  @Column("character", { primary: true, name: "bundel_pelayanan", length: 4 })
-  bundelPelayanan!: string;
-
-  @Column("character", { primary: true, name: "no_urut_pelayanan", length: 3 })
-  noUrutPelayanan!: string;
+  @Column("character", { name: "KD_KANTOR", length: 2 })
+  kdKantor: string;
 
   @Column("character", {
-    primary: true,
-    name: "kd_propinsi_pemohon",
+    name: "KD_TEMPAT_PELAYANAN",
+    nullable: true,
     length: 2,
   })
-  kdPropinsiPemohon!: string;
+  kdTempatPelayanan: string | null;
 
-  @Column("character", { primary: true, name: "kd_dati2_pemohon", length: 2 })
-  kdDati2Pemohon!: string;
+  @Column("character", { name: "THN_PELAYANAN", length: 4 })
+  thnPelayanan: string;
+
+  @Column("character", { name: "BUNDEL_PELAYANAN", length: 4 })
+  bundelPelayanan: string;
+
+  @Column("character", { name: "NO_URUT_PELAYANAN", length: 3 })
+  noUrutPelayanan: string;
+
+  @Column("character", { name: "KD_PROPINSI_PEMOHON", length: 2 })
+  kdPropinsiPemohon: string;
+
+  @Column("character", { name: "KD_DATI2_PEMOHON", length: 2 })
+  kdDati2Pemohon: string;
+
+  @Column("character", { name: "KD_KECAMATAN_PEMOHON", length: 3 })
+  kdKecamatanPemohon: string;
+
+  @Column("character", { name: "KD_KELURAHAN_PEMOHON", length: 3 })
+  kdKelurahanPemohon: string;
+
+  @Column("character", { name: "KD_BLOK_PEMOHON", length: 3 })
+  kdBlokPemohon: string;
+
+  @Column("character", { name: "NO_URUT_PEMOHON", length: 4 })
+  noUrutPemohon: string;
+
+  @Column("character", { name: "KD_JNS_OP_PEMOHON", length: 1 })
+  kdJnsOpPemohon: string;
 
   @Column("character", {
-    primary: true,
-    name: "kd_kecamatan_pemohon",
-    length: 3,
+    name: "THN_PENGURANGAN_DENDA_ADM",
+    nullable: true,
+    length: 4,
   })
-  kdKecamatanPemohon!: string;
+  thnPenguranganDendaAdm: string | null;
 
-  @Column("character", {
-    primary: true,
-    name: "kd_kelurahan_pemohon",
-    length: 3,
+  @Column("character", { name: "JNS_SK", nullable: true, length: 1 })
+  jnsSk: string | null;
+
+  @Column("character", { name: "NO_SK", nullable: true, length: 100 })
+  noSk: string | null;
+
+  @Column("character", { name: "STATUS_PENG_ADM", nullable: true, length: 1 })
+  statusPengAdm: string | null;
+
+  @Column("numeric", {
+    name: "PCT_PENG_DENDA_ADM",
+    nullable: true,
+    precision: 5,
+    scale: 2,
   })
-  kdKelurahanPemohon!: string;
+  pctPengDendaAdm: string | null;
 
-  @Column("character", { primary: true, name: "kd_blok_pemohon", length: 3 })
-  kdBlokPemohon!: string;
+  @Column("timestamp without time zone", {
+    name: "TGL_AWAL_BERLAKU",
+    nullable: true,
+  })
+  tglAwalBerlaku: Date | null;
 
-  @Column("character", { primary: true, name: "no_urut_pemohon", length: 4 })
-  noUrutPemohon!: string;
-
-  @Column("character", { primary: true, name: "kd_jns_op_pemohon", length: 1 })
-  kdJnsOpPemohon!: string;
-
-  @Column("character", { name: "thn_pengurangan_denda_adm", length: 4 })
-  thnPenguranganDendaAdm!: string;
-
-  @Column("character", { name: "jns_sk", length: 1 })
-  jnsSk!: string;
-
-  @Column("character", { name: "no_sk", length: 30 })
-  noSk!: string;
-
-  @Column("character", { name: "status_peng_adm", length: 1 })
-  statusPengAdm!: string;
-
-  @Column("numeric", { name: "pct_peng_denda_adm", precision: 5, scale: 2 })
-  pctPengDendaAdm!: string;
+  @Column("timestamp without time zone", {
+    name: "TGL_AKHIR_BERLAKU",
+    nullable: true,
+  })
+  tglAkhirBerlaku: Date | null;
 }

@@ -1,11 +1,14 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("ref_jns_sektor_pkey", ["kdSektor"], { unique: true })
-@Entity("ref_jns_sektor", { schema: "public" })
+@Entity("REF_JNS_SEKTOR", { schema: "PBB_KUTAI BARAT" })
 export class RefJnsSektor {
-  @Column("character", { primary: true, name: "kd_sektor", length: 2 })
-  kdSektor!: string;
+  @Column("character", { name: "KD_SEKTOR", length: 2 })
+  kdSektor: string;
 
-  @Column("character varying", { name: "nm_sektor", length: 75 })
-  nmSektor!: string;
+  @Column("character varying", {
+    name: "NM_SEKTOR",
+    nullable: true,
+    length: 75,
+  })
+  nmSektor: string | null;
 }

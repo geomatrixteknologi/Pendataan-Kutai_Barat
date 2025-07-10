@@ -1,41 +1,47 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("pbb_minimal_pkey", ["kdDati2", "kdPropinsi", "thnPbbMinimal"], {
-  unique: true,
-})
-@Entity("pbb_minimal", { schema: "public" })
+@Entity("PBB_MINIMAL", { schema: "PBB_KUTAI BARAT" })
 export class PbbMinimal {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "thn_pbb_minimal", length: 4 })
-  thnPbbMinimal!: string;
+  @Column("character", { name: "THN_PBB_MINIMAL", length: 4 })
+  thnPbbMinimal: string;
 
   @Column("character varying", {
-    name: "no_sk_pbb_minimal",
+    name: "NO_SK_PBB_MINIMAL",
+    nullable: true,
+    length: 100,
+  })
+  noSkPbbMinimal: string | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_SK_PBB_MINIMAL",
+    nullable: true,
+  })
+  tglSkPbbMinimal: Date | null;
+
+  @Column("numeric", {
+    name: "NILAI_PBB_MINIMAL",
+    nullable: true,
+    precision: 8,
+    scale: 0,
+  })
+  nilaiPbbMinimal: string | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_REKAM_PBB_MINIMAL",
+    nullable: true,
+  })
+  tglRekamPbbMinimal: Date | null;
+
+  @Column("character", {
+    name: "NIP_PEREKAM_PBB_MINIMAL",
     nullable: true,
     length: 30,
   })
-  noSkPbbMinimal!: string | null;
-
-  @Column("timestamp without time zone", {
-    name: "tgl_sk_pbb_minimal",
-    nullable: true,
-  })
-  tglSkPbbMinimal!: Date | null;
-
-  @Column("integer", { name: "nilai_pbb_minimal" })
-  nilaiPbbMinimal!: number;
-
-  @Column("timestamp without time zone", {
-    name: "tgl_rekam_pbb_minimal",
-    default: () => "statement_timestamp()",
-  })
-  tglRekamPbbMinimal!: Date;
-
-  @Column("character", { name: "nip_perekam_pbb_minimal", length: 18 })
-  nipPerekamPbbMinimal!: string;
+  nipPerekamPbbMinimal: string | null;
 }

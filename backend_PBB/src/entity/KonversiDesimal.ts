@@ -1,11 +1,10 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("konversi_desimal_pkey", ["bilangan_10"], { unique: true })
-@Entity("konversi_desimal", { schema: "public" })
+@Entity("KONVERSI_DESIMAL", { schema: "PBB_KUTAI BARAT" })
 export class KonversiDesimal {
-  @Column("character", { primary: true, name: "bilangan_10", length: 2 })
-  bilangan_10!: string;
+  @Column("character", { name: "BILANGAN_10", length: 2 })
+  bilangan_10: string;
 
-  @Column("character", { name: "bilangan_62", nullable: true, length: 1 })
-  bilangan_62!: string | null;
+  @Column("character", { name: "BILANGAN_62", nullable: true, length: 1 })
+  bilangan_62: string | null;
 }

@@ -28,7 +28,10 @@ export const AppDataSource = new DataSource({
   schema: DB_SCHEMA,
   synchronize: true,
   logging: true,
-  ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : false,
+  // ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : false,
+  ssl: {
+    rejectUnauthorized: false, // untuk sementara (non-production)
+  },
   entities: [accountRole, userAccount, DatOpBangunan, DatOpPajak, WajibPajak, LogDatOpPajak, LogDatOpBangunan, LogWajibPajak, kodeProvinsi, kodeKabupaten, kodeKecamatan, kodeKelurahan],
   migrations: ["src/migrations/*.ts"],
   subscribers: ["src/subscriber/*.ts"],

@@ -1,61 +1,57 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("l6_2_ak", ["jnsSk", "kdKantor", "kdKanwil", "nipPencetakSk", "noSk"], {
-  unique: true,
-})
-@Index("sk_sk_pkey", ["jnsSk", "kdKantor", "kdKanwil", "noSk"], {
-  unique: true,
-})
-@Index("l6_1_ak", ["jnsSk", "kdKantor", "kdKanwil", "noSk"], { unique: true })
-@Entity("sk_sk", { schema: "public" })
+@Entity("SK_SK", { schema: "PBB_KUTAI BARAT" })
 export class SkSk {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
 
-  @Column("character", { primary: true, name: "jns_sk", length: 1 })
-  jnsSk!: string;
+  @Column("character", { name: "JNS_SK", length: 1 })
+  jnsSk: string;
 
-  @Column("character", { primary: true, name: "no_sk", length: 30 })
-  noSk!: string;
+  @Column("character", { name: "NO_SK", length: 100 })
+  noSk: string;
 
-  @Column("timestamp without time zone", { name: "tgl_sk" })
-  tglSk!: Date;
+  @Column("timestamp without time zone", { name: "TGL_SK", nullable: true })
+  tglSk: Date | null;
 
   @Column("character varying", {
-    name: "no_ba_kantor",
+    name: "NO_BA_KANTOR",
     nullable: true,
     length: 30,
   })
-  noBaKantor!: string | null;
+  noBaKantor: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_ba_kantor",
+    name: "TGL_BA_KANTOR",
     nullable: true,
   })
-  tglBaKantor!: Date | null;
+  tglBaKantor: Date | null;
 
   @Column("character varying", {
-    name: "no_ba_lapangan",
+    name: "NO_BA_LAPANGAN",
     nullable: true,
     length: 30,
   })
-  noBaLapangan!: string | null;
+  noBaLapangan: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_ba_lapangan",
+    name: "TGL_BA_LAPANGAN",
     nullable: true,
   })
-  tglBaLapangan!: Date | null;
+  tglBaLapangan: Date | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_cetak_sk",
-    default: () => "statement_timestamp()",
+    name: "TGL_CETAK_SK",
+    nullable: true,
   })
-  tglCetakSk!: Date;
+  tglCetakSk: Date | null;
 
-  @Column("character", { name: "nip_pencetak_sk", length: 18 })
-  nipPencetakSk!: string;
+  @Column("character", { name: "NIP_PENCETAK_SK", nullable: true, length: 30 })
+  nipPencetakSk: string | null;
+
+  @Column("character", { name: "KD_KPPBB", nullable: true, length: 2 })
+  kdKppbb: string | null;
 }

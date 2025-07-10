@@ -1,45 +1,42 @@
-import { Column, Entity, Index, OneToMany } from "typeorm";
-import { PembayaranSkp } from "./PembayaranSkp";
-import { PembayaranStp } from "./PembayaranStp";
-import { Skp } from "./Skp";
-import { Stp } from "./Stp";
+import { Column, Entity, Index } from "typeorm";
 
-@Index("tempat_pembayaran_pkey", ["kdKantor", "kdKanwil", "kdTp"], {
+@Index("TEMPAT_PEMBAYARAN_PK", ["kdKantor", "kdKanwil", "kdTp"], {
   unique: true,
 })
-@Entity("tempat_pembayaran", { schema: "public" })
+@Entity("TEMPAT_PEMBAYARAN", { schema: "PBB_KUTAI BARAT" })
 export class TempatPembayaran {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
+  @Column("character", { primary: true, name: "KD_KANWIL", length: 2 })
   kdKanwil!: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
+  @Column("character", { primary: true, name: "KD_KANTOR", length: 2 })
   kdKantor!: string;
 
-  @Column("character", { primary: true, name: "kd_tp", length: 2 })
+  @Column("character", { primary: true, name: "KD_TP", length: 4 })
   kdTp!: string;
 
-  @Column("character varying", { name: "nm_tp", length: 30 })
-  nmTp!: string;
-
-  @Column("character varying", { name: "alamat_tp", length: 50 })
-  alamatTp!: string;
+  @Column("character varying", { name: "NM_TP", nullable: true, length: 150 })
+  nmTp!: string | null;
 
   @Column("character varying", {
-    name: "no_rek_tp",
+    name: "ALAMAT_TP",
+    nullable: true,
+    length: 50,
+  })
+  alamatTp!: string | null;
+
+  @Column("character varying", {
+    name: "NO_REK_TP",
     nullable: true,
     length: 15,
   })
   noRekTp!: string | null;
 
-  @OneToMany(() => PembayaranSkp, (pembayaranSkp) => pembayaranSkp.tempatPembayaran)
-  pembayaranSkps!: PembayaranSkp[];
+  @Column("character", { name: "KD_BANK_TUNGGAL", nullable: true, length: 2 })
+  kdBankTunggal!: string | null;
 
-  @OneToMany(() => PembayaranStp, (pembayaranStp) => pembayaranStp.tempatPembayaran)
-  pembayaranStps!: PembayaranStp[];
+  @Column("character", { name: "KD_BANK_PERSEPSI", nullable: true, length: 2 })
+  kdBankPersepsi!: string | null;
 
-  @OneToMany(() => Skp, (skp) => skp.tempatPembayaran)
-  skps!: Skp[];
-
-  @OneToMany(() => Stp, (stp) => stp.tempatPembayaran)
-  stps!: Stp[];
+  @Column("character", { name: "KD_KPPBB", nullable: true, length: 2 })
+  kdKppbb!: string | null;
 }

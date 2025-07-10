@@ -1,7 +1,20 @@
 import { Request, Response } from "express";
 import { DatObjekPajak } from "../entity/DatObjekPajak";
 import { AppDataSource } from "../data-resource";
-import { atapBangunanOptions, dindingBangunanOptions, getValueByKeys, kdJpbDescriptions, kondisiBangunanOptions, konstruksiBangunanOptions, langitLangitBangunanOptions, lantaiBangunanOptions } from "../utils/labelData";
+import {
+  atapBangunanOptions,
+  dindingBangunanOptions,
+  getValueByKeys,
+  kdJpbDescriptions,
+  kondisiBangunanOptions,
+  konstruksiBangunanOptions,
+  langitLangitBangunanOptions,
+  lantaiBangunanOptions,
+  statusPekerjaanWpOptions,
+} from "../utils/labelData";
+import { DatSubjekPajak } from "@/entity/DatSubjekPajak";
+import { DatOpBangunan } from "@/entity/DatOpBangunan";
+import { DatOpBumi } from "@/entity/DatOpBumi";
 
 export const getAllDatObjekPajak = async (req: Request, res: Response) => {
   try {
@@ -15,6 +28,10 @@ export const getAllDatObjekPajak = async (req: Request, res: Response) => {
     }
 
     const datObjekPajakRepository = AppDataSource.getRepository(DatObjekPajak);
+    const datObjekBangunanRepository = AppDataSource.getRepository(DatOpBangunan);
+    const datSubjekPajakRepository = AppDataSource.getRepository(DatSubjekPajak);
+    const datOpBumiRepository = AppDataSource.getRepository(DatOpBumi);
+
     const datObjekPajaks = await datObjekPajakRepository.findOne({
       where: {
         kdPropinsi: nop.slice(0, 2),
@@ -45,10 +62,33 @@ export const getAllDatObjekPajak = async (req: Request, res: Response) => {
       //   tglPendataanOp: true,
       //   tglPerekamanOp: true,
       // },
-      relations: {
-        subjekPajak: true, // Tetap diambil jika perlu
-        datOpBangunans: true, // Tambahkan relasi
-        datOpBumis: true, // Tambahkan relasi
+    });
+
+    const datSubjekPajaks = await datSubjekPajakRepository.findOne({
+      where: {
+        subjekPajakId: datObjekPajaks?.subjekPajakId,
+      },
+    });
+    const datObjekbangunans = await datObjekBangunanRepository.find({
+      where: {
+        kdPropinsi: nop.slice(0, 2),
+        kdDati2: nop.slice(2, 4),
+        kdKecamatan: nop.slice(4, 7),
+        kdKelurahan: nop.slice(7, 10),
+        kdBlok: nop.slice(10, 13),
+        noUrut: nop.slice(13, 17),
+        kdJnsOp: nop.slice(17, 18),
+      },
+    });
+    const datOpBumis = await datOpBumiRepository.findOne({
+      where: {
+        kdPropinsi: nop.slice(0, 2),
+        kdDati2: nop.slice(2, 4),
+        kdKecamatan: nop.slice(4, 7),
+        kdKelurahan: nop.slice(7, 10),
+        kdBlok: nop.slice(10, 13),
+        noUrut: nop.slice(13, 17),
+        kdJnsOp: nop.slice(17, 18),
       },
     });
 
@@ -90,13 +130,13 @@ export const getAllDatObjekPajak = async (req: Request, res: Response) => {
         rw_op: datObjekPajaks?.rwOp || "",
         rt_op: datObjekPajaks?.rtOp || "",
         kd_status_wp: datObjekPajaks?.kdStatusWp,
-        kd_znt: datObjekPajaks?.datOpBumis[0]?.kdZnt || "",
-        jns_bumi: datObjekPajaks?.datOpBumis[0]?.jnsBumi || "",
-        jns_transaksi_op: datObjekPajaks?.datOpBangunans[0]?.jnsTransaksiBng || "2",
+        kd_znt: datOpBumis?.kdZnt || "",
+        jns_bumi: datOpBumis?.jnsBumi || "",
+        jns_transaksi_op: datObjekPajaks?.jnsTransaksiOp || "2",
         no_sertifikat: "",
         tgl_sertifikat: "",
         nop_asal: "",
-        kd_status_cabang: datObjekPajaks?.kdStatusCabang === 0 ? "Bukan Cabang" : "Cabang",
+        kd_status_cabang: datObjekPajaks?.kdStatusCabang === null || datObjekPajaks?.kdStatusCabang === "0" ? "Bukan Cabang" : "Cabang",
         no_persil: datObjekPajaks?.noPersil || "",
         longitude: 0,
         latitude: 0,
@@ -136,29 +176,29 @@ export const getAllDatObjekPajak = async (req: Request, res: Response) => {
         kd_jns_op_baru: "",
         nop_baru: "",
         dusun_op: "",
-        no_identitas: datObjekPajaks?.subjekPajak?.subjekPajakId.trim() || "",
+        no_identitas: datObjekPajaks?.subjekPajakId || "",
       },
 
       wajib_pajak: {
         jns_wp: "1",
         jns_identitas: "",
-        nm_wp: datObjekPajaks?.subjekPajak?.nmWp || "",
+        nm_wp: datSubjekPajaks?.nmWp || "",
         jns_kelamin_wp: "",
         tempat_lahir_wp: "",
         tanggal_lahir_wp: "",
-        alamat_wp: datObjekPajaks?.subjekPajak?.jalanWp || "",
-        blok_wp: datObjekPajaks?.subjekPajak?.blokKavNoWp || "",
-        rt_wp: datObjekPajaks?.subjekPajak?.rtWp || "",
-        rw_wp: datObjekPajaks?.subjekPajak?.rwWp || "",
+        alamat_wp: datSubjekPajaks?.jalanWp || "",
+        blok_wp: datSubjekPajaks?.blokKavNoWp || "",
+        rt_wp: datSubjekPajaks?.rtWp || "",
+        rw_wp: datSubjekPajaks?.rwWp || "",
         kd_provinsi: "",
         kd_kabupaten: "",
         kd_kecamatan: "",
         kd_kelurahan: "",
         telp_wp: "",
-        kodepos_wp: "",
+        kodepos_wp: datSubjekPajaks?.kdPosWp || 0,
         email_wp: "",
-        pekerjaan_wp: 0,
-        npwp: datObjekPajaks?.subjekPajak?.npwp || "",
+        pekerjaan_wp: datSubjekPajaks?.statusPekerjaanWp === null ? "" : getValueByKeys(statusPekerjaanWpOptions, datSubjekPajaks?.statusPekerjaanWp) || "",
+        npwp: datSubjekPajaks?.npwp || "",
         nm_penanggung_jawab: "",
         posisi_penanggung_jawab: "",
         foto_wp: [],
@@ -166,15 +206,15 @@ export const getAllDatObjekPajak = async (req: Request, res: Response) => {
         dusun_wp: "-",
         nop: "",
         no_identitas_lama: "",
-        no_identitas: datObjekPajaks?.subjekPajak?.subjekPajakId.trim() || "",
+        no_identitas: datSubjekPajaks?.subjekPajakId || "",
       },
 
-      dat_op_bangunan: datObjekPajaks?.datOpBangunans.map((bgn: any, index: number) => {
+      dat_op_bangunan: datObjekbangunans.map((bgn: any, index: number) => {
         return {
           no_bng: bgn.noBng || index + 1,
-          nop: "",
+          nop: `${bgn.kdPropinsi}${bgn.kdDati2}${bgn.kdKecamatan}${bgn.kdKelurahan}${bgn.kdBlok}${bgn.noUrut}${bgn.kdJnsOp}` || "",
           kd_jpb: bgn.kdJpb,
-          no_formulir_lspop: "",
+          no_formulir_lspop: bgn.no_formulir_lspop || "",
           bng_thn_dibangun: parseInt(bgn.thnDibangunBng) || 2000,
           bng_thn_renovasi: bgn.thnRenovasiBng || "",
           bng_luas: parseFloat(bgn.luasBng) || 0,

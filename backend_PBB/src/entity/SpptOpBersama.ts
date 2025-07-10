@@ -1,83 +1,77 @@
-import { Column, Entity, Index, JoinColumn, OneToOne } from "typeorm";
-import { Sppt } from "./Sppt";
+import { Column, Entity, Index } from "typeorm";
 
-@Index("sppt_op_bersama_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSppt"], { unique: true })
-@Entity("sppt_op_bersama", { schema: "public" })
+@Index("SPPT_OP_BERSAMA_PK", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSppt"], { unique: true })
+@Entity("SPPT_OP_BERSAMA", { schema: "PBB_KUTAI BARAT" })
 export class SpptOpBersama {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
   kdPropinsi!: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
+  @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
   kdDati2!: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
+  @Column("character", { primary: true, name: "KD_KECAMATAN", length: 3 })
   kdKecamatan!: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
+  @Column("character", { primary: true, name: "KD_KELURAHAN", length: 3 })
   kdKelurahan!: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
+  @Column("character", { primary: true, name: "KD_BLOK", length: 3 })
   kdBlok!: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
+  @Column("character", { primary: true, name: "NO_URUT", length: 4 })
   noUrut!: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
+  @Column("character", { primary: true, name: "KD_JNS_OP", length: 1 })
   kdJnsOp!: string;
 
-  @Column("character", { primary: true, name: "thn_pajak_sppt", length: 4 })
+  @Column("character", { primary: true, name: "THN_PAJAK_SPPT", length: 4 })
   thnPajakSppt!: string;
 
-  @Column("character", {
-    name: "kd_kls_tanah",
-    length: 3,
-    default: () => "'XXX'",
-  })
-  kdKlsTanah!: string;
+  @Column("character", { name: "KD_KLS_TANAH", nullable: true, length: 3 })
+  kdKlsTanah!: string | null;
 
   @Column("character", {
-    name: "thn_awal_kls_tanah",
+    name: "THN_AWAL_KLS_TANAH",
+    nullable: true,
     length: 4,
-    default: () => "'1986'",
   })
-  thnAwalKlsTanah!: string;
+  thnAwalKlsTanah!: string | null;
 
-  @Column("character", {
-    name: "kd_kls_bng",
-    length: 3,
-    default: () => "'XXX'",
+  @Column("character", { name: "KD_KLS_BNG", nullable: true, length: 3 })
+  kdKlsBng!: string | null;
+
+  @Column("character", { name: "THN_AWAL_KLS_BNG", nullable: true, length: 4 })
+  thnAwalKlsBng!: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_BUMI_BEBAN_SPPT",
+    nullable: true,
+    precision: 12,
+    scale: 0,
   })
-  kdKlsBng!: string;
+  luasBumiBebanSppt!: string | null;
 
-  @Column("character", {
-    name: "thn_awal_kls_bng",
-    length: 4,
-    default: () => "'1986'",
+  @Column("numeric", {
+    name: "LUAS_BNG_BEBAN_SPPT",
+    nullable: true,
+    precision: 12,
+    scale: 0,
   })
-  thnAwalKlsBng!: string;
+  luasBngBebanSppt!: string | null;
 
-  @Column("bigint", { name: "luas_bumi_beban_sppt", default: () => "0" })
-  luasBumiBebanSppt!: string;
+  @Column("numeric", {
+    name: "NJOP_BUMI_BEBAN_SPPT",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBumiBebanSppt!: string | null;
 
-  @Column("bigint", { name: "luas_bng_beban_sppt", default: () => "0" })
-  luasBngBebanSppt!: string;
-
-  @Column("bigint", { name: "njop_bumi_beban_sppt", default: () => "0" })
-  njopBumiBebanSppt!: string;
-
-  @Column("bigint", { name: "njop_bng_beban_sppt", default: () => "0" })
-  njopBngBebanSppt!: string;
-
-  @OneToOne(() => Sppt, (sppt) => sppt.spptOpBersama)
-  @JoinColumn([
-    { name: "kd_propinsi", referencedColumnName: "kdPropinsi" },
-    { name: "kd_dati2", referencedColumnName: "kdDati2" },
-    { name: "kd_kecamatan", referencedColumnName: "kdKecamatan" },
-    { name: "kd_kelurahan", referencedColumnName: "kdKelurahan" },
-    { name: "kd_blok", referencedColumnName: "kdBlok" },
-    { name: "no_urut", referencedColumnName: "noUrut" },
-    { name: "kd_jns_op", referencedColumnName: "kdJnsOp" },
-    { name: "thn_pajak_sppt", referencedColumnName: "thnPajakSppt" },
-  ])
-  sppt!: Sppt;
+  @Column("numeric", {
+    name: "NJOP_BNG_BEBAN_SPPT",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBngBebanSppt!: string | null;
 }

@@ -1,43 +1,67 @@
 import { Column, Entity, Index } from "typeorm";
 
-@Index("temp_spop_lspop_pkey", ["jnsTransaksiTemp", "kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "nipTransaksiTemp", "noTransaksiTemp", "noUrut"], { unique: true })
-@Index("t4_2_ak", ["jnsTransaksiTemp", "kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "nipTransaksiTemp", "noTransaksiTemp", "noUrut", "statusProses"], { unique: true })
-@Entity("temp_spop_lspop", { schema: "public" })
+@Index(
+  "TEMP_SPOP_LSPOP_PK",
+  [
+    "jnsTransaksiTemp",
+    "kdBlok",
+    "kdDati2",
+    "kdJnsOp",
+    "kdKecamatan",
+    "kdKelurahan",
+    "kdPropinsi",
+    "nipTransaksiTemp",
+    "noTransaksiTemp",
+    "noUrut",
+  ],
+  { unique: true }
+)
+@Entity("TEMP_SPOP_LSPOP", { schema: "PBB_KUTAI BARAT" })
 export class TempSpopLspop {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { primary: true, name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { primary: true, name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { primary: true, name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { primary: true, name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { primary: true, name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("character", { primary: true, name: "jns_transaksi_temp", length: 1 })
-  jnsTransaksiTemp!: string;
+  @Column("character", { primary: true, name: "JNS_TRANSAKSI_TEMP", length: 1 })
+  jnsTransaksiTemp: string;
 
-  @Column("smallint", { primary: true, name: "no_transaksi_temp" })
-  noTransaksiTemp!: number;
+  @Column("numeric", {
+    primary: true,
+    name: "NO_TRANSAKSI_TEMP",
+    precision: 2,
+    scale: 0,
+  })
+  noTransaksiTemp: string;
 
   @Column("character", {
     primary: true,
-    name: "nip_transaksi_temp",
-    length: 18,
+    name: "NIP_TRANSAKSI_TEMP",
+    length: 30,
   })
-  nipTransaksiTemp!: string;
+  nipTransaksiTemp: string;
 
-  @Column("smallint", { name: "status_proses", nullable: true })
-  statusProses!: number | null;
+  @Column("numeric", {
+    name: "STATUS_PROSES",
+    nullable: true,
+    precision: 1,
+    scale: 0,
+  })
+  statusProses: string | null;
 }

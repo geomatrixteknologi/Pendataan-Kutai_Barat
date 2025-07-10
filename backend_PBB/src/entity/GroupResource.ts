@@ -1,11 +1,14 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("group_resource_pkey", ["kdGroupResource"], { unique: true })
-@Entity("group_resource", { schema: "public" })
+@Entity("GROUP_RESOURCE", { schema: "PBB_KUTAI BARAT" })
 export class GroupResource {
-  @Column("character", { primary: true, name: "kd_group_resource", length: 2 })
-  kdGroupResource!: string;
+  @Column("character", { name: "KD_GROUP_RESOURCE", length: 2 })
+  kdGroupResource: string;
 
-  @Column("character varying", { name: "nm_group_resource", length: 45 })
-  nmGroupResource!: string;
+  @Column("character varying", {
+    name: "NM_GROUP_RESOURCE",
+    nullable: true,
+    length: 45,
+  })
+  nmGroupResource: string | null;
 }

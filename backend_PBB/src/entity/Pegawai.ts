@@ -1,69 +1,26 @@
-import { Column, Entity, Index, OneToMany } from "typeorm";
-import { DafnomOp } from "./DafnomOp";
-import { DafnomPiutang } from "./DafnomPiutang";
-import { KeputusanAngsuranPbb } from "./KeputusanAngsuranPbb";
-import { PembayaranSkp } from "./PembayaranSkp";
-import { PembayaranSppt } from "./PembayaranSppt";
-import { PembayaranStp } from "./PembayaranStp";
-import { PenghapusanOpSe14 } from "./PenghapusanOpSe14";
-import { RincianAngsuranPbb } from "./RincianAngsuranPbb";
-import { Skp } from "./Skp";
-import { Sppt } from "./Sppt";
-import { Stp } from "./Stp";
-import { TtrSkp } from "./TtrSkp";
-import { TtrStp } from "./TtrStp";
+import { Column, Entity } from "typeorm";
 
-@Index("pegawai_pkey", ["nip"], { unique: true })
-@Entity("pegawai", { schema: "public" })
+@Entity("PEGAWAI", { schema: "PBB_KUTAI BARAT" })
 export class Pegawai {
-  @Column("character", { primary: true, name: "nip", length: 18 })
+  @Column("character", { primary: true, name: "NIP", length: 30 })
   nip!: string;
 
-  @Column("character varying", { name: "nm_pegawai", length: 30 })
-  nmPegawai!: string;
+  @Column("character varying", {
+    name: "NM_PEGAWAI",
+    nullable: true,
+    length: 50,
+  })
+  nmPegawai!: string | null;
 
-  @OneToMany(() => DafnomOp, (dafnomOp) => dafnomOp.nipPembentuk)
-  dafnomOps!: DafnomOp[];
+  @Column("character", { name: "NIP_BARU", nullable: true, length: 30 })
+  nipBaru!: string | null;
 
-  @OneToMany(() => DafnomOp, (dafnomOp) => dafnomOp.nipPemutakhir)
-  dafnomOps2!: DafnomOp[];
+  @Column("character", { name: "KD_TP", nullable: true, length: 2 })
+  kdTp!: string | null;
 
-  @OneToMany(() => DafnomPiutang, (dafnomPiutang) => dafnomPiutang.nipPembentuk)
-  dafnomPiutangs!: DafnomPiutang[];
+  @Column("character", { name: "KD_BANK_TUNGGAL", nullable: true, length: 2 })
+  kdBankTunggal!: string | null;
 
-  @OneToMany(() => DafnomPiutang, (dafnomPiutang) => dafnomPiutang.nipPemutakhir)
-  dafnomPiutangs2!: DafnomPiutang[];
-
-  @OneToMany(() => KeputusanAngsuranPbb, (keputusanAngsuranPbb) => keputusanAngsuranPbb.nipPerekamSkAngsuran)
-  keputusanAngsuranPbbs!: KeputusanAngsuranPbb[];
-
-  @OneToMany(() => PembayaranSkp, (pembayaranSkp) => pembayaranSkp.nipPerekamByrSkp)
-  pembayaranSkps!: PembayaranSkp[];
-
-  @OneToMany(() => PembayaranSppt, (pembayaranSppt) => pembayaranSppt.nipRekamByrSppt)
-  pembayaranSppts!: PembayaranSppt[];
-
-  @OneToMany(() => PembayaranStp, (pembayaranStp) => pembayaranStp.nipPerekamByrStp)
-  pembayaranStps!: PembayaranStp[];
-
-  @OneToMany(() => PenghapusanOpSe14, (penghapusanOpSe14) => penghapusanOpSe14.nipPerekamPenghapusanOp)
-  penghapusanOpSes!: PenghapusanOpSe14[];
-
-  @OneToMany(() => RincianAngsuranPbb, (rincianAngsuranPbb) => rincianAngsuranPbb.nipPerekamAngsuran)
-  rincianAngsuranPbbs!: RincianAngsuranPbb[];
-
-  @OneToMany(() => Skp, (skp) => skp.nipPencetakSkp)
-  skps!: Skp[];
-
-  @OneToMany(() => Sppt, (sppt) => sppt.nipPencetakSppt)
-  sppts!: Sppt[];
-
-  @OneToMany(() => Stp, (stp) => stp.nipPencetakStp)
-  stps!: Stp[];
-
-  @OneToMany(() => TtrSkp, (ttrSkp) => ttrSkp.nipPerekamTtrSkp)
-  ttrSkps!: TtrSkp[];
-
-  @OneToMany(() => TtrStp, (ttrStp) => ttrStp.nipPerekamTtrStp)
-  ttrStps!: TtrStp[];
+  @Column("character", { name: "KD_BANK_PERSEPSI", nullable: true, length: 2 })
+  kdBankPersepsi!: string | null;
 }

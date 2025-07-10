@@ -1,35 +1,30 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
-import { RefDati2 } from "./RefDati2";
+import { Column, Entity } from "typeorm";
 
-@Index("dbkb_jpb4_pkey", ["kdDati2", "kdPropinsi", "klsDbkbJpb4", "lantaiMaxJpb4", "lantaiMinJpb4", "thnDbkbJpb4"], { unique: true })
-@Index("c30_1_ak", ["kdDati2", "kdPropinsi", "klsDbkbJpb4", "lantaiMaxJpb4", "lantaiMinJpb4", "thnDbkbJpb4"], { unique: true })
-@Entity("dbkb_jpb4", { schema: "public" })
+@Entity("DBKB_JPB4", { schema: "PBB_KUTAI BARAT" })
 export class DbkbJpb4 {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
   kdPropinsi!: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
+  @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
   kdDati2!: string;
 
-  @Column("character", { primary: true, name: "thn_dbkb_jpb4", length: 4 })
+  @Column("character", { primary: true, name: "THN_DBKB_JPB4", length: 4 })
   thnDbkbJpb4!: string;
 
-  @Column("character", { primary: true, name: "kls_dbkb_jpb4", length: 1 })
+  @Column("character", { primary: true, name: "KLS_DBKB_JPB4", length: 1 })
   klsDbkbJpb4!: string;
 
-  @Column("smallint", { primary: true, name: "lantai_min_jpb4" })
-  lantaiMinJpb4!: number;
+  @Column("numeric", { primary: true, name: "LANTAI_MIN_JPB4", precision: 2, scale: 0 })
+  lantaiMinJpb4!: string;
 
-  @Column("smallint", { primary: true, name: "lantai_max_jpb4" })
-  lantaiMaxJpb4!: number;
+  @Column("numeric", { primary: true, name: "LANTAI_MAX_JPB4", precision: 2, scale: 0 })
+  lantaiMaxJpb4!: string;
 
-  @Column("bigint", { name: "nilai_dbkb_jpb4" })
-  nilaiDbkbJpb4!: string;
-
-  @ManyToOne(() => RefDati2, (refDati2) => refDati2.dbkbJpbs8)
-  @JoinColumn([
-    { name: "kd_propinsi", referencedColumnName: "kdPropinsi" },
-    { name: "kd_dati2", referencedColumnName: "kdDati2" },
-  ])
-  refDati!: RefDati2;
+  @Column("numeric", {
+    name: "NILAI_DBKB_JPB4",
+    nullable: true,
+    precision: 10,
+    scale: 0,
+  })
+  nilaiDbkbJpb4!: string | null;
 }

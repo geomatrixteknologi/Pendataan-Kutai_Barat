@@ -1,22 +1,29 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("bangunan_lantai_pkey", ["kdBngLantai", "kdJpb", "tipeBng"], {
-  unique: true,
-})
-@Entity("bangunan_lantai", { schema: "public" })
+@Entity("BANGUNAN_LANTAI", { schema: "PBB_KUTAI BARAT" })
 export class BangunanLantai {
-  @Column("character", { primary: true, name: "kd_jpb", length: 2 })
-  kdJpb!: string;
+  @Column("character", { name: "KD_JPB", length: 2 })
+  kdJpb: string;
 
-  @Column("character", { primary: true, name: "tipe_bng", length: 5 })
-  tipeBng!: string;
+  @Column("character", { name: "TIPE_BNG", length: 5 })
+  tipeBng: string;
 
-  @Column("character", { primary: true, name: "kd_bng_lantai", length: 8 })
-  kdBngLantai!: string;
+  @Column("character", { name: "KD_BNG_LANTAI", length: 8 })
+  kdBngLantai: string;
 
-  @Column("smallint", { name: "lantai_min_bng_lantai" })
-  lantaiMinBngLantai!: number;
+  @Column("numeric", {
+    name: "LANTAI_MIN_BNG_LANTAI",
+    nullable: true,
+    precision: 3,
+    scale: 0,
+  })
+  lantaiMinBngLantai: string | null;
 
-  @Column("smallint", { name: "lantai_max_bng_lantai" })
-  lantaiMaxBngLantai!: number;
+  @Column("numeric", {
+    name: "LANTAI_MAX_BNG_LANTAI",
+    nullable: true,
+    precision: 3,
+    scale: 0,
+  })
+  lantaiMaxBngLantai: string | null;
 }

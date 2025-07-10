@@ -1,23 +1,27 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("adj_bangunan_jpb8_pkey", ["kdAdj", "lbrBentMaxAdj", "lbrBentMinAdj", "tingKolomMaxAdj", "tingKolomMinAdj"], { unique: true })
-@Entity("adj_bangunan_jpb8", { schema: "public" })
+@Entity("ADJ_BANGUNAN_JPB8", { schema: "PBB_KUTAI BARAT" })
 export class AdjBangunanJpb8 {
-  @Column("character", { primary: true, name: "kd_adj", length: 2 })
-  kdAdj!: string;
+  @Column("character", { name: "KD_ADJ", length: 2 })
+  kdAdj: string;
 
-  @Column("smallint", { primary: true, name: "lbr_bent_min_adj" })
-  lbrBentMinAdj!: number;
+  @Column("numeric", { name: "LBR_BENT_MIN_ADJ", precision: 4, scale: 0 })
+  lbrBentMinAdj: string;
 
-  @Column("smallint", { primary: true, name: "lbr_bent_max_adj" })
-  lbrBentMaxAdj!: number;
+  @Column("numeric", { name: "LBR_BENT_MAX_ADJ", precision: 4, scale: 0 })
+  lbrBentMaxAdj: string;
 
-  @Column("smallint", { primary: true, name: "ting_kolom_min_adj" })
-  tingKolomMinAdj!: number;
+  @Column("numeric", { name: "TING_KOLOM_MIN_ADJ", precision: 4, scale: 0 })
+  tingKolomMinAdj: string;
 
-  @Column("smallint", { primary: true, name: "ting_kolom_max_adj" })
-  tingKolomMaxAdj!: number;
+  @Column("numeric", { name: "TING_KOLOM_MAX_ADJ", precision: 4, scale: 0 })
+  tingKolomMaxAdj: string;
 
-  @Column("numeric", { name: "pct_adj_bng_jpb8", precision: 5, scale: 2 })
-  pctAdjBngJpb8!: string;
+  @Column("numeric", {
+    name: "PCT_ADJ_BNG_JPB8",
+    nullable: true,
+    precision: 5,
+    scale: 2,
+  })
+  pctAdjBngJpb8: string | null;
 }

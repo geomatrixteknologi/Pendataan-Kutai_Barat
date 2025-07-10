@@ -1,54 +1,59 @@
 import { Column, Entity, Index } from "typeorm";
 
-@Index("g12_1_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKantor", "kdKanwil", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noSrtTegoran", "noUrut", "thnPajakStp"], { unique: true })
-@Index("g12_g8_fk", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakStp"], {})
-@Index("srt_tegoran_pkey", ["kdKantor", "kdKanwil", "noSrtTegoran"], {
+@Index("SRT_TEGORAN_PK", ["kdKantor", "kdKanwil", "noSrtTegoran"], {
   unique: true,
 })
-@Entity("srt_tegoran", { schema: "public" })
+@Entity("SRT_TEGORAN", { schema: "PBB_KUTAI BARAT" })
 export class SrtTegoran {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { primary: true, name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
+  @Column("character", { primary: true, name: "KD_KANTOR", length: 2 })
+  kdKantor: string;
 
-  @Column("character", { primary: true, name: "no_srt_tegoran", length: 30 })
-  noSrtTegoran!: string;
+  @Column("character", { primary: true, name: "NO_SRT_TEGORAN", length: 30 })
+  noSrtTegoran: string;
 
-  @Column("character", { name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", nullable: true, length: 2 })
+  kdPropinsi: string | null;
 
-  @Column("character", { name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", nullable: true, length: 2 })
+  kdDati2: string | null;
 
-  @Column("character", { name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", nullable: true, length: 3 })
+  kdKecamatan: string | null;
 
-  @Column("character", { name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", nullable: true, length: 3 })
+  kdKelurahan: string | null;
 
-  @Column("character", { name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { name: "KD_BLOK", nullable: true, length: 3 })
+  kdBlok: string | null;
 
-  @Column("character", { name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { name: "NO_URUT", nullable: true, length: 4 })
+  noUrut: string | null;
 
-  @Column("character", { name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { name: "KD_JNS_OP", nullable: true, length: 1 })
+  kdJnsOp: string | null;
 
-  @Column("character", { name: "thn_pajak_stp", length: 4 })
-  thnPajakStp!: string;
-
-  @Column("timestamp without time zone", { name: "tgl_terbit_srt_tegoran" })
-  tglTerbitSrtTegoran!: Date;
+  @Column("character", { name: "THN_PAJAK_STP", nullable: true, length: 4 })
+  thnPajakStp: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_cetak_srt_tegoran",
-    default: () => "statement_timestamp()",
+    name: "TGL_TERBIT_SRT_TEGORAN",
+    nullable: true,
   })
-  tglCetakSrtTegoran!: Date;
+  tglTerbitSrtTegoran: Date | null;
 
-  @Column("character", { name: "nip_pencetak_srt_tegoran", length: 18 })
-  nipPencetakSrtTegoran!: string;
+  @Column("timestamp without time zone", {
+    name: "TGL_CETAK_SRT_TEGORAN",
+    nullable: true,
+  })
+  tglCetakSrtTegoran: Date | null;
+
+  @Column("character", {
+    name: "NIP_PENCETAK_SRT_TEGORAN",
+    nullable: true,
+    length: 30,
+  })
+  nipPencetakSrtTegoran: string | null;
 }

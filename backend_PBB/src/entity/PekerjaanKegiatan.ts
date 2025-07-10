@@ -1,16 +1,17 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("pekerjaan_kegiatan_pkey", ["kdKegiatan", "kdPekerjaan"], {
-  unique: true,
-})
-@Entity("pekerjaan_kegiatan", { schema: "public" })
+@Entity("PEKERJAAN_KEGIATAN", { schema: "PBB_KUTAI BARAT" })
 export class PekerjaanKegiatan {
-  @Column("character", { primary: true, name: "kd_pekerjaan", length: 2 })
-  kdPekerjaan!: string;
+  @Column("character", { name: "KD_PEKERJAAN", length: 2 })
+  kdPekerjaan: string;
 
-  @Column("character", { primary: true, name: "kd_kegiatan", length: 2 })
-  kdKegiatan!: string;
+  @Column("character", { name: "KD_KEGIATAN", length: 2 })
+  kdKegiatan: string;
 
-  @Column("character varying", { name: "nm_kegiatan", length: 30 })
-  nmKegiatan!: string;
+  @Column("character varying", {
+    name: "NM_KEGIATAN",
+    nullable: true,
+    length: 30,
+  })
+  nmKegiatan: string | null;
 }

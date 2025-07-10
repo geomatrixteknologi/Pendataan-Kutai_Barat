@@ -10,10 +10,10 @@ export const getUrutOpBaru = async (req: Request, res: Response) => {
 
     const NOPTerakhir = await datObjekPajakRepository
       .createQueryBuilder("op")
-      .select("MAX(CAST(op.no_urut AS INTEGER))", "max")
-      .where("op.kd_kecamatan = :kd_kecamatan", { kd_kecamatan })
-      .andWhere("op.kd_kelurahan = :kd_kelurahan", { kd_kelurahan })
-      .andWhere("op.kd_blok = :kd_blok", { kd_blok })
+      .select("MAX(CAST(op.NO_URUT AS INTEGER))", "max")
+      .where("op.KD_KECAMATAN = :kd_kecamatan", { kd_kecamatan })
+      .andWhere("op.KD_KELURAHAN = :kd_kelurahan", { kd_kelurahan })
+      .andWhere("op.KD_BLOK = :kd_blok", { kd_blok })
       .getRawOne();
 
     // if (NOPTerakhir.max === null) {

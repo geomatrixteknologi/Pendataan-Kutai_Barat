@@ -1,51 +1,76 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("x14_1_ak", ["hisIndeksNilaiIndividu", "hisNipPenilaiIndividu", "kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noBng", "noUrut"], { unique: true })
-@Index("his_nilai_individu_pkey", ["hisIndeksNilaiIndividu", "kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noBng", "noUrut"], { unique: true })
-@Entity("his_nilai_individu", { schema: "public" })
+@Entity("HIS_NILAI_INDIVIDU", { schema: "PBB_KUTAI BARAT" })
 export class HisNilaiIndividu {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("smallint", { primary: true, name: "no_bng" })
-  noBng!: number;
+  @Column("numeric", { name: "NO_BNG", precision: 3, scale: 0 })
+  noBng: string;
 
-  @Column("smallint", { primary: true, name: "his_indeks_nilai_individu" })
-  hisIndeksNilaiIndividu!: number;
+  @Column("numeric", {
+    name: "HIS_INDEKS_NILAI_INDIVIDU",
+    precision: 2,
+    scale: 0,
+  })
+  hisIndeksNilaiIndividu: string;
 
-  @Column("character", { name: "his_no_formulir_individu", length: 11 })
-  hisNoFormulirIndividu!: string;
+  @Column("character", {
+    name: "HIS_NO_FORMULIR_INDIVIDU",
+    nullable: true,
+    length: 11,
+  })
+  hisNoFormulirIndividu: string | null;
 
-  @Column("bigint", { name: "his_nilai_individu" })
-  hisNilaiIndividu!: string;
+  @Column("numeric", {
+    name: "HIS_NILAI_INDIVIDU",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  hisNilaiIndividu: string | null;
 
-  @Column("timestamp without time zone", { name: "his_tgl_penilaian_individu" })
-  hisTglPenilaianIndividu!: Date;
+  @Column("timestamp without time zone", {
+    name: "HIS_TGL_PENILAIAN_INDIVIDU",
+    nullable: true,
+  })
+  hisTglPenilaianIndividu: Date | null;
 
-  @Column("character", { name: "his_nip_penilai_individu", length: 18 })
-  hisNipPenilaiIndividu!: string;
+  @Column("character", {
+    name: "HIS_NIP_PENILAI_INDIVIDU",
+    nullable: true,
+    length: 30,
+  })
+  hisNipPenilaiIndividu: string | null;
 
-  @Column("timestamp without time zone", { name: "his_tgl_perekaman_individu" })
-  hisTglPerekamanIndividu!: Date;
+  @Column("timestamp without time zone", {
+    name: "HIS_TGL_PEREKAMAN_INDIVIDU",
+    nullable: true,
+  })
+  hisTglPerekamanIndividu: Date | null;
 
-  @Column("character", { name: "his_nip_perekam_individu", length: 18 })
-  hisNipPerekamIndividu!: string;
+  @Column("character", {
+    name: "HIS_NIP_PEREKAM_INDIVIDU",
+    nullable: true,
+    length: 30,
+  })
+  hisNipPerekamIndividu: string | null;
 }

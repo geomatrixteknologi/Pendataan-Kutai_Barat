@@ -1,63 +1,71 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne, OneToOne } from "typeorm";
-import { DatOpBangunan } from "./DatOpBangunan";
-import { DayaDukung } from "./DayaDukung";
+import { Column, Entity } from "typeorm";
 
-@Index("dat_jpb8_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noBng", "noUrut"], { unique: true })
-@Entity("dat_jpb8", { schema: "public" })
+@Entity("DAT_JPB8", { schema: "PBB_KUTAI BARAT" })
 export class DatJpb8 {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
   kdPropinsi!: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
+  @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
   kdDati2!: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
+  @Column("character", { primary: true, name: "KD_KECAMATAN", length: 3 })
   kdKecamatan!: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
+  @Column("character", { primary: true, name: "KD_KELURAHAN", length: 3 })
   kdKelurahan!: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
+  @Column("character", { primary: true, name: "KD_BLOK", length: 3 })
   kdBlok!: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
+  @Column("character", { primary: true, name: "NO_URUT", length: 4 })
   noUrut!: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
+  @Column("character", { primary: true, name: "KD_JNS_OP", length: 1 })
   kdJnsOp!: string;
 
-  @Column("smallint", { primary: true, name: "no_bng" })
-  noBng!: number;
+  @Column("numeric", { primary: true, name: "NO_BNG", precision: 3, scale: 0 })
+  noBng!: string;
 
-  @Column("smallint", { name: "ting_kolom_jpb8" })
-  tingKolomJpb8!: number;
+  @Column("character", { name: "TYPE_KONSTRUKSI", nullable: true, length: 1 })
+  typeKonstruksi!: string | null;
 
-  @Column("smallint", { name: "lbr_bent_jpb8" })
-  lbrBentJpb8!: number;
+  @Column("numeric", {
+    name: "TING_KOLOM_JPB8",
+    nullable: true,
+    precision: 4,
+    scale: 0,
+  })
+  tingKolomJpb8!: string | null;
 
-  @Column("smallint", { name: "luas_mezzanine_jpb8", nullable: true })
-  luasMezzanineJpb8!: number | null;
+  @Column("numeric", {
+    name: "LBR_BENT_JPB8",
+    nullable: true,
+    precision: 4,
+    scale: 0,
+  })
+  lbrBentJpb8!: string | null;
 
-  @Column("smallint", { name: "keliling_dinding_jpb8", nullable: true })
-  kelilingDindingJpb8!: number | null;
+  @Column("numeric", {
+    name: "LUAS_MEZZANINE_JPB8",
+    nullable: true,
+    precision: 4,
+    scale: 0,
+  })
+  luasMezzanineJpb8!: string | null;
 
-  @Column("integer", { name: "daya_dukung_lantai_jpb8" })
-  dayaDukungLantaiJpb8!: number;
+  @Column("numeric", {
+    name: "KELILING_DINDING_JPB8",
+    nullable: true,
+    precision: 4,
+    scale: 0,
+  })
+  kelilingDindingJpb8!: string | null;
 
-  @OneToOne(() => DatOpBangunan, (datOpBangunan) => datOpBangunan.datJpb8)
-  @JoinColumn([
-    { name: "kd_propinsi", referencedColumnName: "kdPropinsi" },
-    { name: "kd_dati2", referencedColumnName: "kdDati2" },
-    { name: "kd_kecamatan", referencedColumnName: "kdKecamatan" },
-    { name: "kd_kelurahan", referencedColumnName: "kdKelurahan" },
-    { name: "kd_blok", referencedColumnName: "kdBlok" },
-    { name: "no_urut", referencedColumnName: "noUrut" },
-    { name: "kd_jns_op", referencedColumnName: "kdJnsOp" },
-    { name: "no_bng", referencedColumnName: "noBng" },
-  ])
-  datOpBangunan!: DatOpBangunan;
-
-  @ManyToOne(() => DayaDukung, (dayaDukung) => dayaDukung.datJpbs2)
-  @JoinColumn([{ name: "type_konstruksi", referencedColumnName: "typeKonstruksi" }])
-  typeKonstruksi!: DayaDukung;
+  @Column("numeric", {
+    name: "DAYA_DUKUNG_LANTAI_JPB8",
+    nullable: true,
+    precision: 8,
+    scale: 0,
+  })
+  dayaDukungLantaiJpb8!: string | null;
 }

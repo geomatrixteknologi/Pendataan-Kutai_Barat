@@ -1,37 +1,24 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
-import { RefDati2 } from "./RefDati2";
+import { Column, Entity } from "typeorm";
 
-@Index("c38_2_ak", ["kdDati2", "kdPropinsi", "thnDbkbJpb12", "typeDbkbJpb12"], {
-  unique: true,
-})
-@Index("c38_1_ak", ["kdDati2", "kdPropinsi", "thnDbkbJpb12", "typeDbkbJpb12"], {
-  unique: true,
-})
-@Index("c38_3_ak", ["kdDati2", "kdPropinsi", "thnDbkbJpb12", "typeDbkbJpb12"], {
-  unique: true,
-})
-@Index("dbkb_jpb12_pkey", ["kdDati2", "kdPropinsi", "thnDbkbJpb12", "typeDbkbJpb12"], { unique: true })
-@Entity("dbkb_jpb12", { schema: "public" })
+@Entity("DBKB_JPB12", { schema: "PBB_KUTAI BARAT" })
 export class DbkbJpb12 {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
   kdPropinsi!: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
+  @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
   kdDati2!: string;
 
-  @Column("character", { primary: true, name: "thn_dbkb_jpb12", length: 4 })
+  @Column("character", { primary: true, name: "THN_DBKB_JPB12", length: 4 })
   thnDbkbJpb12!: string;
 
-  @Column("character", { primary: true, name: "type_dbkb_jpb12", length: 1 })
+  @Column("character", { primary: true, name: "TYPE_DBKB_JPB12", length: 1 })
   typeDbkbJpb12!: string;
 
-  @Column("bigint", { name: "nilai_dbkb_jpb12" })
-  nilaiDbkbJpb12!: string;
-
-  @ManyToOne(() => RefDati2, (refDati2) => refDati2.dbkbJpbs)
-  @JoinColumn([
-    { name: "kd_propinsi", referencedColumnName: "kdPropinsi" },
-    { name: "kd_dati2", referencedColumnName: "kdDati2" },
-  ])
-  refDati!: RefDati2;
+  @Column("numeric", {
+    name: "NILAI_DBKB_JPB12",
+    nullable: true,
+    precision: 10,
+    scale: 0,
+  })
+  nilaiDbkbJpb12!: string | null;
 }

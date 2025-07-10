@@ -1,24 +1,39 @@
 import { Column, Entity, Index } from "typeorm";
 
-@Index("tipe_bangunan_pkey", ["tipeBng"], { unique: true })
-@Entity("tipe_bangunan", { schema: "public" })
+@Index("TIPE_BANGUNAN_PK", ["tipeBng"], { unique: true })
+@Entity("TIPE_BANGUNAN", { schema: "PBB_KUTAI BARAT" })
 export class TipeBangunan {
-  @Column("character", { primary: true, name: "tipe_bng", length: 5 })
-  tipeBng!: string;
+  @Column("character", { name: "TIPE_BNG", length: 5 })
+  tipeBng: string;
 
-  @Column("character varying", { name: "nm_tipe_bng", length: 30 })
-  nmTipeBng!: string;
-
-  @Column("integer", { name: "luas_min_tipe_bng" })
-  luasMinTipeBng!: number;
-
-  @Column("integer", { name: "luas_max_tipe_bng" })
-  luasMaxTipeBng!: number;
+  @Column("character varying", {
+    name: "NM_TIPE_BNG",
+    nullable: true,
+    length: 30,
+  })
+  nmTipeBng: string | null;
 
   @Column("numeric", {
-    name: "faktor_pembagi_tipe_bng",
+    name: "LUAS_MIN_TIPE_BNG",
+    nullable: true,
+    precision: 8,
+    scale: 0,
+  })
+  luasMinTipeBng: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_MAX_TIPE_BNG",
+    nullable: true,
+    precision: 8,
+    scale: 0,
+  })
+  luasMaxTipeBng: string | null;
+
+  @Column("numeric", {
+    name: "FAKTOR_PEMBAGI_TIPE_BNG",
+    nullable: true,
     precision: 8,
     scale: 4,
   })
-  faktorPembagiTipeBng!: string;
+  faktorPembagiTipeBng: string | null;
 }

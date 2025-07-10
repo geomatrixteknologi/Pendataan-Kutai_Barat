@@ -1,52 +1,69 @@
 import { Column, Entity, Index } from "typeorm";
 
-@Index("ttr_sppt_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSppt"], { unique: true })
-@Index("g2_1_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSppt"], { unique: true })
-@Entity("ttr_sppt", { schema: "public" })
+@Index(
+  "TTR_SPPT_PK",
+  [
+    "kdBlok",
+    "kdDati2",
+    "kdJnsOp",
+    "kdKecamatan",
+    "kdKelurahan",
+    "kdPropinsi",
+    "noUrut",
+    "thnPajakSppt",
+  ],
+  { unique: true }
+)
+@Index("TTR_SPPT_I01", ["tglRekamTtrSppt"], {})
+@Entity("TTR_SPPT", { schema: "PBB_KUTAI BARAT" })
 export class TtrSppt {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { primary: true, name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { primary: true, name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { primary: true, name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { primary: true, name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { primary: true, name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("character", { primary: true, name: "thn_pajak_sppt", length: 4 })
-  thnPajakSppt!: string;
+  @Column("character", { primary: true, name: "THN_PAJAK_SPPT", length: 4 })
+  thnPajakSppt: string;
 
-  @Column("timestamp without time zone", { name: "tgl_terima_wp_sppt" })
-  tglTerimaWpSppt!: Date;
+  @Column("timestamp without time zone", {
+    name: "TGL_TERIMA_WP_SPPT",
+    nullable: true,
+  })
+  tglTerimaWpSppt: Date | null;
 
   @Column("character varying", {
-    name: "nm_yg_menerima_sppt",
+    name: "NM_YG_MENERIMA_SPPT",
     nullable: true,
     length: 30,
   })
-  nmYgMenerimaSppt!: string | null;
+  nmYgMenerimaSppt: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_rekam_ttr_sppt",
-    default: () => "statement_timestamp()",
+    name: "TGL_REKAM_TTR_SPPT",
+    nullable: true,
   })
-  tglRekamTtrSppt!: Date;
+  tglRekamTtrSppt: Date | null;
 
-  @Column("character", { name: "nip_rekam_ttr_sppt", length: 18 })
-  nipRekamTtrSppt!: string;
-
-  @Column("character varying", { name: "userid", nullable: true, length: 20 })
-  userid!: string | null;
+  @Column("character", {
+    name: "NIP_REKAM_TTR_SPPT",
+    nullable: true,
+    length: 30,
+  })
+  nipRekamTtrSppt: string | null;
 }

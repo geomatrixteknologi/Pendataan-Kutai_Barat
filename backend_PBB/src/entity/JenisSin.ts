@@ -1,15 +1,14 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("jenis_sin_pkey", ["kdJnsSin"], { unique: true })
-@Entity("jenis_sin", { schema: "public" })
+@Entity("JENIS_SIN", { schema: "PBB_KUTAI BARAT" })
 export class JenisSin {
-  @Column("character", { primary: true, name: "kd_jns_sin", length: 2 })
-  kdJnsSin!: string;
+  @Column("character", { name: "KD_JNS_SIN", length: 2 })
+  kdJnsSin: string;
 
   @Column("character varying", {
-    name: "ket_jns_sin",
+    name: "KET_JNS_SIN",
     nullable: true,
     length: 30,
   })
-  ketJnsSin!: string | null;
+  ketJnsSin: string | null;
 }

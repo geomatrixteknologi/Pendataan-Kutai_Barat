@@ -1,32 +1,40 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("posisi_pegawai_pkey", ["kdKantor", "kdKanwil", "nip"], { unique: true })
-@Entity("posisi_pegawai", { schema: "public" })
+@Entity("POSISI_PEGAWAI", { schema: "PBB_KUTAI BARAT" })
 export class PosisiPegawai {
-  @Column("character", { primary: true, name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
+  @Column("character", { name: "KD_KANWIL", length: 2 })
+  kdKanwil: string;
 
-  @Column("character", { primary: true, name: "kd_kantor", length: 2 })
-  kdKantor!: string;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
 
-  @Column("character", { primary: true, name: "nip", length: 18 })
-  nip!: string;
+  @Column("character", { name: "NIP", length: 30 })
+  nip: string;
 
-  @Column("character", { name: "kd_seksi", length: 2 })
-  kdSeksi!: string;
-
-  @Column("timestamp without time zone", { name: "tgl_awal_berlaku" })
-  tglAwalBerlaku!: Date;
+  @Column("character", { name: "KD_SEKSI", nullable: true, length: 2 })
+  kdSeksi: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_akhir_berlaku",
-    default: () => "to_date('01019999', 'DDMMYYYY'::text)",
+    name: "TGL_AWAL_BERLAKU",
+    nullable: true,
   })
-  tglAkhirBerlaku!: Date;
+  tglAwalBerlaku: Date | null;
 
-  @Column("character", { name: "kd_wewenang", length: 2 })
-  kdWewenang!: string;
+  @Column("timestamp without time zone", {
+    name: "TGL_AKHIR_BERLAKU",
+    nullable: true,
+  })
+  tglAkhirBerlaku: Date | null;
 
-  @Column("character", { name: "kd_jabatan", length: 2 })
-  kdJabatan!: string;
+  @Column("character", { name: "KD_WEWENANG", nullable: true, length: 2 })
+  kdWewenang: string | null;
+
+  @Column("character", { name: "KD_JABATAN", nullable: true, length: 2 })
+  kdJabatan: string | null;
+
+  @Column("character", { name: "KD_KPPBB", nullable: true, length: 2 })
+  kdKppbb: string | null;
+
+  @Column("character", { name: "KD_SUBSEKSI", nullable: true, length: 2 })
+  kdSubseksi: string | null;
 }

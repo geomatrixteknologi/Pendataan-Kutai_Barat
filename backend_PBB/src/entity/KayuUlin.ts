@@ -1,23 +1,21 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("kayu_ulin_pkey", ["kdDati2", "kdPropinsi", "thnStatusKayuUlin"], {
-  unique: true,
-})
-@Entity("kayu_ulin", { schema: "public" })
+@Entity("KAYU_ULIN", { schema: "PBB_KUTAI BARAT" })
 export class KayuUlin {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", {
-    primary: true,
-    name: "thn_status_kayu_ulin",
-    length: 4,
+  @Column("character", { name: "THN_STATUS_KAYU_ULIN", length: 4 })
+  thnStatusKayuUlin: string;
+
+  @Column("numeric", {
+    name: "STATUS_KAYU_ULIN",
+    nullable: true,
+    precision: 1,
+    scale: 0,
   })
-  thnStatusKayuUlin!: string;
-
-  @Column("smallint", { name: "status_kayu_ulin", default: () => "0" })
-  statusKayuUlin!: number;
+  statusKayuUlin: string | null;
 }

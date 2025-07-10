@@ -1,67 +1,74 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("penghapusan_bng_pkey", ["indeksPenghapusanBng", "kdBlokPenghapusanBng", "kdDati2", "kdJnsOpPenghapusanBng", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noBngPenghapusan", "noUrutPenghapusanBng"], { unique: true })
-@Index("x9_1_ak", ["indeksPenghapusanBng", "kdBlokPenghapusanBng", "kdDati2", "kdJnsOpPenghapusanBng", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noBngPenghapusan", "noUrutPenghapusanBng", "thnPajakPenghapusanBng"], { unique: true })
-@Index("x9_2_ak", ["kdBlokPenghapusanBng", "kdDati2", "kdJnsOpPenghapusanBng", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noBngPenghapusan", "noFormulirPenghapusanBng", "noUrutPenghapusanBng"], { unique: true })
-@Entity("penghapusan_bng", { schema: "public" })
+@Entity("PENGHAPUSAN_BNG", { schema: "PBB_KUTAI BARAT" })
 export class PenghapusanBng {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
+
+  @Column("character", { name: "KD_BLOK_PENGHAPUSAN_BNG", length: 3 })
+  kdBlokPenghapusanBng: string;
+
+  @Column("character", { name: "NO_URUT_PENGHAPUSAN_BNG", length: 4 })
+  noUrutPenghapusanBng: string;
+
+  @Column("character", { name: "KD_JNS_OP_PENGHAPUSAN_BNG", length: 1 })
+  kdJnsOpPenghapusanBng: string;
+
+  @Column("numeric", { name: "NO_BNG_PENGHAPUSAN", precision: 3, scale: 0 })
+  noBngPenghapusan: string;
+
+  @Column("numeric", { name: "INDEKS_PENGHAPUSAN_BNG", precision: 2, scale: 0 })
+  indeksPenghapusanBng: string;
 
   @Column("character", {
-    primary: true,
-    name: "kd_blok_penghapusan_bng",
-    length: 3,
-  })
-  kdBlokPenghapusanBng!: string;
-
-  @Column("character", {
-    primary: true,
-    name: "no_urut_penghapusan_bng",
+    name: "THN_PAJAK_PENGHAPUSAN_BNG",
+    nullable: true,
     length: 4,
   })
-  noUrutPenghapusanBng!: string;
+  thnPajakPenghapusanBng: string | null;
 
   @Column("character", {
-    primary: true,
-    name: "kd_jns_op_penghapusan_bng",
-    length: 1,
+    name: "NO_FORMULIR_PENGHAPUSAN_BNG",
+    nullable: true,
+    length: 11,
   })
-  kdJnsOpPenghapusanBng!: string;
+  noFormulirPenghapusanBng: string | null;
 
-  @Column("smallint", { primary: true, name: "no_bng_penghapusan" })
-  noBngPenghapusan!: number;
+  @Column("numeric", {
+    name: "LUAS_BNG_PENGHAPUSAN",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBngPenghapusan: string | null;
 
-  @Column("smallint", { primary: true, name: "indeks_penghapusan_bng" })
-  indeksPenghapusanBng!: number;
-
-  @Column("character", { name: "thn_pajak_penghapusan_bng", length: 4 })
-  thnPajakPenghapusanBng!: string;
-
-  @Column("character", { name: "no_formulir_penghapusan_bng", length: 11 })
-  noFormulirPenghapusanBng!: string;
-
-  @Column("bigint", { name: "luas_bng_penghapusan" })
-  luasBngPenghapusan!: string;
-
-  @Column("bigint", { name: "nilai_bng_penghapusan" })
-  nilaiBngPenghapusan!: string;
+  @Column("numeric", {
+    name: "NILAI_BNG_PENGHAPUSAN",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  nilaiBngPenghapusan: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_penghapusan_bng",
-    default: () => "statement_timestamp()",
+    name: "TGL_PENGHAPUSAN_BNG",
+    nullable: true,
   })
-  tglPenghapusanBng!: Date;
+  tglPenghapusanBng: Date | null;
 
-  @Column("character", { name: "nip_perekam_penghapusan_bng", length: 18 })
-  nipPerekamPenghapusanBng!: string;
+  @Column("character", {
+    name: "NIP_PEREKAM_PENGHAPUSAN_BNG",
+    nullable: true,
+    length: 30,
+  })
+  nipPerekamPenghapusanBng: string | null;
 }

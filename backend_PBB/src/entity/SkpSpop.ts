@@ -1,191 +1,250 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("e12_1_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "statusPembayaranSkpSpop", "thnPajakSkpSpop"], { unique: true })
-@Index("e12_2_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "statusTagihanSkpSpop"], { unique: true })
-@Index("e12_3_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdKlsTanah", "kdPropinsi", "noUrut", "thnPajakSkpSpop"], { unique: true })
-@Index("e12_6_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "pbbYgHarusDibayarSkpSpop", "thnPajakSkpSpop"], { unique: true })
-@Index("e12_4_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdKlsBng", "kdPropinsi", "noUrut"], { unique: true })
-@Index("skp_spop_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSkpSpop"], { unique: true })
-@Index("e12_5_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noUrut", "thnPajakSkpSpop"], { unique: true })
-@Entity("skp_spop", { schema: "public" })
+@Entity("SKP_SPOP", { schema: "PBB_KUTAI BARAT" })
 export class SkpSpop {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
-  kdBlok!: string;
+  @Column("character", { name: "KD_BLOK", length: 3 })
+  kdBlok: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
-  noUrut!: string;
+  @Column("character", { name: "NO_URUT", length: 4 })
+  noUrut: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
-  kdJnsOp!: string;
+  @Column("character", { name: "KD_JNS_OP", length: 1 })
+  kdJnsOp: string;
 
-  @Column("character", { primary: true, name: "thn_pajak_skp_spop", length: 4 })
-  thnPajakSkpSpop!: string;
+  @Column("character", { name: "THN_PAJAK_SKP_SPOP", length: 4 })
+  thnPajakSkpSpop: string;
 
-  @Column("smallint", { name: "siklus_skp_spop" })
-  siklusSkpSpop!: number;
-
-  @Column("character", { name: "kd_kanwil", length: 2 })
-  kdKanwil!: string;
-
-  @Column("character", { name: "kd_kantor", length: 2 })
-  kdKantor!: string;
-
-  @Column("character", { name: "kd_tp", length: 2 })
-  kdTp!: string;
-
-  @Column("character varying", { name: "nm_wp_skp_spop", length: 30 })
-  nmWpSkpSpop!: string;
-
-  @Column("character varying", { name: "jln_wp_skp_spop", length: 30 })
-  jlnWpSkpSpop!: string;
-
-  @Column("character varying", {
-    name: "blok_kav_no_wp_skp_spop",
+  @Column("numeric", {
+    name: "SIKLUS_SKP_SPOP",
     nullable: true,
-    length: 15,
+    precision: 4,
+    scale: 0,
   })
-  blokKavNoWpSkpSpop!: string | null;
+  siklusSkpSpop: string | null;
 
-  @Column("character", { name: "rw_wp_skp_spop", nullable: true, length: 2 })
-  rwWpSkpSpop!: string | null;
+  @Column("character", { name: "KD_KANWIL", nullable: true, length: 2 })
+  kdKanwil: string | null;
 
-  @Column("character", { name: "rt_wp_skp_spop", nullable: true, length: 3 })
-  rtWpSkpSpop!: string | null;
+  @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
+  kdKantor: string | null;
+
+  @Column("character", { name: "KD_TP", nullable: true, length: 4 })
+  kdTp: string | null;
 
   @Column("character varying", {
-    name: "kelurahan_wp_skp_spop",
+    name: "NM_WP_SKP_SPOP",
     nullable: true,
     length: 30,
   })
-  kelurahanWpSkpSpop!: string | null;
+  nmWpSkpSpop: string | null;
 
   @Column("character varying", {
-    name: "kota_wp_skp_spop",
+    name: "JLN_WP_SKP_SPOP",
     nullable: true,
     length: 30,
   })
-  kotaWpSkpSpop!: string | null;
+  jlnWpSkpSpop: string | null;
 
   @Column("character varying", {
-    name: "kd_pos_wp_skp_spop",
-    nullable: true,
-    length: 5,
-  })
-  kdPosWpSkpSpop!: string | null;
-
-  @Column("character varying", {
-    name: "npwp_skp_spop",
+    name: "BLOK_KAV_NO_WP_SKP_SPOP",
     nullable: true,
     length: 15,
   })
-  npwpSkpSpop!: string | null;
+  blokKavNoWpSkpSpop: string | null;
+
+  @Column("character", { name: "RW_WP_SKP_SPOP", nullable: true, length: 3 })
+  rwWpSkpSpop: string | null;
+
+  @Column("character", { name: "RT_WP_SKP_SPOP", nullable: true, length: 3 })
+  rtWpSkpSpop: string | null;
 
   @Column("character varying", {
-    name: "no_persil_skp_spop",
+    name: "KELURAHAN_WP_SKP_SPOP",
+    nullable: true,
+    length: 30,
+  })
+  kelurahanWpSkpSpop: string | null;
+
+  @Column("character varying", {
+    name: "KOTA_WP_SKP_SPOP",
+    nullable: true,
+    length: 30,
+  })
+  kotaWpSkpSpop: string | null;
+
+  @Column("character varying", {
+    name: "KD_POS_WP_SKP_SPOP",
     nullable: true,
     length: 5,
   })
-  noPersilSkpSpop!: string | null;
+  kdPosWpSkpSpop: string | null;
 
-  @Column("character", {
-    name: "kd_kls_tanah",
-    length: 3,
-    default: () => "'XXX'",
+  @Column("character varying", {
+    name: "NPWP_SKP_SPOP",
+    nullable: true,
+    length: 15,
   })
-  kdKlsTanah!: string;
+  npwpSkpSpop: string | null;
+
+  @Column("character varying", {
+    name: "NO_PERSIL_SKP_SPOP",
+    nullable: true,
+    length: 5,
+  })
+  noPersilSkpSpop: string | null;
+
+  @Column("character", { name: "KD_KLS_TANAH", nullable: true, length: 3 })
+  kdKlsTanah: string | null;
 
   @Column("character", {
-    name: "thn_awal_kls_tanah",
+    name: "THN_AWAL_KLS_TANAH",
+    nullable: true,
     length: 4,
-    default: () => "'1986'",
   })
-  thnAwalKlsTanah!: string;
+  thnAwalKlsTanah: string | null;
 
-  @Column("character", {
-    name: "kd_kls_bng",
-    length: 3,
-    default: () => "'XXX'",
-  })
-  kdKlsBng!: string;
+  @Column("character", { name: "KD_KLS_BNG", nullable: true, length: 3 })
+  kdKlsBng: string | null;
 
-  @Column("character", {
-    name: "thn_awal_kls_bng",
-    length: 4,
-    default: () => "'1986'",
-  })
-  thnAwalKlsBng!: string;
-
-  @Column("timestamp without time zone", { name: "tgl_jatuh_tempo_skp_spop" })
-  tglJatuhTempoSkpSpop!: Date;
-
-  @Column("bigint", { name: "luas_bumi_skp_spop", default: () => "0" })
-  luasBumiSkpSpop!: string;
-
-  @Column("bigint", { name: "luas_bng_skp_spop", default: () => "0" })
-  luasBngSkpSpop!: string;
-
-  @Column("bigint", { name: "njop_bumi_skp_spop", default: () => "0" })
-  njopBumiSkpSpop!: string;
-
-  @Column("bigint", { name: "njop_bng_skp_spop", default: () => "0" })
-  njopBngSkpSpop!: string;
-
-  @Column("bigint", { name: "njop_skp_spop" })
-  njopSkpSpop!: string;
-
-  @Column("integer", { name: "njoptkp_skp_spop" })
-  njoptkpSkpSpop!: number;
-
-  @Column("numeric", { name: "njkp_skp_spop", precision: 5, scale: 2 })
-  njkpSkpSpop!: string;
-
-  @Column("bigint", { name: "pbb_terhutang_skp_spop" })
-  pbbTerhutangSkpSpop!: string;
-
-  @Column("bigint", { name: "besar_denda_skp_spop" })
-  besarDendaSkpSpop!: string;
-
-  @Column("bigint", { name: "faktor_pengurang_skp_spop", nullable: true })
-  faktorPengurangSkpSpop!: string | null;
-
-  @Column("bigint", { name: "pbb_yg_harus_dibayar_skp_spop" })
-  pbbYgHarusDibayarSkpSpop!: string;
-
-  @Column("character", {
-    name: "status_pembayaran_skp_spop",
-    length: 1,
-    default: () => "'0'",
-  })
-  statusPembayaranSkpSpop!: string;
-
-  @Column("character", {
-    name: "status_tagihan_skp_spop",
-    length: 1,
-    default: () => "'1'",
-  })
-  statusTagihanSkpSpop!: string;
-
-  @Column("timestamp without time zone", { name: "tgl_terbit_skp_spop" })
-  tglTerbitSkpSpop!: Date;
+  @Column("character", { name: "THN_AWAL_KLS_BNG", nullable: true, length: 4 })
+  thnAwalKlsBng: string | null;
 
   @Column("timestamp without time zone", {
-    name: "tgl_cetak_skp_spop",
-    default: () => "statement_timestamp()",
+    name: "TGL_JATUH_TEMPO_SKP_SPOP",
+    nullable: true,
   })
-  tglCetakSkpSpop!: Date;
+  tglJatuhTempoSkpSpop: Date | null;
 
-  @Column("character", { name: "nip_pencetak_skp_spop", length: 18 })
-  nipPencetakSkpSpop!: string;
+  @Column("numeric", {
+    name: "LUAS_BUMI_SKP_SPOP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBumiSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "LUAS_BNG_SKP_SPOP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBngSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "NJOP_BUMI_SKP_SPOP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBumiSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "NJOP_BNG_SKP_SPOP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopBngSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "NJOP_SKP_SPOP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  njopSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "NJOPTKP_SKP_SPOP",
+    nullable: true,
+    precision: 8,
+    scale: 0,
+  })
+  njoptkpSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "NJKP_SKP_SPOP",
+    nullable: true,
+    precision: 5,
+    scale: 2,
+  })
+  njkpSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "PBB_TERHUTANG_SKP_SPOP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  pbbTerhutangSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "BESAR_DENDA_SKP_SPOP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  besarDendaSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "FAKTOR_PENGURANG_SKP_SPOP",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  faktorPengurangSkpSpop: string | null;
+
+  @Column("numeric", {
+    name: "PBB_YG_HARUS_DIBAYAR_SKP_SPOP",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  pbbYgHarusDibayarSkpSpop: string | null;
+
+  @Column("character", {
+    name: "STATUS_PEMBAYARAN_SKP_SPOP",
+    nullable: true,
+    length: 1,
+  })
+  statusPembayaranSkpSpop: string | null;
+
+  @Column("character", {
+    name: "STATUS_TAGIHAN_SKP_SPOP",
+    nullable: true,
+    length: 1,
+  })
+  statusTagihanSkpSpop: string | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_TERBIT_SKP_SPOP",
+    nullable: true,
+  })
+  tglTerbitSkpSpop: Date | null;
+
+  @Column("timestamp without time zone", {
+    name: "TGL_CETAK_SKP_SPOP",
+    nullable: true,
+  })
+  tglCetakSkpSpop: Date | null;
+
+  @Column("character", {
+    name: "NIP_PENCETAK_SKP_SPOP",
+    nullable: true,
+    length: 30,
+  })
+  nipPencetakSkpSpop: string | null;
 }

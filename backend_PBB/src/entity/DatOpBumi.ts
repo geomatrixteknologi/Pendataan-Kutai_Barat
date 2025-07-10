@@ -1,69 +1,56 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
-import { DatObjekPajak } from "./DatObjekPajak";
-import { DatPetaZnt } from "./DatPetaZnt";
+import { Column, Entity } from "typeorm";
 
-@Index("d6_2_ak", ["jnsBumi", "kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noBumi", "noUrut"], { unique: true })
-@Index("d6_3_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "luasBumi", "noBumi", "noUrut"], { unique: true })
-@Index("d6_1_ak", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "kdZnt", "noBumi", "noUrut"], { unique: true })
-@Index("dat_op_bumi_pkey", ["kdBlok", "kdDati2", "kdJnsOp", "kdKecamatan", "kdKelurahan", "kdPropinsi", "noBumi", "noUrut"], { unique: true })
-@Entity("dat_op_bumi", { schema: "public" })
+@Entity("DAT_OP_BUMI", { schema: "PBB_KUTAI BARAT" })
 export class DatOpBumi {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
+  @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
   kdPropinsi!: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
+  @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
   kdDati2!: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
+  @Column("character", { primary: true, name: "KD_KECAMATAN", length: 3 })
   kdKecamatan!: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
+  @Column("character", { primary: true, name: "KD_KELURAHAN", length: 3 })
   kdKelurahan!: string;
 
-  @Column("character", { primary: true, name: "kd_blok", length: 3 })
+  @Column("character", { primary: true, name: "KD_BLOK", length: 3 })
   kdBlok!: string;
 
-  @Column("character", { primary: true, name: "no_urut", length: 4 })
+  @Column("character", { primary: true, name: "NO_URUT", length: 4 })
   noUrut!: string;
 
-  @Column("character", { primary: true, name: "kd_jns_op", length: 1 })
+  @Column("character", { primary: true, name: "KD_JNS_OP", length: 1 })
   kdJnsOp!: string;
 
-  @Column("smallint", { primary: true, name: "no_bumi", default: () => "1" })
-  noBumi!: number;
+  @Column("numeric", { primary: true, name: "NO_BUMI", precision: 2, scale: 0 })
+  noBumi!: string;
 
-  @Column("character", { name: "kd_znt", length: 2 })
-  kdZnt!: string;
+  @Column("character", { name: "KD_ZNT", nullable: true, length: 2 })
+  kdZnt!: string | null;
 
-  @Column("bigint", { name: "luas_bumi", default: () => "0" })
-  luasBumi!: string;
+  @Column("numeric", {
+    name: "LUAS_BUMI",
+    nullable: true,
+    precision: 12,
+    scale: 0,
+  })
+  luasBumi!: string | null;
 
-  @Column("character", { name: "jns_bumi", length: 1, default: () => "'1'" })
-  jnsBumi!: string;
+  @Column("character", { name: "JNS_BUMI", nullable: true, length: 1 })
+  jnsBumi!: string | null;
 
-  @Column("bigint", { name: "nilai_sistem_bumi", default: () => "0" })
-  nilaiSistemBumi!: string;
+  @Column("numeric", {
+    name: "NILAI_SISTEM_BUMI",
+    nullable: true,
+    precision: 15,
+    scale: 0,
+  })
+  nilaiSistemBumi!: string | null;
 
-  @ManyToOne(() => DatObjekPajak, (datObjekPajak) => datObjekPajak.datOpBumis)
-  @JoinColumn([
-    { name: "kd_propinsi", referencedColumnName: "kdPropinsi" },
-    { name: "kd_dati2", referencedColumnName: "kdDati2" },
-    { name: "kd_kecamatan", referencedColumnName: "kdKecamatan" },
-    { name: "kd_kelurahan", referencedColumnName: "kdKelurahan" },
-    { name: "kd_blok", referencedColumnName: "kdBlok" },
-    { name: "no_urut", referencedColumnName: "noUrut" },
-    { name: "kd_jns_op", referencedColumnName: "kdJnsOp" },
-  ])
-  datObjekPajak!: DatObjekPajak;
+  @Column("character", { name: "KD_PERUNTUKAN", nullable: true, length: 2 })
+  kdPeruntukan!: string | null;
 
-  @ManyToOne(() => DatPetaZnt, (datPetaZnt) => datPetaZnt.datOpBumis)
-  @JoinColumn([
-    { name: "kd_propinsi", referencedColumnName: "kdPropinsi" },
-    { name: "kd_dati2", referencedColumnName: "kdDati2" },
-    { name: "kd_kecamatan", referencedColumnName: "kdKecamatan" },
-    { name: "kd_kelurahan", referencedColumnName: "kdKelurahan" },
-    { name: "kd_blok", referencedColumnName: "kdBlok" },
-    { name: "kd_znt", referencedColumnName: "kdZnt" },
-  ])
-  datPetaZnt!: DatPetaZnt;
+  @Column("character", { name: "KD_SUB_PERUNTUKAN", nullable: true, length: 2 })
+  kdSubPeruntukan!: string | null;
 }

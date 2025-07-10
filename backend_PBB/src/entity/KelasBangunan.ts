@@ -1,35 +1,37 @@
-import { Column, Entity, Index, OneToMany } from "typeorm";
-import { Skp } from "./Skp";
-import { SkpOpBersama } from "./SkpOpBersama";
-import { Sppt } from "./Sppt";
+import { Column, Entity } from "typeorm";
 
-@Index("kelas_bangunan_pkey", ["kdKlsBng", "thnAwalKlsBng"], { unique: true })
-@Entity("kelas_bangunan", { schema: "public" })
+@Entity("KELAS_BANGUNAN", { schema: "PBB_KUTAI BARAT" })
 export class KelasBangunan {
-  @Column("character", { primary: true, name: "kd_kls_bng", length: 3 })
+  @Column("character", { primary: true, name: "KD_KLS_BNG", length: 3 })
   kdKlsBng!: string;
 
-  @Column("character", { primary: true, name: "thn_awal_kls_bng", length: 4 })
+  @Column("character", { primary: true, name: "THN_AWAL_KLS_BNG", length: 4 })
   thnAwalKlsBng!: string;
 
-  @Column("character", { name: "thn_akhir_kls_bng", length: 4 })
-  thnAkhirKlsBng!: string;
+  @Column("character", { name: "THN_AKHIR_KLS_BNG", nullable: true, length: 4 })
+  thnAkhirKlsBng!: string | null;
 
-  @Column("numeric", { name: "nilai_min_bng", precision: 8, scale: 2 })
-  nilaiMinBng!: string;
+  @Column("numeric", {
+    name: "NILAI_MIN_BNG",
+    nullable: true,
+    precision: 8,
+    scale: 2,
+  })
+  nilaiMinBng!: string | null;
 
-  @Column("numeric", { name: "nilai_max_bng", precision: 8, scale: 2 })
-  nilaiMaxBng!: string;
+  @Column("numeric", {
+    name: "NILAI_MAX_BNG",
+    nullable: true,
+    precision: 8,
+    scale: 2,
+  })
+  nilaiMaxBng!: string | null;
 
-  @Column("numeric", { name: "nilai_per_m2_bng", precision: 8, scale: 2 })
-  nilaiPerM2Bng!: string;
-
-  @OneToMany(() => Skp, (skp) => skp.kelasBangunan)
-  skps!: Skp[];
-
-  @OneToMany(() => SkpOpBersama, (skpOpBersama) => skpOpBersama.kelasBangunan)
-  skpOpBersamas!: SkpOpBersama[];
-
-  @OneToMany(() => Sppt, (sppt) => sppt.kelasBangunan)
-  sppts!: Sppt[];
+  @Column("numeric", {
+    name: "NILAI_PER_M2_BNG",
+    nullable: true,
+    precision: 8,
+    scale: 2,
+  })
+  nilaiPerM2Bng!: string | null;
 }

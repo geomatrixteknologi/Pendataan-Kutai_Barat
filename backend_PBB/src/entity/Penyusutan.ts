@@ -1,21 +1,21 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("penyusutan_pkey", ["kdRangePenyusutan", "kondisiBngSusut", "umurEfektif"], { unique: true })
-@Entity("penyusutan", { schema: "public" })
+@Entity("PENYUSUTAN", { schema: "PBB_KUTAI BARAT" })
 export class Penyusutan {
-  @Column("smallint", { primary: true, name: "umur_efektif" })
-  umurEfektif!: number;
+  @Column("numeric", { name: "UMUR_EFEKTIF", precision: 2, scale: 0 })
+  umurEfektif: string;
 
-  @Column("character", {
-    primary: true,
-    name: "kd_range_penyusutan",
-    length: 1,
+  @Column("character", { name: "KD_RANGE_PENYUSUTAN", length: 1 })
+  kdRangePenyusutan: string;
+
+  @Column("character", { name: "KONDISI_BNG_SUSUT", length: 1 })
+  kondisiBngSusut: string;
+
+  @Column("numeric", {
+    name: "NILAI_PENYUSUTAN",
+    nullable: true,
+    precision: 3,
+    scale: 0,
   })
-  kdRangePenyusutan!: string;
-
-  @Column("character", { primary: true, name: "kondisi_bng_susut", length: 1 })
-  kondisiBngSusut!: string;
-
-  @Column("smallint", { name: "nilai_penyusutan", nullable: true })
-  nilaiPenyusutan!: number | null;
+  nilaiPenyusutan: string | null;
 }

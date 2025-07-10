@@ -1,15 +1,14 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("jns_status_kantor_pkey", ["kdStatKantor"], { unique: true })
-@Entity("jns_status_kantor", { schema: "public" })
+@Entity("JNS_STATUS_KANTOR", { schema: "PBB_KUTAI BARAT" })
 export class JnsStatusKantor {
-  @Column("character", { primary: true, name: "kd_stat_kantor", length: 2 })
-  kdStatKantor!: string;
+  @Column("character", { name: "KD_STAT_KANTOR", length: 2 })
+  kdStatKantor: string;
 
   @Column("character varying", {
-    name: "ket_stat_kantor",
+    name: "KET_STAT_KANTOR",
     nullable: true,
     length: 30,
   })
-  ketStatKantor!: string | null;
+  ketStatKantor: string | null;
 }

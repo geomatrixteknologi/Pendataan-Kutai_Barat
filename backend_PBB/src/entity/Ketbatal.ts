@@ -1,19 +1,14 @@
-import { Column, Entity, Index, OneToMany } from "typeorm";
-import { PembatalanSppt } from "./PembatalanSppt";
+import { Column, Entity } from "typeorm";
 
-@Index("ketbatal_pkey", ["kdBatal"], { unique: true })
-@Entity("ketbatal", { schema: "public" })
+@Entity("KETBATAL", { schema: "PBB_KUTAI BARAT" })
 export class Ketbatal {
-  @Column("character", { primary: true, name: "kd_batal", length: 2 })
-  kdBatal!: string;
+  @Column("character", { name: "KD_BATAL", length: 2 })
+  kdBatal: string;
 
   @Column("character varying", {
-    name: "ket_batal",
+    name: "KET_BATAL",
     nullable: true,
     length: 30,
   })
-  ketBatal!: string | null;
-
-  @OneToMany(() => PembatalanSppt, (pembatalanSppt) => pembatalanSppt.kdBatal)
-  pembatalanSppts!: PembatalanSppt[];
+  ketBatal: string | null;
 }

@@ -1,11 +1,10 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("ref_jpb_pkey", ["kdJpb"], { unique: true })
-@Entity("ref_jpb", { schema: "public" })
+@Entity("REF_JPB", { schema: "PBB_KUTAI BARAT" })
 export class RefJpb {
-  @Column("character", { primary: true, name: "kd_jpb", length: 2 })
-  kdJpb!: string;
+  @Column("character", { name: "KD_JPB", length: 2 })
+  kdJpb: string;
 
-  @Column("character varying", { name: "nm_jpb", length: 50 })
-  nmJpb!: string;
+  @Column("character varying", { name: "NM_JPB", nullable: true, length: 50 })
+  nmJpb: string | null;
 }

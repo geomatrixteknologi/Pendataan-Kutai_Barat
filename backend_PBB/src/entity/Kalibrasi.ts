@@ -1,33 +1,35 @@
-import { Column, Entity, Index } from "typeorm";
+import { Column, Entity } from "typeorm";
 
-@Index("kalibrasi_pkey", ["indeksKalibrasi", "kdDati2", "kdKecamatan", "kdKelurahan", "kdPropinsi", "thnKalibrasi"], { unique: true })
-@Index("e21_1_ak", ["indeksKalibrasi", "kdDati2", "kdKecamatan", "kdKelurahan", "kdPropinsi", "nipPengkalibrasi", "thnKalibrasi"], { unique: true })
-@Entity("kalibrasi", { schema: "public" })
+@Entity("KALIBRASI", { schema: "PBB_KUTAI BARAT" })
 export class Kalibrasi {
-  @Column("character", { primary: true, name: "kd_propinsi", length: 2 })
-  kdPropinsi!: string;
+  @Column("character", { name: "KD_PROPINSI", length: 2 })
+  kdPropinsi: string;
 
-  @Column("character", { primary: true, name: "kd_dati2", length: 2 })
-  kdDati2!: string;
+  @Column("character", { name: "KD_DATI2", length: 2 })
+  kdDati2: string;
 
-  @Column("character", { primary: true, name: "kd_kecamatan", length: 3 })
-  kdKecamatan!: string;
+  @Column("character", { name: "KD_KECAMATAN", length: 3 })
+  kdKecamatan: string;
 
-  @Column("character", { primary: true, name: "kd_kelurahan", length: 3 })
-  kdKelurahan!: string;
+  @Column("character", { name: "KD_KELURAHAN", length: 3 })
+  kdKelurahan: string;
 
-  @Column("character", { primary: true, name: "thn_kalibrasi", length: 4 })
-  thnKalibrasi!: string;
+  @Column("character", { name: "THN_KALIBRASI", length: 4 })
+  thnKalibrasi: string;
 
-  @Column("smallint", { primary: true, name: "indeks_kalibrasi" })
-  indeksKalibrasi!: number;
+  @Column("numeric", { name: "INDEKS_KALIBRASI", precision: 2, scale: 0 })
+  indeksKalibrasi: string;
 
   @Column("timestamp without time zone", {
-    name: "tgl_kalibrasi",
-    default: () => "statement_timestamp()",
+    name: "TGL_KALIBRASI",
+    nullable: true,
   })
-  tglKalibrasi!: Date;
+  tglKalibrasi: Date | null;
 
-  @Column("character", { name: "nip_pengkalibrasi", length: 18 })
-  nipPengkalibrasi!: string;
+  @Column("character", {
+    name: "NIP_PENGKALIBRASI",
+    nullable: true,
+    length: 30,
+  })
+  nipPengkalibrasi: string | null;
 }
