@@ -8,7 +8,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  version!: string | null;
+  versionA!: string | null;
 
   @Column("character varying", { name: "VERSION", nullable: true, length: 384 })
   version!: string | null;
