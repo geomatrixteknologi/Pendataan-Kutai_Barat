@@ -3,61 +3,61 @@ import { Column, Entity } from "typeorm";
 @Entity("NOP_MUTASI", { schema: "PBB_KUTAI BARAT" })
 export class NopMutasi {
   @Column("character", { name: "KD_PROPINSI", length: 2 })
-  kdPropinsi: string;
+  kdPropinsi!: string;
 
   @Column("character", { name: "KD_DATI2", length: 2 })
-  kdDati2: string;
+  kdDati2!: string;
 
   @Column("character", { name: "KD_KECAMATAN", length: 3 })
-  kdKecamatan: string;
+  kdKecamatan!: string;
 
   @Column("character", { name: "KD_KELURAHAN", length: 3 })
-  kdKelurahan: string;
+  kdKelurahan!: string;
 
   @Column("character", { name: "KD_BLOK", length: 3 })
-  kdBlok: string;
+  kdBlok!: string;
 
   @Column("character", { name: "NO_URUT", length: 4 })
-  noUrut: string;
+  noUrut!: string;
 
   @Column("character", { name: "KD_JNS_OP", length: 1 })
-  kdJnsOp: string;
+  kdJnsOp!: string;
 
   @Column("numeric", { name: "INDEKS_MUTASI", precision: 2, scale: 0 })
-  indeksMutasi: string;
+  indeksMutasi!: string;
 
   @Column("character", {
     name: "KD_PROPINSI_MUTASI",
     nullable: true,
     length: 2,
   })
-  kdPropinsiMutasi: string | null;
+  kdPropinsiMutasi!: string | null;
 
   @Column("character", { name: "KD_DATI2_MUTASI", nullable: true, length: 2 })
-  kdDati2Mutasi: string | null;
+  kdDati2Mutasi!: string | null;
 
   @Column("character", {
     name: "KD_KECAMATAN_MUTASI",
     nullable: true,
     length: 3,
   })
-  kdKecamatanMutasi: string | null;
+  kdKecamatanMutasi!: string | null;
 
   @Column("character", {
     name: "KD_KELURAHAN_MUTASI",
     nullable: true,
     length: 3,
   })
-  kdKelurahanMutasi: string | null;
+  kdKelurahanMutasi!: string | null;
 
   @Column("character", { name: "KD_BLOK_MUTASI", nullable: true, length: 3 })
-  kdBlokMutasi: string | null;
+  kdBlokMutasi!: string | null;
 
   @Column("character", { name: "NO_URUT_MUTASI", nullable: true, length: 4 })
-  noUrutMutasi: string | null;
+  noUrutMutasi!: string | null;
 
   @Column("character", { name: "KD_JNS_OP_MUTASI", nullable: true, length: 1 })
-  kdJnsOpMutasi: string | null;
+  kdJnsOpMutasi!: string | null;
 
   @Column("numeric", {
     name: "LUAS_BUMI_MUTASI",
@@ -65,18 +65,18 @@ export class NopMutasi {
     precision: 12,
     scale: 0,
   })
-  luasBumiMutasi: string | null;
+  luasBumiMutasi!: string | null;
 
   @Column("timestamp without time zone", {
     name: "TGL_REKAM_NOP_MUTASI",
     nullable: true,
   })
-  tglRekamNopMutasi: Date | null;
+  tglRekamNopMutasi!: Date | null;
 
   @Column("character", {
     name: "NIP_PEREKAM_NOP_MUTASI",
     nullable: true,
     length: 30,
   })
-  nipPerekamNopMutasi: string | null;
+  nipPerekamNopMutasi!: string | null;
 }

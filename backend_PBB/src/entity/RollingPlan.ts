@@ -8,7 +8,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  instid: string | null;
+  instid!: string | null;
 
   @Column("numeric", {
     name: "BATCHID",
@@ -16,7 +16,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  batchid: string | null;
+  batchid!: string | null;
 
   @Column("numeric", {
     name: "DIRECTID",
@@ -24,7 +24,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  directid: string | null;
+  directid!: string | null;
 
   @Column("numeric", {
     name: "TASKID",
@@ -32,7 +32,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  taskid: string | null;
+  taskid!: string | null;
 
   @Column("numeric", {
     name: "REVISION",
@@ -40,7 +40,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  revision: string | null;
+  revision!: string | null;
 
   @Column("numeric", {
     name: "PHASE",
@@ -48,7 +48,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  phase: string | null;
+  phase!: string | null;
 
   @Column("numeric", {
     name: "STATUS",
@@ -56,7 +56,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  status: string | null;
+  status!: string | null;
 
   @Column("numeric", {
     name: "PROGRESS",
@@ -64,7 +64,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  progress: string | null;
+  progress!: string | null;
 
   @Column("numeric", {
     name: "SOURCE",
@@ -72,7 +72,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  source: string | null;
+  source!: string | null;
 
   @Column("numeric", {
     name: "TARGET",
@@ -80,7 +80,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  target: string | null;
+  target!: string | null;
 
   @Column("numeric", {
     name: "RFLAGS",
@@ -88,7 +88,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  rflags: string | null;
+  rflags!: string | null;
 
   @Column("numeric", {
     name: "OPCODE",
@@ -96,26 +96,26 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  opcode: string | null;
+  opcode!: string | null;
 
   @Column("character varying", { name: "P1", nullable: true, length: 256 })
-  p1: string | null;
+  p1!: string | null;
 
   @Column("character varying", { name: "P2", nullable: true, length: 256 })
-  p2: string | null;
+  p2!: string | null;
 
   @Column("character varying", { name: "P3", nullable: true, length: 256 })
-  p3: string | null;
+  p3!: string | null;
 
   @Column("character varying", { name: "P4", nullable: true, length: 256 })
-  p4: string | null;
+  p4!: string | null;
 
   @Column("character varying", {
     name: "DESCRIPTION",
     nullable: true,
     length: 256,
   })
-  description: string | null;
+  description!: string | null;
 
   @Column("numeric", {
     name: "EXEC_STATUS",
@@ -123,23 +123,23 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  execStatus: string | null;
+  execStatus!: string | null;
 
   @Column("character varying", {
     name: "EXEC_INFO",
     nullable: true,
     length: 256,
   })
-  execInfo: string | null;
+  execInfo!: string | null;
 
   @Column("timestamp without time zone", { name: "EXEC_TIME", nullable: true })
-  execTime: Date | null;
+  execTime!: Date | null;
 
   @Column("timestamp without time zone", {
     name: "FINISH_TIME",
     nullable: true,
   })
-  finishTime: Date | null;
+  finishTime!: Date | null;
 
   @Column("numeric", {
     name: "POST_STATUS",
@@ -147,7 +147,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  postStatus: string | null;
+  postStatus!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -155,7 +155,7 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -163,8 +163,8 @@ export class RollingPlan {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 256 })
-  spare3: string | null;
+  spare3!: string | null;
 }

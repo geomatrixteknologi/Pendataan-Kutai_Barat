@@ -3,40 +3,40 @@ import { Column, Entity } from "typeorm";
 @Entity("PEMBAYARAN_SKP_KB", { schema: "PBB_KUTAI BARAT" })
 export class PembayaranSkpKb {
   @Column("character", { name: "KD_PROPINSI", length: 2 })
-  kdPropinsi: string;
+  kdPropinsi!: string;
 
   @Column("character", { name: "KD_DATI2", length: 2 })
-  kdDati2: string;
+  kdDati2!: string;
 
   @Column("character", { name: "KD_KECAMATAN", length: 3 })
-  kdKecamatan: string;
+  kdKecamatan!: string;
 
   @Column("character", { name: "KD_KELURAHAN", length: 3 })
-  kdKelurahan: string;
+  kdKelurahan!: string;
 
   @Column("character", { name: "KD_BLOK", length: 3 })
-  kdBlok: string;
+  kdBlok!: string;
 
   @Column("character", { name: "NO_URUT", length: 4 })
-  noUrut: string;
+  noUrut!: string;
 
   @Column("character", { name: "KD_JNS_OP", length: 1 })
-  kdJnsOp: string;
+  kdJnsOp!: string;
 
   @Column("character", { name: "THN_PAJAK_SKP_KB", length: 4 })
-  thnPajakSkpKb: string;
+  thnPajakSkpKb!: string;
 
   @Column("numeric", { name: "PEMBAYARAN_SKP_KB_KE", precision: 2, scale: 0 })
-  pembayaranSkpKbKe: string;
+  pembayaranSkpKbKe!: string;
 
   @Column("character", { name: "KD_KANWIL", nullable: true, length: 2 })
-  kdKanwil: string | null;
+  kdKanwil!: string | null;
 
   @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
-  kdKantor: string | null;
+  kdKantor!: string | null;
 
   @Column("character", { name: "KD_TP", nullable: true, length: 4 })
-  kdTp: string | null;
+  kdTp!: string | null;
 
   @Column("numeric", {
     name: "DENDA_SKP_KB",
@@ -44,7 +44,7 @@ export class PembayaranSkpKb {
     precision: 12,
     scale: 0,
   })
-  dendaSkpKb: string | null;
+  dendaSkpKb!: string | null;
 
   @Column("numeric", {
     name: "JML_SKP_KB_YG_DIBAYAR",
@@ -52,24 +52,24 @@ export class PembayaranSkpKb {
     precision: 15,
     scale: 0,
   })
-  jmlSkpKbYgDibayar: string | null;
+  jmlSkpKbYgDibayar!: string | null;
 
   @Column("timestamp without time zone", {
     name: "TGL_PEMBAYARAN_SKP_KB",
     nullable: true,
   })
-  tglPembayaranSkpKb: Date | null;
+  tglPembayaranSkpKb!: Date | null;
 
   @Column("timestamp without time zone", {
     name: "TGL_REKAM_BYR_SKP_KB",
     nullable: true,
   })
-  tglRekamByrSkpKb: Date | null;
+  tglRekamByrSkpKb!: Date | null;
 
   @Column("character", {
     name: "NIP_PEREKAM_BYR_SKP_KB",
     nullable: true,
     length: 30,
   })
-  nipPerekamByrSkpKb: string | null;
+  nipPerekamByrSkpKb!: string | null;
 }

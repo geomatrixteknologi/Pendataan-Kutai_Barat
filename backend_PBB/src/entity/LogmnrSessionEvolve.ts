@@ -8,19 +8,19 @@ export class LogmnrSessionEvolve {
     precision: 1000,
     scale: 53,
   })
-  branchLevel: string | null;
+  branchLevel!: string | null;
 
   @Column("numeric", { name: "SESSION#", precision: 1000, scale: 53 })
-  session: string;
+  session!: string;
 
   @Column("numeric", { name: "DB_ID", precision: 1000, scale: 53 })
-  dbId: string;
+  dbId!: string;
 
   @Column("numeric", { name: "RESET_SCN", precision: 1000, scale: 53 })
-  resetScn: string;
+  resetScn!: string;
 
   @Column("numeric", { name: "RESET_TIMESTAMP", precision: 1000, scale: 53 })
-  resetTimestamp: string;
+  resetTimestamp!: string;
 
   @Column("numeric", {
     name: "PREV_RESET_SCN",
@@ -28,7 +28,7 @@ export class LogmnrSessionEvolve {
     precision: 1000,
     scale: 53,
   })
-  prevResetScn: string | null;
+  prevResetScn!: string | null;
 
   @Column("numeric", {
     name: "PREV_RESET_TIMESTAMP",
@@ -36,7 +36,7 @@ export class LogmnrSessionEvolve {
     precision: 1000,
     scale: 53,
   })
-  prevResetTimestamp: string | null;
+  prevResetTimestamp!: string | null;
 
   @Column("numeric", {
     name: "STATUS",
@@ -44,7 +44,7 @@ export class LogmnrSessionEvolve {
     precision: 1000,
     scale: 53,
   })
-  status: string | null;
+  status!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -52,7 +52,7 @@ export class LogmnrSessionEvolve {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -60,7 +60,7 @@ export class LogmnrSessionEvolve {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", {
     name: "SPARE3",
@@ -68,8 +68,8 @@ export class LogmnrSessionEvolve {
     precision: 1000,
     scale: 53,
   })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("timestamp without time zone", { name: "SPARE4", nullable: true })
-  spare4: Date | null;
+  spare4!: Date | null;
 }

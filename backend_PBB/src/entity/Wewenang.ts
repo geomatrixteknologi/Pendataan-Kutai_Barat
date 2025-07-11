@@ -4,12 +4,12 @@ import { Column, Entity, Index } from "typeorm";
 @Entity("WEWENANG", { schema: "PBB_KUTAI BARAT" })
 export class Wewenang {
   @Column("character", { name: "KD_WEWENANG", length: 2 })
-  kdWewenang: string;
+  kdWewenang!: string;
 
   @Column("character varying", {
     name: "NM_WEWENANG",
     nullable: true,
     length: 30,
   })
-  nmWewenang: string | null;
+  nmWewenang!: string | null;
 }

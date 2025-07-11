@@ -8,7 +8,7 @@ export class LogstdbySkipTransaction {
     precision: 1000,
     scale: 53,
   })
-  xidusn: string | null;
+  xidusn!: string | null;
 
   @Column("numeric", {
     name: "XIDSLT",
@@ -16,7 +16,7 @@ export class LogstdbySkipTransaction {
     precision: 1000,
     scale: 53,
   })
-  xidslt: string | null;
+  xidslt!: string | null;
 
   @Column("numeric", {
     name: "XIDSQN",
@@ -24,7 +24,7 @@ export class LogstdbySkipTransaction {
     precision: 1000,
     scale: 53,
   })
-  xidsqn: string | null;
+  xidsqn!: string | null;
 
   @Column("numeric", {
     name: "ACTIVE",
@@ -32,7 +32,7 @@ export class LogstdbySkipTransaction {
     precision: 1000,
     scale: 53,
   })
-  active: string | null;
+  active!: string | null;
 
   @Column("numeric", {
     name: "COMMIT_SCN",
@@ -40,7 +40,7 @@ export class LogstdbySkipTransaction {
     precision: 1000,
     scale: 53,
   })
-  commitScn: string | null;
+  commitScn!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -48,15 +48,15 @@ export class LogstdbySkipTransaction {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 2000 })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("character varying", {
     name: "CON_NAME",
     nullable: true,
     length: 384,
   })
-  conName: string | null;
+  conName!: string | null;
 }

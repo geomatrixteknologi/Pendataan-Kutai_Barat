@@ -8,7 +8,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  parttype: string | null;
+  parttype!: string | null;
 
   @Column("numeric", {
     name: "PARTCNT",
@@ -16,7 +16,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  partcnt: string | null;
+  partcnt!: string | null;
 
   @Column("numeric", {
     name: "PARTKEYCOLS",
@@ -24,7 +24,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  partkeycols: string | null;
+  partkeycols!: string | null;
 
   @Column("numeric", {
     name: "FLAGS",
@@ -32,7 +32,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  flags: string | null;
+  flags!: string | null;
 
   @Column("numeric", {
     name: "DEFTS#",
@@ -40,7 +40,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defts: string | null;
+  defts!: string | null;
 
   @Column("numeric", {
     name: "DEFPCTFREE",
@@ -48,7 +48,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defpctfree: string | null;
+  defpctfree!: string | null;
 
   @Column("numeric", {
     name: "DEFPCTUSED",
@@ -56,7 +56,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defpctused: string | null;
+  defpctused!: string | null;
 
   @Column("numeric", {
     name: "DEFPCTTHRES",
@@ -64,7 +64,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defpctthres: string | null;
+  defpctthres!: string | null;
 
   @Column("numeric", {
     name: "DEFINITRANS",
@@ -72,7 +72,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  definitrans: string | null;
+  definitrans!: string | null;
 
   @Column("numeric", {
     name: "DEFMAXTRANS",
@@ -80,7 +80,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defmaxtrans: string | null;
+  defmaxtrans!: string | null;
 
   @Column("numeric", {
     name: "DEFTINIEXTS",
@@ -88,7 +88,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  deftiniexts: string | null;
+  deftiniexts!: string | null;
 
   @Column("numeric", {
     name: "DEFEXTSIZE",
@@ -96,7 +96,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defextsize: string | null;
+  defextsize!: string | null;
 
   @Column("numeric", {
     name: "DEFMINEXTS",
@@ -104,7 +104,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defminexts: string | null;
+  defminexts!: string | null;
 
   @Column("numeric", {
     name: "DEFMAXEXTS",
@@ -112,7 +112,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defmaxexts: string | null;
+  defmaxexts!: string | null;
 
   @Column("numeric", {
     name: "DEFEXTPCT",
@@ -120,7 +120,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defextpct: string | null;
+  defextpct!: string | null;
 
   @Column("numeric", {
     name: "DEFLISTS",
@@ -128,7 +128,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  deflists: string | null;
+  deflists!: string | null;
 
   @Column("numeric", {
     name: "DEFGROUPS",
@@ -136,7 +136,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  defgroups: string | null;
+  defgroups!: string | null;
 
   @Column("numeric", {
     name: "DEFLOGGING",
@@ -144,7 +144,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  deflogging: string | null;
+  deflogging!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -152,7 +152,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -160,7 +160,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", {
     name: "SPARE3",
@@ -168,7 +168,7 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("numeric", {
     name: "DEFINCLCOL",
@@ -176,17 +176,17 @@ export class LogmnrPartobj {
     precision: 1000,
     scale: 53,
   })
-  definclcol: string | null;
+  definclcol!: string | null;
 
   @Column("character varying", {
     name: "PARAMETERS",
     nullable: true,
     length: 3000,
   })
-  parameters: string | null;
+  parameters!: string | null;
 
   @Column("numeric", { name: "OBJ#", precision: 1000, scale: 53 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -194,7 +194,7 @@ export class LogmnrPartobj {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -202,5 +202,5 @@ export class LogmnrPartobj {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

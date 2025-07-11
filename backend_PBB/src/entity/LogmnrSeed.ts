@@ -8,7 +8,7 @@ export class LogmnrSeed {
     precision: 22,
     scale: 0,
   })
-  seedVersion: string | null;
+  seedVersion!: string | null;
 
   @Column("numeric", {
     name: "GATHER_VERSION",
@@ -16,14 +16,14 @@ export class LogmnrSeed {
     precision: 22,
     scale: 0,
   })
-  gatherVersion: string | null;
+  gatherVersion!: string | null;
 
   @Column("character varying", {
     name: "SCHEMANAME",
     nullable: true,
     length: 384,
   })
-  schemaname: string | null;
+  schemaname!: string | null;
 
   @Column("numeric", {
     name: "OBJ#",
@@ -31,24 +31,24 @@ export class LogmnrSeed {
     precision: 1000,
     scale: 53,
   })
-  obj: string | null;
+  obj!: string | null;
 
   @Column("numeric", { name: "OBJV#", nullable: true, precision: 22, scale: 0 })
-  objv: string | null;
+  objv!: string | null;
 
   @Column("character varying", {
     name: "TABLE_NAME",
     nullable: true,
     length: 384,
   })
-  tableName: string | null;
+  tableName!: string | null;
 
   @Column("character varying", {
     name: "COL_NAME",
     nullable: true,
     length: 384,
   })
-  colName: string | null;
+  colName!: string | null;
 
   @Column("numeric", {
     name: "COL#",
@@ -56,7 +56,7 @@ export class LogmnrSeed {
     precision: 1000,
     scale: 53,
   })
-  col: string | null;
+  col!: string | null;
 
   @Column("numeric", {
     name: "INTCOL#",
@@ -64,7 +64,7 @@ export class LogmnrSeed {
     precision: 1000,
     scale: 53,
   })
-  intcol: string | null;
+  intcol!: string | null;
 
   @Column("numeric", {
     name: "SEGCOL#",
@@ -72,7 +72,7 @@ export class LogmnrSeed {
     precision: 1000,
     scale: 53,
   })
-  segcol: string | null;
+  segcol!: string | null;
 
   @Column("numeric", {
     name: "TYPE#",
@@ -80,7 +80,7 @@ export class LogmnrSeed {
     precision: 1000,
     scale: 53,
   })
-  type: string | null;
+  type!: string | null;
 
   @Column("numeric", {
     name: "LENGTH",
@@ -88,7 +88,7 @@ export class LogmnrSeed {
     precision: 1000,
     scale: 53,
   })
-  length: string | null;
+  length!: string | null;
 
   @Column("numeric", {
     name: "PRECISION#",
@@ -96,7 +96,7 @@ export class LogmnrSeed {
     precision: 1000,
     scale: 53,
   })
-  precision: string | null;
+  precision!: string | null;
 
   @Column("numeric", {
     name: "SCALE",
@@ -104,10 +104,10 @@ export class LogmnrSeed {
     precision: 1000,
     scale: 53,
   })
-  scale: string | null;
+  scale!: string | null;
 
   @Column("numeric", { name: "NULL$", precision: 1000, scale: 53 })
-  null: string;
+  null!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -115,7 +115,7 @@ export class LogmnrSeed {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -123,5 +123,5 @@ export class LogmnrSeed {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

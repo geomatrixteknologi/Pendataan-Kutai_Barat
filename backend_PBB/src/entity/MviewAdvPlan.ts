@@ -7,44 +7,44 @@ export class MviewAdvPlan {
     nullable: true,
     length: 30,
   })
-  statementId: string | null;
+  statementId!: string | null;
 
   @Column("timestamp without time zone", { name: "TIMESTAMP", nullable: true })
-  timestamp: Date | null;
+  timestamp!: Date | null;
 
   @Column("character varying", { name: "REMARKS", nullable: true, length: 80 })
-  remarks: string | null;
+  remarks!: string | null;
 
   @Column("character varying", {
     name: "OPERATION",
     nullable: true,
     length: 30,
   })
-  operation: string | null;
+  operation!: string | null;
 
   @Column("character varying", { name: "OPTIONS", nullable: true, length: 255 })
-  options: string | null;
+  options!: string | null;
 
   @Column("character varying", {
     name: "OBJECT_NODE",
     nullable: true,
     length: 128,
   })
-  objectNode: string | null;
+  objectNode!: string | null;
 
   @Column("character varying", {
     name: "OBJECT_OWNER",
     nullable: true,
     length: 128,
   })
-  objectOwner: string | null;
+  objectOwner!: string | null;
 
   @Column("character varying", {
     name: "OBJECT_NAME",
     nullable: true,
     length: 128,
   })
-  objectName: string | null;
+  objectName!: string | null;
 
   @Column("numeric", {
     name: "OBJECT_INSTANCE",
@@ -52,21 +52,21 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  objectInstance: string | null;
+  objectInstance!: string | null;
 
   @Column("character varying", {
     name: "OBJECT_TYPE",
     nullable: true,
     length: 30,
   })
-  objectType: string | null;
+  objectType!: string | null;
 
   @Column("character varying", {
     name: "OPTIMIZER",
     nullable: true,
     length: 255,
   })
-  optimizer: string | null;
+  optimizer!: string | null;
 
   @Column("numeric", {
     name: "SEARCH_COLUMNS",
@@ -74,10 +74,10 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  searchColumns: string | null;
+  searchColumns!: string | null;
 
   @Column("numeric", { name: "ID", nullable: true, precision: 1000, scale: 53 })
-  id: string | null;
+  id!: string | null;
 
   @Column("numeric", {
     name: "PARENT_ID",
@@ -85,7 +85,7 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  parentId: string | null;
+  parentId!: string | null;
 
   @Column("numeric", {
     name: "POSITION",
@@ -93,7 +93,7 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  position: string | null;
+  position!: string | null;
 
   @Column("numeric", {
     name: "COST",
@@ -101,7 +101,7 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  cost: string | null;
+  cost!: string | null;
 
   @Column("numeric", {
     name: "CARDINALITY",
@@ -109,7 +109,7 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  cardinality: string | null;
+  cardinality!: string | null;
 
   @Column("numeric", {
     name: "BYTES",
@@ -117,28 +117,28 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  bytes: string | null;
+  bytes!: string | null;
 
   @Column("character varying", {
     name: "OTHER_TAG",
     nullable: true,
     length: 255,
   })
-  otherTag: string | null;
+  otherTag!: string | null;
 
   @Column("character varying", {
     name: "PARTITION_START",
     nullable: true,
     length: 255,
   })
-  partitionStart: string | null;
+  partitionStart!: string | null;
 
   @Column("character varying", {
     name: "PARTITION_STOP",
     nullable: true,
     length: 255,
   })
-  partitionStop: string | null;
+  partitionStop!: string | null;
 
   @Column("numeric", {
     name: "PARTITION_ID",
@@ -146,17 +146,17 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  partitionId: string | null;
+  partitionId!: string | null;
 
   @Column("text", { name: "OTHER", nullable: true })
-  other: string | null;
+  other!: string | null;
 
   @Column("character varying", {
     name: "DISTRIBUTION",
     nullable: true,
     length: 30,
   })
-  distribution: string | null;
+  distribution!: string | null;
 
   @Column("numeric", {
     name: "CPU_COST",
@@ -164,7 +164,7 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  cpuCost: string | null;
+  cpuCost!: string | null;
 
   @Column("numeric", {
     name: "IO_COST",
@@ -172,7 +172,7 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  ioCost: string | null;
+  ioCost!: string | null;
 
   @Column("numeric", {
     name: "TEMP_SPACE",
@@ -180,5 +180,5 @@ export class MviewAdvPlan {
     precision: 1000,
     scale: 53,
   })
-  tempSpace: string | null;
+  tempSpace!: string | null;
 }

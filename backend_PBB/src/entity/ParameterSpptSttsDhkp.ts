@@ -8,7 +8,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  spptTerpisah: string | null;
+  spptTerpisah!: string | null;
 
   @Column("numeric", {
     name: "STTS_TERPISAH",
@@ -16,7 +16,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  sttsTerpisah: string | null;
+  sttsTerpisah!: string | null;
 
   @Column("numeric", {
     name: "DHKP_TERPISAH",
@@ -24,14 +24,14 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  dhkpTerpisah: string | null;
+  dhkpTerpisah!: string | null;
 
   @Column("character varying", {
     name: "KELOMPOK_BUKU",
     nullable: true,
     length: 2,
   })
-  kelompokBuku: string | null;
+  kelompokBuku!: string | null;
 
   @Column("numeric", {
     name: "TAHUN_PAJAK_SPPT",
@@ -39,7 +39,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  tahunPajakSppt: string | null;
+  tahunPajakSppt!: string | null;
 
   @Column("numeric", {
     name: "TAHUN_PAJAK_STTS",
@@ -47,7 +47,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  tahunPajakStts: string | null;
+  tahunPajakStts!: string | null;
 
   @Column("numeric", {
     name: "NAMA_KANWIL",
@@ -55,7 +55,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  namaKanwil: string | null;
+  namaKanwil!: string | null;
 
   @Column("numeric", {
     name: "NAMA_KANTOR",
@@ -63,7 +63,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  namaKantor: string | null;
+  namaKantor!: string | null;
 
   @Column("numeric", {
     name: "KOTA_TERBIT",
@@ -71,7 +71,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  kotaTerbit: string | null;
+  kotaTerbit!: string | null;
 
   @Column("numeric", {
     name: "NAMA_KEPALA_KANTOR",
@@ -79,7 +79,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  namaKepalaKantor: string | null;
+  namaKepalaKantor!: string | null;
 
   @Column("numeric", {
     name: "BARCODE_SPPT",
@@ -87,10 +87,10 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  barcodeSppt: string | null;
+  barcodeSppt!: string | null;
 
   @Column("character", { name: "JNS_BARCODE_SPPT", nullable: true, length: 1 })
-  jnsBarcodeSppt: string | null;
+  jnsBarcodeSppt!: string | null;
 
   @Column("numeric", {
     name: "BARCODE_STTS",
@@ -98,10 +98,10 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  barcodeStts: string | null;
+  barcodeStts!: string | null;
 
   @Column("character", { name: "JNS_BARCODE_STTS", nullable: true, length: 1 })
-  jnsBarcodeStts: string | null;
+  jnsBarcodeStts!: string | null;
 
   @Column("numeric", {
     name: "SPPT_FORM_BARU",
@@ -109,7 +109,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  spptFormBaru: string | null;
+  spptFormBaru!: string | null;
 
   @Column("numeric", {
     name: "STTS_FORM_BARU",
@@ -117,7 +117,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  sttsFormBaru: string | null;
+  sttsFormBaru!: string | null;
 
   @Column("numeric", {
     name: "SPPT_FORM_LAMA",
@@ -125,7 +125,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  spptFormLama: string | null;
+  spptFormLama!: string | null;
 
   @Column("numeric", {
     name: "STTS_FORM_LAMA",
@@ -133,7 +133,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  sttsFormLama: string | null;
+  sttsFormLama!: string | null;
 
   @Column("numeric", {
     name: "SURAT_HIMBAUAN",
@@ -141,14 +141,14 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  suratHimbauan: string | null;
+  suratHimbauan!: string | null;
 
   @Column("character varying", {
     name: "BUKU_HIMBAUAN",
     nullable: true,
     length: 2,
   })
-  bukuHimbauan: string | null;
+  bukuHimbauan!: string | null;
 
   @Column("numeric", {
     name: "TUNGGAKAN_THN_LALU",
@@ -156,7 +156,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  tunggakanThnLalu: string | null;
+  tunggakanThnLalu!: string | null;
 
   @Column("numeric", {
     name: "SPPT_PBB_NOL",
@@ -164,7 +164,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  spptPbbNol: string | null;
+  spptPbbNol!: string | null;
 
   @Column("numeric", {
     name: "TEKS_KANWIL",
@@ -172,7 +172,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  teksKanwil: string | null;
+  teksKanwil!: string | null;
 
   @Column("numeric", {
     name: "TEKS_KANTOR",
@@ -180,7 +180,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  teksKantor: string | null;
+  teksKantor!: string | null;
 
   @Column("numeric", {
     name: "TEKS_SPPT",
@@ -188,7 +188,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  teksSppt: string | null;
+  teksSppt!: string | null;
 
   @Column("numeric", {
     name: "TEKS_STTS",
@@ -196,10 +196,10 @@ export class ParameterSpptSttsDhkp {
     precision: 1,
     scale: 0,
   })
-  teksStts: string | null;
+  teksStts!: string | null;
 
   @Column("character varying", { name: "KAKAP", nullable: true, length: 4 })
-  kakap: string | null;
+  kakap!: string | null;
 
   @Column("numeric", {
     name: "TEKS_PRATAMA",
@@ -207,7 +207,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1000,
     scale: 53,
   })
-  teksPratama: string | null;
+  teksPratama!: string | null;
 
   @Column("numeric", {
     name: "PBB_MINIMAL",
@@ -215,7 +215,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1000,
     scale: 53,
   })
-  pbbMinimal: string | null;
+  pbbMinimal!: string | null;
 
   @Column("numeric", {
     name: "TEKS_KPPBB",
@@ -223,7 +223,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1000,
     scale: 53,
   })
-  teksKppbb: string | null;
+  teksKppbb!: string | null;
 
   @Column("numeric", {
     name: "NAMA_KEPALA_KPPBB",
@@ -231,7 +231,7 @@ export class ParameterSpptSttsDhkp {
     precision: 1000,
     scale: 53,
   })
-  namaKepalaKppbb: string | null;
+  namaKepalaKppbb!: string | null;
 
   @Column("numeric", {
     name: "NAMA_KPPBB",
@@ -239,5 +239,5 @@ export class ParameterSpptSttsDhkp {
     precision: 1000,
     scale: 53,
   })
-  namaKppbb: string | null;
+  namaKppbb!: string | null;
 }

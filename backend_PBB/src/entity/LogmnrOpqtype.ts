@@ -3,7 +3,7 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_OPQTYPE$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrOpqtype {
   @Column("numeric", { name: "INTCOL#", precision: 1000, scale: 53 })
-  intcol: string;
+  intcol!: string;
 
   @Column("numeric", {
     name: "TYPE",
@@ -11,7 +11,7 @@ export class LogmnrOpqtype {
     precision: 1000,
     scale: 53,
   })
-  type: string | null;
+  type!: string | null;
 
   @Column("numeric", {
     name: "FLAGS",
@@ -19,7 +19,7 @@ export class LogmnrOpqtype {
     precision: 1000,
     scale: 53,
   })
-  flags: string | null;
+  flags!: string | null;
 
   @Column("numeric", {
     name: "LOBCOL",
@@ -27,7 +27,7 @@ export class LogmnrOpqtype {
     precision: 1000,
     scale: 53,
   })
-  lobcol: string | null;
+  lobcol!: string | null;
 
   @Column("numeric", {
     name: "OBJCOL",
@@ -35,7 +35,7 @@ export class LogmnrOpqtype {
     precision: 1000,
     scale: 53,
   })
-  objcol: string | null;
+  objcol!: string | null;
 
   @Column("numeric", {
     name: "EXTRACOL",
@@ -43,10 +43,10 @@ export class LogmnrOpqtype {
     precision: 1000,
     scale: 53,
   })
-  extracol: string | null;
+  extracol!: string | null;
 
   @Column("bytea", { name: "SCHEMAOID", nullable: true })
-  schemaoid: Buffer | null;
+  schemaoid!: Buffer | null;
 
   @Column("numeric", {
     name: "ELEMNUM",
@@ -54,17 +54,17 @@ export class LogmnrOpqtype {
     precision: 1000,
     scale: 53,
   })
-  elemnum: string | null;
+  elemnum!: string | null;
 
   @Column("character varying", {
     name: "SCHEMAURL",
     nullable: true,
     length: 4000,
   })
-  schemaurl: string | null;
+  schemaurl!: string | null;
 
   @Column("numeric", { name: "OBJ#", precision: 1000, scale: 53 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -72,7 +72,7 @@ export class LogmnrOpqtype {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -80,5 +80,5 @@ export class LogmnrOpqtype {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

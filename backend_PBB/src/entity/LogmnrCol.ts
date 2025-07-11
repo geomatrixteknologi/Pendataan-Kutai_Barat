@@ -3,7 +3,7 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_COL$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrCol {
   @Column("numeric", { name: "COL#", nullable: true, precision: 22, scale: 0 })
-  col: string | null;
+  col!: string | null;
 
   @Column("numeric", {
     name: "SEGCOL#",
@@ -11,13 +11,13 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  segcol: string | null;
+  segcol!: string | null;
 
   @Column("character varying", { name: "NAME", nullable: true, length: 384 })
-  name: string | null;
+  name!: string | null;
 
   @Column("numeric", { name: "TYPE#", nullable: true, precision: 22, scale: 0 })
-  type: string | null;
+  type!: string | null;
 
   @Column("numeric", {
     name: "LENGTH",
@@ -25,7 +25,7 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  length: string | null;
+  length!: string | null;
 
   @Column("numeric", {
     name: "PRECISION#",
@@ -33,13 +33,13 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  precision: string | null;
+  precision!: string | null;
 
   @Column("numeric", { name: "SCALE", nullable: true, precision: 22, scale: 0 })
-  scale: string | null;
+  scale!: string | null;
 
   @Column("numeric", { name: "NULL$", nullable: true, precision: 22, scale: 0 })
-  null: string | null;
+  null!: string | null;
 
   @Column("numeric", {
     name: "INTCOL#",
@@ -47,7 +47,7 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  intcol: string | null;
+  intcol!: string | null;
 
   @Column("numeric", {
     name: "PROPERTY",
@@ -55,7 +55,7 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  property: string | null;
+  property!: string | null;
 
   @Column("numeric", {
     name: "CHARSETID",
@@ -63,7 +63,7 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  charsetid: string | null;
+  charsetid!: string | null;
 
   @Column("numeric", {
     name: "CHARSETFORM",
@@ -71,7 +71,7 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  charsetform: string | null;
+  charsetform!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -79,7 +79,7 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -87,10 +87,10 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", { name: "OBJ#", precision: 22, scale: 0 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -98,7 +98,7 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -106,7 +106,7 @@ export class LogmnrCol {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 
   @Column("numeric", {
     name: "COLLID",
@@ -114,7 +114,7 @@ export class LogmnrCol {
     precision: 1000,
     scale: 53,
   })
-  collid: string | null;
+  collid!: string | null;
 
   @Column("numeric", {
     name: "COLLINTCOL#",
@@ -122,7 +122,7 @@ export class LogmnrCol {
     precision: 1000,
     scale: 53,
   })
-  collintcol: string | null;
+  collintcol!: string | null;
 
   @Column("numeric", {
     name: "ACDRRESCOL#",
@@ -130,5 +130,5 @@ export class LogmnrCol {
     precision: 1000,
     scale: 53,
   })
-  acdrrescol: string | null;
+  acdrrescol!: string | null;
 }

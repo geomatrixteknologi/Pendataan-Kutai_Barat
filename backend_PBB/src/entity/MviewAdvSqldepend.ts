@@ -8,7 +8,7 @@ export class MviewAdvSqldepend {
     precision: 1000,
     scale: 53,
   })
-  collectionid: string | null;
+  collectionid!: string | null;
 
   @Column("numeric", {
     name: "INST_ID",
@@ -16,10 +16,10 @@ export class MviewAdvSqldepend {
     precision: 1000,
     scale: 53,
   })
-  instId: string | null;
+  instId!: string | null;
 
   @Column("bytea", { name: "FROM_ADDRESS", nullable: true })
-  fromAddress: Buffer | null;
+  fromAddress!: Buffer | null;
 
   @Column("numeric", {
     name: "FROM_HASH",
@@ -27,21 +27,21 @@ export class MviewAdvSqldepend {
     precision: 1000,
     scale: 53,
   })
-  fromHash: string | null;
+  fromHash!: string | null;
 
   @Column("character varying", {
     name: "TO_OWNER",
     nullable: true,
     length: 128,
   })
-  toOwner: string | null;
+  toOwner!: string | null;
 
   @Column("character varying", {
     name: "TO_NAME",
     nullable: true,
     length: 1000,
   })
-  toName: string | null;
+  toName!: string | null;
 
   @Column("numeric", {
     name: "TO_TYPE",
@@ -49,7 +49,7 @@ export class MviewAdvSqldepend {
     precision: 1000,
     scale: 53,
   })
-  toType: string | null;
+  toType!: string | null;
 
   @Column("numeric", {
     name: "CARDINALITY",
@@ -57,5 +57,5 @@ export class MviewAdvSqldepend {
     precision: 1000,
     scale: 53,
   })
-  cardinality: string | null;
+  cardinality!: string | null;
 }

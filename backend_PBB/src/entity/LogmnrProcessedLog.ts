@@ -3,10 +3,10 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_PROCESSED_LOG$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrProcessedLog {
   @Column("numeric", { name: "SESSION#", precision: 1000, scale: 53 })
-  session: string;
+  session!: string;
 
   @Column("numeric", { name: "THREAD#", precision: 1000, scale: 53 })
-  thread: string;
+  thread!: string;
 
   @Column("numeric", {
     name: "SEQUENCE#",
@@ -14,7 +14,7 @@ export class LogmnrProcessedLog {
     precision: 1000,
     scale: 53,
   })
-  sequence: string | null;
+  sequence!: string | null;
 
   @Column("numeric", {
     name: "FIRST_CHANGE#",
@@ -22,7 +22,7 @@ export class LogmnrProcessedLog {
     precision: 1000,
     scale: 53,
   })
-  firstChange: string | null;
+  firstChange!: string | null;
 
   @Column("numeric", {
     name: "NEXT_CHANGE#",
@@ -30,20 +30,20 @@ export class LogmnrProcessedLog {
     precision: 1000,
     scale: 53,
   })
-  nextChange: string | null;
+  nextChange!: string | null;
 
   @Column("timestamp without time zone", { name: "FIRST_TIME", nullable: true })
-  firstTime: Date | null;
+  firstTime!: Date | null;
 
   @Column("timestamp without time zone", { name: "NEXT_TIME", nullable: true })
-  nextTime: Date | null;
+  nextTime!: Date | null;
 
   @Column("character varying", {
     name: "FILE_NAME",
     nullable: true,
     length: 513,
   })
-  fileName: string | null;
+  fileName!: string | null;
 
   @Column("numeric", {
     name: "STATUS",
@@ -51,11 +51,11 @@ export class LogmnrProcessedLog {
     precision: 1000,
     scale: 53,
   })
-  status: string | null;
+  status!: string | null;
 
   @Column("character varying", { name: "INFO", nullable: true, length: 32 })
-  info: string | null;
+  info!: string | null;
 
   @Column("timestamp without time zone", { name: "TIMESTAMP", nullable: true })
-  timestamp: Date | null;
+  timestamp!: Date | null;
 }

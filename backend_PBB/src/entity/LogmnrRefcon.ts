@@ -8,7 +8,7 @@ export class LogmnrRefcon {
     precision: 1000,
     scale: 53,
   })
-  col: string | null;
+  col!: string | null;
 
   @Column("numeric", {
     name: "INTCOL#",
@@ -16,7 +16,7 @@ export class LogmnrRefcon {
     precision: 1000,
     scale: 53,
   })
-  intcol: string | null;
+  intcol!: string | null;
 
   @Column("numeric", {
     name: "REFTYP",
@@ -24,16 +24,16 @@ export class LogmnrRefcon {
     precision: 1000,
     scale: 53,
   })
-  reftyp: string | null;
+  reftyp!: string | null;
 
   @Column("bytea", { name: "STABID", nullable: true })
-  stabid: Buffer | null;
+  stabid!: Buffer | null;
 
   @Column("bytea", { name: "EXPCTOID", nullable: true })
-  expctoid: Buffer | null;
+  expctoid!: Buffer | null;
 
   @Column("numeric", { name: "OBJ#", precision: 1000, scale: 53 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -41,7 +41,7 @@ export class LogmnrRefcon {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -49,5 +49,5 @@ export class LogmnrRefcon {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

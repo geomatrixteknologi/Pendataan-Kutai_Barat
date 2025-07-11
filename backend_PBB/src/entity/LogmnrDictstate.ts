@@ -8,7 +8,7 @@ export class LogmnrDictstate {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "START_SCNBAS",
@@ -16,7 +16,7 @@ export class LogmnrDictstate {
     precision: 1000,
     scale: 53,
   })
-  startScnbas: string | null;
+  startScnbas!: string | null;
 
   @Column("numeric", {
     name: "START_SCNWRP",
@@ -24,7 +24,7 @@ export class LogmnrDictstate {
     precision: 1000,
     scale: 53,
   })
-  startScnwrp: string | null;
+  startScnwrp!: string | null;
 
   @Column("numeric", {
     name: "END_SCNBAS",
@@ -32,7 +32,7 @@ export class LogmnrDictstate {
     precision: 1000,
     scale: 53,
   })
-  endScnbas: string | null;
+  endScnbas!: string | null;
 
   @Column("numeric", {
     name: "END_SCNWRP",
@@ -40,7 +40,7 @@ export class LogmnrDictstate {
     precision: 1000,
     scale: 53,
   })
-  endScnwrp: string | null;
+  endScnwrp!: string | null;
 
   @Column("numeric", {
     name: "REDO_THREAD",
@@ -48,7 +48,7 @@ export class LogmnrDictstate {
     precision: 1000,
     scale: 53,
   })
-  redoThread: string | null;
+  redoThread!: string | null;
 
   @Column("numeric", {
     name: "RBASQN",
@@ -56,7 +56,7 @@ export class LogmnrDictstate {
     precision: 1000,
     scale: 53,
   })
-  rbasqn: string | null;
+  rbasqn!: string | null;
 
   @Column("numeric", {
     name: "RBABLK",
@@ -64,7 +64,7 @@ export class LogmnrDictstate {
     precision: 1000,
     scale: 53,
   })
-  rbablk: string | null;
+  rbablk!: string | null;
 
   @Column("numeric", {
     name: "RBABYTE",
@@ -72,7 +72,7 @@ export class LogmnrDictstate {
     precision: 1000,
     scale: 53,
   })
-  rbabyte: string | null;
+  rbabyte!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -80,5 +80,5 @@ export class LogmnrDictstate {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

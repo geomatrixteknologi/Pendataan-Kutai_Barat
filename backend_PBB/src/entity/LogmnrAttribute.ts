@@ -8,10 +8,10 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  version: string | null;
+  version!: string | null;
 
   @Column("character varying", { name: "NAME", nullable: true, length: 384 })
-  name: string | null;
+  name!: string | null;
 
   @Column("numeric", {
     name: "ATTRIBUTE#",
@@ -19,10 +19,10 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  attribute: string | null;
+  attribute!: string | null;
 
   @Column("bytea", { name: "ATTR_TOID", nullable: true })
-  attrToid: Buffer | null;
+  attrToid!: Buffer | null;
 
   @Column("numeric", {
     name: "ATTR_VERSION#",
@@ -30,7 +30,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  attrVersion: string | null;
+  attrVersion!: string | null;
 
   @Column("numeric", {
     name: "SYNOBJ#",
@@ -38,7 +38,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  synobj: string | null;
+  synobj!: string | null;
 
   @Column("numeric", {
     name: "PROPERTIES",
@@ -46,7 +46,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  properties: string | null;
+  properties!: string | null;
 
   @Column("numeric", {
     name: "CHARSETID",
@@ -54,7 +54,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  charsetid: string | null;
+  charsetid!: string | null;
 
   @Column("numeric", {
     name: "CHARSETFORM",
@@ -62,7 +62,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  charsetform: string | null;
+  charsetform!: string | null;
 
   @Column("numeric", {
     name: "LENGTH",
@@ -70,7 +70,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  length: string | null;
+  length!: string | null;
 
   @Column("numeric", {
     name: "PRECISION#",
@@ -78,7 +78,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  precision: string | null;
+  precision!: string | null;
 
   @Column("numeric", {
     name: "SCALE",
@@ -86,14 +86,14 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  scale: string | null;
+  scale!: string | null;
 
   @Column("character varying", {
     name: "EXTERNNAME",
     nullable: true,
     length: 4000,
   })
-  externname: string | null;
+  externname!: string | null;
 
   @Column("numeric", {
     name: "XFLAGS",
@@ -101,7 +101,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  xflags: string | null;
+  xflags!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -109,7 +109,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -117,7 +117,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", {
     name: "SPARE3",
@@ -125,7 +125,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("numeric", {
     name: "SPARE4",
@@ -133,7 +133,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  spare4: string | null;
+  spare4!: string | null;
 
   @Column("numeric", {
     name: "SPARE5",
@@ -141,7 +141,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  spare5: string | null;
+  spare5!: string | null;
 
   @Column("numeric", {
     name: "SETTER",
@@ -149,7 +149,7 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  setter: string | null;
+  setter!: string | null;
 
   @Column("numeric", {
     name: "GETTER",
@@ -157,10 +157,10 @@ export class LogmnrAttribute {
     precision: 1000,
     scale: 53,
   })
-  getter: string | null;
+  getter!: string | null;
 
   @Column("bytea", { name: "TOID" })
-  toid: Buffer;
+  toid!: Buffer;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -168,7 +168,7 @@ export class LogmnrAttribute {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -176,5 +176,5 @@ export class LogmnrAttribute {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

@@ -3,10 +3,10 @@ import { Column, Entity } from "typeorm";
 @Entity("REF_BUKU_STIMULUS_MASSAL", { schema: "PBB_KUTAI BARAT" })
 export class RefBukuStimulusMassal {
   @Column("character", { name: "THN_PAJAK_SPPT", length: 4 })
-  thnPajakSppt: string;
+  thnPajakSppt!: string;
 
   @Column("character", { name: "KD_BUKU", length: 1 })
-  kdBuku: string;
+  kdBuku!: string;
 
   @Column("numeric", {
     name: "PROSENTASE",
@@ -14,5 +14,5 @@ export class RefBukuStimulusMassal {
     precision: 5,
     scale: 2,
   })
-  prosentase: string | null;
+  prosentase!: string | null;
 }

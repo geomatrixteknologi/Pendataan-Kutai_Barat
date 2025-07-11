@@ -3,35 +3,35 @@ import { Column, Entity } from "typeorm";
 @Entity("HIS_SKP_KURANG_BAYAR", { schema: "PBB_KUTAI BARAT" })
 export class HisSkpKurangBayar {
   @Column("character", { name: "KD_PROPINSI", length: 2 })
-  kdPropinsi: string;
+  kdPropinsi!: string;
 
   @Column("character", { name: "KD_DATI2", length: 2 })
-  kdDati2: string;
+  kdDati2!: string;
 
   @Column("character", { name: "KD_KECAMATAN", length: 3 })
-  kdKecamatan: string;
+  kdKecamatan!: string;
 
   @Column("character", { name: "KD_KELURAHAN", length: 3 })
-  kdKelurahan: string;
+  kdKelurahan!: string;
 
   @Column("character", { name: "KD_BLOK", length: 3 })
-  kdBlok: string;
+  kdBlok!: string;
 
   @Column("character", { name: "NO_URUT", length: 4 })
-  noUrut: string;
+  noUrut!: string;
 
   @Column("character", { name: "KD_JNS_OP", length: 1 })
-  kdJnsOp: string;
+  kdJnsOp!: string;
 
   @Column("character", { name: "THN_PAJAK_SKP_KB", length: 4 })
-  thnPajakSkpKb: string;
+  thnPajakSkpKb!: string;
 
   @Column("numeric", {
     name: "HIS_INDEKS_PERUBAHAN_SKP_KB",
     precision: 4,
     scale: 0,
   })
-  hisIndeksPerubahanSkpKb: string;
+  hisIndeksPerubahanSkpKb!: string;
 
   @Column("numeric", {
     name: "HIS_SIKLUS_SKP_KB",
@@ -39,48 +39,48 @@ export class HisSkpKurangBayar {
     precision: 4,
     scale: 0,
   })
-  hisSiklusSkpKb: string | null;
+  hisSiklusSkpKb!: string | null;
 
   @Column("character", { name: "KD_KANWIL", nullable: true, length: 2 })
-  kdKanwil: string | null;
+  kdKanwil!: string | null;
 
   @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
-  kdKantor: string | null;
+  kdKantor!: string | null;
 
   @Column("character", { name: "JNS_SK", nullable: true, length: 1 })
-  jnsSk: string | null;
+  jnsSk!: string | null;
 
   @Column("character", { name: "NO_SK", nullable: true, length: 100 })
-  noSk: string | null;
+  noSk!: string | null;
 
   @Column("character", { name: "HIS_KD_TP", nullable: true, length: 4 })
-  hisKdTp: string | null;
+  hisKdTp!: string | null;
 
   @Column("character", { name: "HIS_KD_KLS_TANAH", nullable: true, length: 3 })
-  hisKdKlsTanah: string | null;
+  hisKdKlsTanah!: string | null;
 
   @Column("character", {
     name: "HIS_THN_AWAL_KLS_TANAH",
     nullable: true,
     length: 4,
   })
-  hisThnAwalKlsTanah: string | null;
+  hisThnAwalKlsTanah!: string | null;
 
   @Column("character", { name: "HIS_KD_KLS_BNG", nullable: true, length: 3 })
-  hisKdKlsBng: string | null;
+  hisKdKlsBng!: string | null;
 
   @Column("character", {
     name: "HIS_THN_AWAL_KLS_BNG",
     nullable: true,
     length: 4,
   })
-  hisThnAwalKlsBng: string | null;
+  hisThnAwalKlsBng!: string | null;
 
   @Column("timestamp without time zone", {
     name: "HIS_TGL_JATUH_TEMPO_SKP_KB",
     nullable: true,
   })
-  hisTglJatuhTempoSkpKb: Date | null;
+  hisTglJatuhTempoSkpKb!: Date | null;
 
   @Column("numeric", {
     name: "HIS_LUAS_BUMI_SKP_KB",
@@ -88,7 +88,7 @@ export class HisSkpKurangBayar {
     precision: 12,
     scale: 0,
   })
-  hisLuasBumiSkpKb: string | null;
+  hisLuasBumiSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_LUAS_BNG_SKP_KB",
@@ -96,7 +96,7 @@ export class HisSkpKurangBayar {
     precision: 12,
     scale: 0,
   })
-  hisLuasBngSkpKb: string | null;
+  hisLuasBngSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_NJOP_BUMI_SKP_KB",
@@ -104,7 +104,7 @@ export class HisSkpKurangBayar {
     precision: 15,
     scale: 0,
   })
-  hisNjopBumiSkpKb: string | null;
+  hisNjopBumiSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_NJOP_BNG_SKP_KB",
@@ -112,7 +112,7 @@ export class HisSkpKurangBayar {
     precision: 15,
     scale: 0,
   })
-  hisNjopBngSkpKb: string | null;
+  hisNjopBngSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_NJOP_SKP_KB",
@@ -120,7 +120,7 @@ export class HisSkpKurangBayar {
     precision: 15,
     scale: 0,
   })
-  hisNjopSkpKb: string | null;
+  hisNjopSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_NJOPTKP_SKP_KB",
@@ -128,7 +128,7 @@ export class HisSkpKurangBayar {
     precision: 8,
     scale: 0,
   })
-  hisNjoptkpSkpKb: string | null;
+  hisNjoptkpSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_NJKP_SKP_KB",
@@ -136,7 +136,7 @@ export class HisSkpKurangBayar {
     precision: 5,
     scale: 2,
   })
-  hisNjkpSkpKb: string | null;
+  hisNjkpSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_PBB_TERHUTANG_SKP_KB",
@@ -144,7 +144,7 @@ export class HisSkpKurangBayar {
     precision: 15,
     scale: 0,
   })
-  hisPbbTerhutangSkpKb: string | null;
+  hisPbbTerhutangSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_BESAR_DENDA_SKP_KB",
@@ -152,7 +152,7 @@ export class HisSkpKurangBayar {
     precision: 12,
     scale: 0,
   })
-  hisBesarDendaSkpKb: string | null;
+  hisBesarDendaSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_FAKTOR_PENGURANG_SKP_KB",
@@ -160,7 +160,7 @@ export class HisSkpKurangBayar {
     precision: 12,
     scale: 0,
   })
-  hisFaktorPengurangSkpKb: string | null;
+  hisFaktorPengurangSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_PBB_YG_HARUS_DIBYR_SKP_KB",
@@ -168,7 +168,7 @@ export class HisSkpKurangBayar {
     precision: 15,
     scale: 0,
   })
-  hisPbbYgHarusDibyrSkpKb: string | null;
+  hisPbbYgHarusDibyrSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_PBB_SPPT",
@@ -176,7 +176,7 @@ export class HisSkpKurangBayar {
     precision: 15,
     scale: 0,
   })
-  hisPbbSppt: string | null;
+  hisPbbSppt!: string | null;
 
   @Column("numeric", {
     name: "HIS_SELISIH_PEMBAYARAN_SKP_KB",
@@ -184,31 +184,31 @@ export class HisSkpKurangBayar {
     precision: 12,
     scale: 0,
   })
-  hisSelisihPembayaranSkpKb: string | null;
+  hisSelisihPembayaranSkpKb!: string | null;
 
   @Column("character", {
     name: "HIS_STATUS_PEMBAYARAN_SKP_KB",
     nullable: true,
     length: 1,
   })
-  hisStatusPembayaranSkpKb: string | null;
+  hisStatusPembayaranSkpKb!: string | null;
 
   @Column("timestamp without time zone", {
     name: "HIS_TGL_TERBIT_SKP_KB",
     nullable: true,
   })
-  hisTglTerbitSkpKb: Date | null;
+  hisTglTerbitSkpKb!: Date | null;
 
   @Column("timestamp without time zone", {
     name: "HIS_TGL_CETAK_SKP_KB",
     nullable: true,
   })
-  hisTglCetakSkpKb: Date | null;
+  hisTglCetakSkpKb!: Date | null;
 
   @Column("character", {
     name: "HIS_NIP_PENCETAK_SKP_KB",
     nullable: true,
     length: 30,
   })
-  hisNipPencetakSkpKb: string | null;
+  hisNipPencetakSkpKb!: string | null;
 }

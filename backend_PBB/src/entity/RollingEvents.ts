@@ -8,7 +8,7 @@ export class RollingEvents {
     precision: 1000,
     scale: 53,
   })
-  eventid: string | null;
+  eventid!: string | null;
 
   @Column("numeric", {
     name: "INSTID",
@@ -16,7 +16,7 @@ export class RollingEvents {
     precision: 1000,
     scale: 53,
   })
-  instid: string | null;
+  instid!: string | null;
 
   @Column("numeric", {
     name: "REVISION",
@@ -24,13 +24,13 @@ export class RollingEvents {
     precision: 1000,
     scale: 53,
   })
-  revision: string | null;
+  revision!: string | null;
 
   @Column("timestamp without time zone", { name: "EVENT_TIME", nullable: true })
-  eventTime: Date | null;
+  eventTime!: Date | null;
 
   @Column("character varying", { name: "TYPE", nullable: true, length: 16 })
-  type: string | null;
+  type!: string | null;
 
   @Column("numeric", {
     name: "STATUS",
@@ -38,10 +38,10 @@ export class RollingEvents {
     precision: 1000,
     scale: 53,
   })
-  status: string | null;
+  status!: string | null;
 
   @Column("character varying", { name: "MESSAGE", nullable: true, length: 256 })
-  message: string | null;
+  message!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -49,7 +49,7 @@ export class RollingEvents {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -57,8 +57,8 @@ export class RollingEvents {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 128 })
-  spare3: string | null;
+  spare3!: string | null;
 }

@@ -8,7 +8,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  rdbid: string | null;
+  rdbid!: string | null;
 
   @Column("numeric", {
     name: "ATTRIBUTES",
@@ -16,7 +16,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  attributes: string | null;
+  attributes!: string | null;
 
   @Column("numeric", {
     name: "ATTRIBUTES2",
@@ -24,10 +24,10 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  attributes2: string | null;
+  attributes2!: string | null;
 
   @Column("character varying", { name: "DBUN", nullable: true, length: 128 })
-  dbun: string | null;
+  dbun!: string | null;
 
   @Column("numeric", {
     name: "DBID",
@@ -35,7 +35,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  dbid: string | null;
+  dbid!: string | null;
 
   @Column("numeric", {
     name: "PROD_RSCN",
@@ -43,7 +43,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  prodRscn: string | null;
+  prodRscn!: string | null;
 
   @Column("numeric", {
     name: "PROD_RID",
@@ -51,7 +51,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  prodRid: string | null;
+  prodRid!: string | null;
 
   @Column("numeric", {
     name: "PROD_SCN",
@@ -59,7 +59,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  prodScn: string | null;
+  prodScn!: string | null;
 
   @Column("numeric", {
     name: "CONS_RSCN",
@@ -67,7 +67,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  consRscn: string | null;
+  consRscn!: string | null;
 
   @Column("numeric", {
     name: "CONS_RID",
@@ -75,7 +75,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  consRid: string | null;
+  consRid!: string | null;
 
   @Column("numeric", {
     name: "CONS_SCN",
@@ -83,7 +83,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  consScn: string | null;
+  consScn!: string | null;
 
   @Column("numeric", {
     name: "ENGINE_STATUS",
@@ -91,10 +91,10 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  engineStatus: string | null;
+  engineStatus!: string | null;
 
   @Column("character varying", { name: "VERSION", nullable: true, length: 128 })
-  version: string | null;
+  version!: string | null;
 
   @Column("numeric", {
     name: "REDO_SOURCE",
@@ -102,13 +102,13 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  redoSource: string | null;
+  redoSource!: string | null;
 
   @Column("timestamp without time zone", {
     name: "UPDATE_TIME",
     nullable: true,
   })
-  updateTime: Date | null;
+  updateTime!: Date | null;
 
   @Column("numeric", {
     name: "REVISION",
@@ -116,7 +116,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  revision: string | null;
+  revision!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -124,7 +124,7 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -132,8 +132,8 @@ export class RollingDatabases {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 128 })
-  spare3: string | null;
+  spare3!: string | null;
 }

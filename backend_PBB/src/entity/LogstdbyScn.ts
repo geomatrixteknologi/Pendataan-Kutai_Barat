@@ -8,20 +8,20 @@ export class LogstdbyScn {
     precision: 1000,
     scale: 53,
   })
-  obj: string | null;
+  obj!: string | null;
 
   @Column("character varying", {
     name: "OBJNAME",
     nullable: true,
     length: 4000,
   })
-  objname: string | null;
+  objname!: string | null;
 
   @Column("character varying", { name: "SCHEMA", nullable: true, length: 128 })
-  schema: string | null;
+  schema!: string | null;
 
   @Column("character varying", { name: "TYPE", nullable: true, length: 20 })
-  type: string | null;
+  type!: string | null;
 
   @Column("numeric", {
     name: "SCN",
@@ -29,7 +29,7 @@ export class LogstdbyScn {
     precision: 1000,
     scale: 53,
   })
-  scn: string | null;
+  scn!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -37,7 +37,7 @@ export class LogstdbyScn {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -45,8 +45,8 @@ export class LogstdbyScn {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 2000 })
-  spare3: string | null;
+  spare3!: string | null;
 }

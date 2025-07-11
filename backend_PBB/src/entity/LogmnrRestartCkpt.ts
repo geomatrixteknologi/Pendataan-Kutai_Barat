@@ -3,7 +3,7 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_RESTART_CKPT$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrRestartCkpt {
   @Column("numeric", { name: "SESSION#", precision: 1000, scale: 53 })
-  session: string;
+  session!: string;
 
   @Column("numeric", {
     name: "VALID",
@@ -11,28 +11,28 @@ export class LogmnrRestartCkpt {
     precision: 1000,
     scale: 53,
   })
-  valid: string | null;
+  valid!: string | null;
 
   @Column("numeric", { name: "CKPT_SCN", precision: 1000, scale: 53 })
-  ckptScn: string;
+  ckptScn!: string;
 
   @Column("numeric", { name: "XIDUSN", precision: 1000, scale: 53 })
-  xidusn: string;
+  xidusn!: string;
 
   @Column("numeric", { name: "XIDSLT", precision: 1000, scale: 53 })
-  xidslt: string;
+  xidslt!: string;
 
   @Column("numeric", { name: "XIDSQN", precision: 1000, scale: 53 })
-  xidsqn: string;
+  xidsqn!: string;
 
   @Column("numeric", { name: "SESSION_NUM", precision: 1000, scale: 53 })
-  sessionNum: string;
+  sessionNum!: string;
 
   @Column("numeric", { name: "SERIAL_NUM", precision: 1000, scale: 53 })
-  serialNum: string;
+  serialNum!: string;
 
   @Column("bytea", { name: "CKPT_INFO", nullable: true })
-  ckptInfo: Buffer | null;
+  ckptInfo!: Buffer | null;
 
   @Column("numeric", {
     name: "FLAG",
@@ -40,7 +40,7 @@ export class LogmnrRestartCkpt {
     precision: 1000,
     scale: 53,
   })
-  flag: string | null;
+  flag!: string | null;
 
   @Column("numeric", {
     name: "OFFSET",
@@ -48,10 +48,10 @@ export class LogmnrRestartCkpt {
     precision: 1000,
     scale: 53,
   })
-  offset: string | null;
+  offset!: string | null;
 
   @Column("bytea", { name: "CLIENT_DATA", nullable: true })
-  clientData: Buffer | null;
+  clientData!: Buffer | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -59,7 +59,7 @@ export class LogmnrRestartCkpt {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -67,8 +67,8 @@ export class LogmnrRestartCkpt {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", { name: "PDBID", precision: 1000, scale: 53 })
-  pdbid: string;
+  pdbid!: string;
 }

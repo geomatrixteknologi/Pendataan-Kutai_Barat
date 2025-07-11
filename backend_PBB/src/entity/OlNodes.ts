@@ -3,14 +3,14 @@ import { Column, Entity } from "typeorm";
 @Entity("OL$NODES", { schema: "PBB_KUTAI BARAT" })
 export class OlNodes {
   @Column("character varying", { name: "OL_NAME", nullable: true, length: 128 })
-  olName: string | null;
+  olName!: string | null;
 
   @Column("character varying", {
     name: "CATEGORY",
     nullable: true,
     length: 128,
   })
-  category: string | null;
+  category!: string | null;
 
   @Column("numeric", {
     name: "NODE_ID",
@@ -18,7 +18,7 @@ export class OlNodes {
     precision: 1000,
     scale: 53,
   })
-  nodeId: string | null;
+  nodeId!: string | null;
 
   @Column("numeric", {
     name: "PARENT_ID",
@@ -26,7 +26,7 @@ export class OlNodes {
     precision: 1000,
     scale: 53,
   })
-  parentId: string | null;
+  parentId!: string | null;
 
   @Column("numeric", {
     name: "NODE_TYPE",
@@ -34,7 +34,7 @@ export class OlNodes {
     precision: 1000,
     scale: 53,
   })
-  nodeType: string | null;
+  nodeType!: string | null;
 
   @Column("numeric", {
     name: "NODE_TEXTLEN",
@@ -42,7 +42,7 @@ export class OlNodes {
     precision: 1000,
     scale: 53,
   })
-  nodeTextlen: string | null;
+  nodeTextlen!: string | null;
 
   @Column("numeric", {
     name: "NODE_TEXTOFF",
@@ -50,12 +50,12 @@ export class OlNodes {
     precision: 1000,
     scale: 53,
   })
-  nodeTextoff: string | null;
+  nodeTextoff!: string | null;
 
   @Column("character varying", {
     name: "NODE_NAME",
     nullable: true,
     length: 64,
   })
-  nodeName: string | null;
+  nodeName!: string | null;
 }

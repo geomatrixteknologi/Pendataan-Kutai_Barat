@@ -3,7 +3,7 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGSTDBY$EVENTS", { schema: "PBB_KUTAI BARAT" })
 export class LogstdbyEvents {
   @Column("timestamp without time zone", { name: "EVENT_TIME" })
-  eventTime: Date;
+  eventTime!: Date;
 
   @Column("numeric", {
     name: "CURRENT_SCN",
@@ -11,7 +11,7 @@ export class LogstdbyEvents {
     precision: 1000,
     scale: 53,
   })
-  currentScn: string | null;
+  currentScn!: string | null;
 
   @Column("numeric", {
     name: "COMMIT_SCN",
@@ -19,7 +19,7 @@ export class LogstdbyEvents {
     precision: 1000,
     scale: 53,
   })
-  commitScn: string | null;
+  commitScn!: string | null;
 
   @Column("numeric", {
     name: "XIDUSN",
@@ -27,7 +27,7 @@ export class LogstdbyEvents {
     precision: 1000,
     scale: 53,
   })
-  xidusn: string | null;
+  xidusn!: string | null;
 
   @Column("numeric", {
     name: "XIDSLT",
@@ -35,7 +35,7 @@ export class LogstdbyEvents {
     precision: 1000,
     scale: 53,
   })
-  xidslt: string | null;
+  xidslt!: string | null;
 
   @Column("numeric", {
     name: "XIDSQN",
@@ -43,7 +43,7 @@ export class LogstdbyEvents {
     precision: 1000,
     scale: 53,
   })
-  xidsqn: string | null;
+  xidsqn!: string | null;
 
   @Column("numeric", {
     name: "ERRVAL",
@@ -51,16 +51,16 @@ export class LogstdbyEvents {
     precision: 1000,
     scale: 53,
   })
-  errval: string | null;
+  errval!: string | null;
 
   @Column("character varying", { name: "EVENT", nullable: true, length: 2000 })
-  event: string | null;
+  event!: string | null;
 
   @Column("text", { name: "FULL_EVENT", nullable: true })
-  fullEvent: string | null;
+  fullEvent!: string | null;
 
   @Column("character varying", { name: "ERROR", nullable: true, length: 2000 })
-  error: string | null;
+  error!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -68,7 +68,7 @@ export class LogstdbyEvents {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -76,13 +76,13 @@ export class LogstdbyEvents {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 2000 })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("character varying", { name: "CON_NAME", nullable: true, length: 30 })
-  conName: string | null;
+  conName!: string | null;
 
   @Column("numeric", {
     name: "CON_ID",
@@ -90,5 +90,5 @@ export class LogstdbyEvents {
     precision: 1000,
     scale: 53,
   })
-  conId: string | null;
+  conId!: string | null;
 }

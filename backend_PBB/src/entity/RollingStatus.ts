@@ -8,7 +8,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  revision: string | null;
+  revision!: string | null;
 
   @Column("numeric", {
     name: "PHASE",
@@ -16,7 +16,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  phase: string | null;
+  phase!: string | null;
 
   @Column("numeric", {
     name: "BATCHID",
@@ -24,7 +24,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  batchid: string | null;
+  batchid!: string | null;
 
   @Column("numeric", {
     name: "STATUS",
@@ -32,7 +32,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  status: string | null;
+  status!: string | null;
 
   @Column("numeric", {
     name: "COORDID",
@@ -40,7 +40,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  coordid: string | null;
+  coordid!: string | null;
 
   @Column("numeric", {
     name: "OPRIMARY",
@@ -48,7 +48,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  oprimary: string | null;
+  oprimary!: string | null;
 
   @Column("numeric", {
     name: "FPRIMARY",
@@ -56,7 +56,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  fprimary: string | null;
+  fprimary!: string | null;
 
   @Column("numeric", {
     name: "PID",
@@ -64,7 +64,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  pid: string | null;
+  pid!: string | null;
 
   @Column("numeric", {
     name: "INSTANCE",
@@ -72,7 +72,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  instance: string | null;
+  instance!: string | null;
 
   @Column("numeric", {
     name: "DBTOTAL",
@@ -80,7 +80,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  dbtotal: string | null;
+  dbtotal!: string | null;
 
   @Column("numeric", {
     name: "DBACTIVE",
@@ -88,35 +88,35 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  dbactive: string | null;
+  dbactive!: string | null;
 
   @Column("character varying", {
     name: "LOCATION",
     nullable: true,
     length: 128,
   })
-  location: string | null;
+  location!: string | null;
 
   @Column("timestamp without time zone", { name: "INIT_TIME", nullable: true })
-  initTime: Date | null;
+  initTime!: Date | null;
 
   @Column("timestamp without time zone", { name: "BUILD_TIME", nullable: true })
-  buildTime: Date | null;
+  buildTime!: Date | null;
 
   @Column("timestamp without time zone", { name: "START_TIME", nullable: true })
-  startTime: Date | null;
+  startTime!: Date | null;
 
   @Column("timestamp without time zone", {
     name: "SWITCH_TIME",
     nullable: true,
   })
-  switchTime: Date | null;
+  switchTime!: Date | null;
 
   @Column("timestamp without time zone", {
     name: "FINISH_TIME",
     nullable: true,
   })
-  finishTime: Date | null;
+  finishTime!: Date | null;
 
   @Column("numeric", {
     name: "LAST_INSTID",
@@ -124,7 +124,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  lastInstid: string | null;
+  lastInstid!: string | null;
 
   @Column("numeric", {
     name: "LAST_BATCHID",
@@ -132,7 +132,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  lastBatchid: string | null;
+  lastBatchid!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -140,7 +140,7 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -148,8 +148,8 @@ export class RollingStatus {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 128 })
-  spare3: string | null;
+  spare3!: string | null;
 }

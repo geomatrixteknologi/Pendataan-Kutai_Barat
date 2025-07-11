@@ -7,7 +7,7 @@ export class LogmnrLogmnrBuildlog {
     nullable: true,
     length: 20,
   })
-  buildDate: string | null;
+  buildDate!: string | null;
 
   @Column("numeric", {
     name: "DB_TXN_SCNBAS",
@@ -15,7 +15,7 @@ export class LogmnrLogmnrBuildlog {
     precision: 1000,
     scale: 53,
   })
-  dbTxnScnbas: string | null;
+  dbTxnScnbas!: string | null;
 
   @Column("numeric", {
     name: "DB_TXN_SCNWRP",
@@ -23,7 +23,7 @@ export class LogmnrLogmnrBuildlog {
     precision: 1000,
     scale: 53,
   })
-  dbTxnScnwrp: string | null;
+  dbTxnScnwrp!: string | null;
 
   @Column("numeric", {
     name: "CURRENT_BUILD_STATE",
@@ -31,7 +31,7 @@ export class LogmnrLogmnrBuildlog {
     precision: 1000,
     scale: 53,
   })
-  currentBuildState: string | null;
+  currentBuildState!: string | null;
 
   @Column("numeric", {
     name: "COMPLETION_STATUS",
@@ -39,7 +39,7 @@ export class LogmnrLogmnrBuildlog {
     precision: 1000,
     scale: 53,
   })
-  completionStatus: string | null;
+  completionStatus!: string | null;
 
   @Column("numeric", {
     name: "MARKED_LOG_FILE_LOW_SCN",
@@ -47,10 +47,10 @@ export class LogmnrLogmnrBuildlog {
     precision: 1000,
     scale: 53,
   })
-  markedLogFileLowScn: string | null;
+  markedLogFileLowScn!: string | null;
 
   @Column("character varying", { name: "INITIAL_XID", length: 22 })
-  initialXid: string;
+  initialXid!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -58,7 +58,7 @@ export class LogmnrLogmnrBuildlog {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -66,10 +66,10 @@ export class LogmnrLogmnrBuildlog {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 
   @Column("character varying", { name: "CDB_XID", nullable: true, length: 22 })
-  cdbXid: string | null;
+  cdbXid!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -77,8 +77,8 @@ export class LogmnrLogmnrBuildlog {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("character varying", { name: "SPARE2", nullable: true, length: 4000 })
-  spare2: string | null;
+  spare2!: string | null;
 }

@@ -8,8 +8,8 @@ export class MviewAdvPretty {
     precision: 1000,
     scale: 53,
   })
-  queryid: string | null;
+  queryid!: string | null;
 
   @Column("text", { name: "SQL_TEXT", nullable: true })
-  sqlText: string | null;
+  sqlText!: string | null;
 }

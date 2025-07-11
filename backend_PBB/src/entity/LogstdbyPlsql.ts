@@ -8,7 +8,7 @@ export class LogstdbyPlsql {
     precision: 1000,
     scale: 53,
   })
-  sessionId: string | null;
+  sessionId!: string | null;
 
   @Column("numeric", {
     name: "START_FINISH",
@@ -16,10 +16,10 @@ export class LogstdbyPlsql {
     precision: 1000,
     scale: 53,
   })
-  startFinish: string | null;
+  startFinish!: string | null;
 
   @Column("text", { name: "CALL_TEXT", nullable: true })
-  callText: string | null;
+  callText!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -27,7 +27,7 @@ export class LogstdbyPlsql {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -35,8 +35,8 @@ export class LogstdbyPlsql {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 2000 })
-  spare3: string | null;
+  spare3!: string | null;
 }

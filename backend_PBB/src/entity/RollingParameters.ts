@@ -8,16 +8,16 @@ export class RollingParameters {
     precision: 1000,
     scale: 53,
   })
-  scope: string | null;
+  scope!: string | null;
 
   @Column("character varying", { name: "NAME", nullable: true, length: 32 })
-  name: string | null;
+  name!: string | null;
 
   @Column("numeric", { name: "ID", nullable: true, precision: 1000, scale: 53 })
-  id: string | null;
+  id!: string | null;
 
   @Column("character varying", { name: "DESCRIP", nullable: true, length: 256 })
-  descrip: string | null;
+  descrip!: string | null;
 
   @Column("numeric", {
     name: "TYPE",
@@ -25,7 +25,7 @@ export class RollingParameters {
     precision: 1000,
     scale: 53,
   })
-  type: string | null;
+  type!: string | null;
 
   @Column("numeric", {
     name: "DATATYPE",
@@ -33,7 +33,7 @@ export class RollingParameters {
     precision: 1000,
     scale: 53,
   })
-  datatype: string | null;
+  datatype!: string | null;
 
   @Column("numeric", {
     name: "ATTRIBUTES",
@@ -41,16 +41,16 @@ export class RollingParameters {
     precision: 1000,
     scale: 53,
   })
-  attributes: string | null;
+  attributes!: string | null;
 
   @Column("character varying", { name: "CURVAL", nullable: true, length: 1024 })
-  curval: string | null;
+  curval!: string | null;
 
   @Column("character varying", { name: "LSTVAL", nullable: true, length: 1024 })
-  lstval: string | null;
+  lstval!: string | null;
 
   @Column("character varying", { name: "DEFVAL", nullable: true, length: 1024 })
-  defval: string | null;
+  defval!: string | null;
 
   @Column("numeric", {
     name: "MINVAL",
@@ -58,7 +58,7 @@ export class RollingParameters {
     precision: 1000,
     scale: 53,
   })
-  minval: string | null;
+  minval!: string | null;
 
   @Column("numeric", {
     name: "MAXVAL",
@@ -66,7 +66,7 @@ export class RollingParameters {
     precision: 1000,
     scale: 53,
   })
-  maxval: string | null;
+  maxval!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -74,7 +74,7 @@ export class RollingParameters {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -82,8 +82,8 @@ export class RollingParameters {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 128 })
-  spare3: string | null;
+  spare3!: string | null;
 }

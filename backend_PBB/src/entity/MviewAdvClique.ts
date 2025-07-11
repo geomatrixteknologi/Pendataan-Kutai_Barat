@@ -3,29 +3,29 @@ import { Column, Entity } from "typeorm";
 @Entity("MVIEW$_ADV_CLIQUE", { schema: "PBB_KUTAI BARAT" })
 export class MviewAdvClique {
   @Column("numeric", { name: "CLIQUEID#", precision: 1000, scale: 53 })
-  cliqueid: string;
+  cliqueid!: string;
 
   @Column("numeric", { name: "RUNID#", precision: 1000, scale: 53 })
-  runid: string;
+  runid!: string;
 
   @Column("numeric", { name: "CLIQUEDESLEN", precision: 1000, scale: 53 })
-  cliquedeslen: string;
+  cliquedeslen!: string;
 
   @Column("bytea", { name: "CLIQUEDES" })
-  cliquedes: Buffer;
+  cliquedes!: Buffer;
 
   @Column("numeric", { name: "HASHVALUE", precision: 1000, scale: 53 })
-  hashvalue: string;
+  hashvalue!: string;
 
   @Column("numeric", { name: "FREQUENCY", precision: 1000, scale: 53 })
-  frequency: string;
+  frequency!: string;
 
   @Column("numeric", { name: "BYTECOST", precision: 1000, scale: 53 })
-  bytecost: string;
+  bytecost!: string;
 
   @Column("numeric", { name: "ROWSIZE", precision: 1000, scale: 53 })
-  rowsize: string;
+  rowsize!: string;
 
   @Column("numeric", { name: "NUMROWS", precision: 1000, scale: 53 })
-  numrows: string;
+  numrows!: string;
 }

@@ -3,13 +3,13 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_SUBCOLTYPE$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrSubcoltype {
   @Column("numeric", { name: "INTCOL#", precision: 1000, scale: 53 })
-  intcol: string;
+  intcol!: string;
 
   @Column("bytea", { name: "TOID" })
-  toid: Buffer;
+  toid!: Buffer;
 
   @Column("numeric", { name: "VERSION#", precision: 1000, scale: 53 })
-  version: string;
+  version!: string;
 
   @Column("numeric", {
     name: "INTCOLS",
@@ -17,10 +17,10 @@ export class LogmnrSubcoltype {
     precision: 1000,
     scale: 53,
   })
-  intcols: string | null;
+  intcols!: string | null;
 
   @Column("bytea", { name: "INTCOL#S", nullable: true })
-  intcolS: Buffer | null;
+  intcolS!: Buffer | null;
 
   @Column("numeric", {
     name: "FLAGS",
@@ -28,7 +28,7 @@ export class LogmnrSubcoltype {
     precision: 1000,
     scale: 53,
   })
-  flags: string | null;
+  flags!: string | null;
 
   @Column("numeric", {
     name: "SYNOBJ#",
@@ -36,10 +36,10 @@ export class LogmnrSubcoltype {
     precision: 1000,
     scale: 53,
   })
-  synobj: string | null;
+  synobj!: string | null;
 
   @Column("numeric", { name: "OBJ#", precision: 1000, scale: 53 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -47,7 +47,7 @@ export class LogmnrSubcoltype {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -55,5 +55,5 @@ export class LogmnrSubcoltype {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

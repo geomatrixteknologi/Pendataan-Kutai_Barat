@@ -8,13 +8,13 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  version: string | null;
+  version!: string | null;
 
   @Column("character varying", { name: "VERSION", nullable: true, length: 384 })
-  version: string | null;
+  version!: string | null;
 
   @Column("bytea", { name: "TVOID", nullable: true })
-  tvoid: Buffer | null;
+  tvoid!: Buffer | null;
 
   @Column("numeric", {
     name: "TYPECODE",
@@ -22,7 +22,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  typecode: string | null;
+  typecode!: string | null;
 
   @Column("numeric", {
     name: "PROPERTIES",
@@ -30,7 +30,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  properties: string | null;
+  properties!: string | null;
 
   @Column("numeric", {
     name: "ATTRIBUTES",
@@ -38,7 +38,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  attributes: string | null;
+  attributes!: string | null;
 
   @Column("numeric", {
     name: "METHODS",
@@ -46,7 +46,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  methods: string | null;
+  methods!: string | null;
 
   @Column("numeric", {
     name: "HIDDENMETHODS",
@@ -54,7 +54,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  hiddenmethods: string | null;
+  hiddenmethods!: string | null;
 
   @Column("numeric", {
     name: "SUPERTYPES",
@@ -62,7 +62,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  supertypes: string | null;
+  supertypes!: string | null;
 
   @Column("numeric", {
     name: "SUBTYPES",
@@ -70,7 +70,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  subtypes: string | null;
+  subtypes!: string | null;
 
   @Column("numeric", {
     name: "EXTERNTYPE",
@@ -78,21 +78,21 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  externtype: string | null;
+  externtype!: string | null;
 
   @Column("character varying", {
     name: "EXTERNNAME",
     nullable: true,
     length: 4000,
   })
-  externname: string | null;
+  externname!: string | null;
 
   @Column("character varying", {
     name: "HELPERCLASSNAME",
     nullable: true,
     length: 4000,
   })
-  helperclassname: string | null;
+  helperclassname!: string | null;
 
   @Column("numeric", {
     name: "LOCAL_ATTRS",
@@ -100,7 +100,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  localAttrs: string | null;
+  localAttrs!: string | null;
 
   @Column("numeric", {
     name: "LOCAL_METHODS",
@@ -108,13 +108,13 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  localMethods: string | null;
+  localMethods!: string | null;
 
   @Column("bytea", { name: "TYPEID", nullable: true })
-  typeid: Buffer | null;
+  typeid!: Buffer | null;
 
   @Column("bytea", { name: "ROOTTOID", nullable: true })
-  roottoid: Buffer | null;
+  roottoid!: Buffer | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -122,7 +122,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -130,7 +130,7 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", {
     name: "SPARE3",
@@ -138,16 +138,16 @@ export class LogmnrType {
     precision: 1000,
     scale: 53,
   })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("bytea", { name: "SUPERTOID", nullable: true })
-  supertoid: Buffer | null;
+  supertoid!: Buffer | null;
 
   @Column("bytea", { name: "HASHCODE", nullable: true })
-  hashcode: Buffer | null;
+  hashcode!: Buffer | null;
 
   @Column("bytea", { name: "TOID" })
-  toid: Buffer;
+  toid!: Buffer;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -155,7 +155,7 @@ export class LogmnrType {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -163,5 +163,5 @@ export class LogmnrType {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

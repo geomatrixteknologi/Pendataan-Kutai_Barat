@@ -8,7 +8,7 @@ export class LogstdbyHistory {
     precision: 1000,
     scale: 53,
   })
-  streamSequence: string | null;
+  streamSequence!: string | null;
 
   @Column("numeric", {
     name: "LMNR_SID",
@@ -16,7 +16,7 @@ export class LogstdbyHistory {
     precision: 1000,
     scale: 53,
   })
-  lmnrSid: string | null;
+  lmnrSid!: string | null;
 
   @Column("numeric", {
     name: "DBID",
@@ -24,7 +24,7 @@ export class LogstdbyHistory {
     precision: 1000,
     scale: 53,
   })
-  dbid: string | null;
+  dbid!: string | null;
 
   @Column("numeric", {
     name: "FIRST_CHANGE#",
@@ -32,7 +32,7 @@ export class LogstdbyHistory {
     precision: 1000,
     scale: 53,
   })
-  firstChange: string | null;
+  firstChange!: string | null;
 
   @Column("numeric", {
     name: "LAST_CHANGE#",
@@ -40,7 +40,7 @@ export class LogstdbyHistory {
     precision: 1000,
     scale: 53,
   })
-  lastChange: string | null;
+  lastChange!: string | null;
 
   @Column("numeric", {
     name: "SOURCE",
@@ -48,7 +48,7 @@ export class LogstdbyHistory {
     precision: 1000,
     scale: 53,
   })
-  source: string | null;
+  source!: string | null;
 
   @Column("numeric", {
     name: "STATUS",
@@ -56,16 +56,16 @@ export class LogstdbyHistory {
     precision: 1000,
     scale: 53,
   })
-  status: string | null;
+  status!: string | null;
 
   @Column("timestamp without time zone", { name: "FIRST_TIME", nullable: true })
-  firstTime: Date | null;
+  firstTime!: Date | null;
 
   @Column("timestamp without time zone", { name: "LAST_TIME", nullable: true })
-  lastTime: Date | null;
+  lastTime!: Date | null;
 
   @Column("character varying", { name: "DGNAME", nullable: true, length: 255 })
-  dgname: string | null;
+  dgname!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -73,7 +73,7 @@ export class LogstdbyHistory {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -81,8 +81,8 @@ export class LogstdbyHistory {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 2000 })
-  spare3: string | null;
+  spare3!: string | null;
 }

@@ -8,7 +8,7 @@ export class LogstdbyApplyProgress {
     precision: 1000,
     scale: 53,
   })
-  xidusn: string | null;
+  xidusn!: string | null;
 
   @Column("numeric", {
     name: "XIDSLT",
@@ -16,7 +16,7 @@ export class LogstdbyApplyProgress {
     precision: 1000,
     scale: 53,
   })
-  xidslt: string | null;
+  xidslt!: string | null;
 
   @Column("numeric", {
     name: "XIDSQN",
@@ -24,7 +24,7 @@ export class LogstdbyApplyProgress {
     precision: 1000,
     scale: 53,
   })
-  xidsqn: string | null;
+  xidsqn!: string | null;
 
   @Column("numeric", {
     name: "COMMIT_SCN",
@@ -32,13 +32,13 @@ export class LogstdbyApplyProgress {
     precision: 1000,
     scale: 53,
   })
-  commitScn: string | null;
+  commitScn!: string | null;
 
   @Column("timestamp without time zone", {
     name: "COMMIT_TIME",
     nullable: true,
   })
-  commitTime: Date | null;
+  commitTime!: Date | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -46,7 +46,7 @@ export class LogstdbyApplyProgress {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -54,8 +54,8 @@ export class LogstdbyApplyProgress {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 2000 })
-  spare3: string | null;
+  spare3!: string | null;
 }

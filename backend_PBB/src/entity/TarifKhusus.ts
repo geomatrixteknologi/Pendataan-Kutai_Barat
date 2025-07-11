@@ -1,32 +1,19 @@
 import { Column, Entity, Index } from "typeorm";
 
-@Index(
-  "TARIF_KHUSUS_PK",
-  [
-    "kdDati2",
-    "kdPeruntukan",
-    "kdPropinsi",
-    "kdSubPeruntukan",
-    "njopMax",
-    "njopMin",
-    "thnAkhir",
-    "thnAwal",
-  ],
-  { unique: true }
-)
+@Index("TARIF_KHUSUS_PK", ["kdDati2", "kdPeruntukan", "kdPropinsi", "kdSubPeruntukan", "njopMax", "njopMin", "thnAkhir", "thnAwal"], { unique: true })
 @Entity("TARIF_KHUSUS", { schema: "PBB_KUTAI BARAT" })
 export class TarifKhusus {
   @Column("character", { primary: true, name: "THN_AWAL", length: 4 })
-  thnAwal: string;
+  thnAwal!: string;
 
   @Column("character", { primary: true, name: "THN_AKHIR", length: 4 })
-  thnAkhir: string;
+  thnAkhir!: string;
 
   @Column("character", { primary: true, name: "KD_PERUNTUKAN", length: 2 })
-  kdPeruntukan: string;
+  kdPeruntukan!: string;
 
   @Column("character", { primary: true, name: "KD_SUB_PERUNTUKAN", length: 2 })
-  kdSubPeruntukan: string;
+  kdSubPeruntukan!: string;
 
   @Column("numeric", {
     name: "NILAI_TARIF",
@@ -34,13 +21,13 @@ export class TarifKhusus {
     precision: 3,
     scale: 3,
   })
-  nilaiTarif: string | null;
+  nilaiTarif!: string | null;
 
   @Column("character", { primary: true, name: "KD_PROPINSI", length: 2 })
-  kdPropinsi: string;
+  kdPropinsi!: string;
 
   @Column("character", { primary: true, name: "KD_DATI2", length: 2 })
-  kdDati2: string;
+  kdDati2!: string;
 
   @Column("numeric", {
     primary: true,
@@ -48,7 +35,7 @@ export class TarifKhusus {
     precision: 15,
     scale: 0,
   })
-  njopMin: string;
+  njopMin!: string;
 
   @Column("numeric", {
     primary: true,
@@ -56,5 +43,5 @@ export class TarifKhusus {
     precision: 15,
     scale: 0,
   })
-  njopMax: string;
+  njopMax!: string;
 }

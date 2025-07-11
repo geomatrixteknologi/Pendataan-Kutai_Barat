@@ -7,15 +7,15 @@ export class LogNop {
     nullable: true,
     length: 18,
   })
-  nopPendataan: string | null;
+  nopPendataan!: string | null;
 
   @Column("character varying", {
     name: "NOP_HASIL",
     nullable: true,
     length: 24,
   })
-  nopHasil: string | null;
+  nopHasil!: string | null;
 
   @Column("character varying", { name: "NOFOR", nullable: true, length: 13 })
-  nofor: string | null;
+  nofor!: string | null;
 }

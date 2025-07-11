@@ -3,22 +3,22 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_AGE_SPILL$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrAgeSpill {
   @Column("numeric", { name: "SESSION#", precision: 1000, scale: 53 })
-  session: string;
+  session!: string;
 
   @Column("numeric", { name: "XIDUSN", precision: 1000, scale: 53 })
-  xidusn: string;
+  xidusn!: string;
 
   @Column("numeric", { name: "XIDSLT", precision: 1000, scale: 53 })
-  xidslt: string;
+  xidslt!: string;
 
   @Column("numeric", { name: "XIDSQN", precision: 1000, scale: 53 })
-  xidsqn: string;
+  xidsqn!: string;
 
   @Column("numeric", { name: "CHUNK", precision: 1000, scale: 53 })
-  chunk: string;
+  chunk!: string;
 
   @Column("numeric", { name: "SEQUENCE#", precision: 1000, scale: 53 })
-  sequence: string;
+  sequence!: string;
 
   @Column("numeric", {
     name: "OFFSET",
@@ -26,10 +26,10 @@ export class LogmnrAgeSpill {
     precision: 1000,
     scale: 53,
   })
-  offset: string | null;
+  offset!: string | null;
 
   @Column("bytea", { name: "SPILL_DATA", nullable: true })
-  spillData: Buffer | null;
+  spillData!: Buffer | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -37,7 +37,7 @@ export class LogmnrAgeSpill {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -45,8 +45,8 @@ export class LogmnrAgeSpill {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", { name: "PDBID", precision: 1000, scale: 53 })
-  pdbid: string;
+  pdbid!: string;
 }

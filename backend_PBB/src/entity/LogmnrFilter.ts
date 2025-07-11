@@ -8,14 +8,14 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  session: string | null;
+  session!: string | null;
 
   @Column("character varying", {
     name: "FILTER_TYPE",
     nullable: true,
     length: 30,
   })
-  filterType: string | null;
+  filterType!: string | null;
 
   @Column("numeric", {
     name: "ATTR1",
@@ -23,7 +23,7 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  attr1: string | null;
+  attr1!: string | null;
 
   @Column("numeric", {
     name: "ATTR2",
@@ -31,7 +31,7 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  attr2: string | null;
+  attr2!: string | null;
 
   @Column("numeric", {
     name: "ATTR3",
@@ -39,7 +39,7 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  attr3: string | null;
+  attr3!: string | null;
 
   @Column("numeric", {
     name: "ATTR4",
@@ -47,7 +47,7 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  attr4: string | null;
+  attr4!: string | null;
 
   @Column("numeric", {
     name: "ATTR5",
@@ -55,7 +55,7 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  attr5: string | null;
+  attr5!: string | null;
 
   @Column("numeric", {
     name: "ATTR6",
@@ -63,7 +63,7 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  attr6: string | null;
+  attr6!: string | null;
 
   @Column("numeric", {
     name: "FILTER_SCN",
@@ -71,7 +71,7 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  filterScn: string | null;
+  filterScn!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -79,7 +79,7 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -87,23 +87,23 @@ export class LogmnrFilter {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("timestamp without time zone", { name: "SPARE3", nullable: true })
-  spare3: Date | null;
+  spare3!: Date | null;
 
   @Column("character varying", { name: "ATTR7", nullable: true, length: 128 })
-  attr7: string | null;
+  attr7!: string | null;
 
   @Column("character varying", { name: "ATTR8", nullable: true, length: 128 })
-  attr8: string | null;
+  attr8!: string | null;
 
   @Column("character varying", { name: "ATTR9", nullable: true, length: 128 })
-  attr9: string | null;
+  attr9!: string | null;
 
   @Column("character varying", { name: "ATTR10", nullable: true, length: 128 })
-  attr10: string | null;
+  attr10!: string | null;
 
   @Column("character varying", { name: "ATTR11", nullable: true, length: 128 })
-  attr11: string | null;
+  attr11!: string | null;
 }

@@ -8,7 +8,7 @@ export class LogmnrLobfrag {
     precision: 1000,
     scale: 53,
   })
-  fragobj: string | null;
+  fragobj!: string | null;
 
   @Column("numeric", {
     name: "PARENTOBJ#",
@@ -16,7 +16,7 @@ export class LogmnrLobfrag {
     precision: 1000,
     scale: 53,
   })
-  parentobj: string | null;
+  parentobj!: string | null;
 
   @Column("numeric", {
     name: "TABFRAGOBJ#",
@@ -24,7 +24,7 @@ export class LogmnrLobfrag {
     precision: 1000,
     scale: 53,
   })
-  tabfragobj: string | null;
+  tabfragobj!: string | null;
 
   @Column("numeric", {
     name: "INDFRAGOBJ#",
@@ -32,10 +32,10 @@ export class LogmnrLobfrag {
     precision: 1000,
     scale: 53,
   })
-  indfragobj: string | null;
+  indfragobj!: string | null;
 
   @Column("numeric", { name: "FRAG#", precision: 1000, scale: 53 })
-  frag: string;
+  frag!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -43,7 +43,7 @@ export class LogmnrLobfrag {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -51,5 +51,5 @@ export class LogmnrLobfrag {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

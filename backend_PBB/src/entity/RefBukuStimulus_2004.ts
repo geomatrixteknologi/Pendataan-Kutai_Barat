@@ -3,16 +3,16 @@ import { Column, Entity } from "typeorm";
 @Entity("REF_BUKU_STIMULUS_2004", { schema: "PBB_KUTAI BARAT" })
 export class RefBukuStimulus_2004 {
   @Column("character", { name: "KD_PROPINSI", length: 2 })
-  kdPropinsi: string;
+  kdPropinsi!: string;
 
   @Column("character", { name: "KD_DATI2", length: 2 })
-  kdDati2: string;
+  kdDati2!: string;
 
   @Column("character", { name: "KD_SEKTOR", length: 2 })
-  kdSektor: string;
+  kdSektor!: string;
 
   @Column("character", { name: "THN_PAJAK", length: 4 })
-  thnPajak: string;
+  thnPajak!: string;
 
   @Column("numeric", {
     name: "BK_SATU",
@@ -20,10 +20,10 @@ export class RefBukuStimulus_2004 {
     precision: 3,
     scale: 0,
   })
-  bkSatu: string | null;
+  bkSatu!: string | null;
 
   @Column("numeric", { name: "BK_DUA", nullable: true, precision: 3, scale: 0 })
-  bkDua: string | null;
+  bkDua!: string | null;
 
   @Column("numeric", {
     name: "BK_TIGA",
@@ -31,7 +31,7 @@ export class RefBukuStimulus_2004 {
     precision: 3,
     scale: 0,
   })
-  bkTiga: string | null;
+  bkTiga!: string | null;
 
   @Column("numeric", {
     name: "BK_EMPAT_LIMA_TNH_KOSONG",
@@ -39,7 +39,7 @@ export class RefBukuStimulus_2004 {
     precision: 3,
     scale: 0,
   })
-  bkEmpatLimaTnhKosong: string | null;
+  bkEmpatLimaTnhKosong!: string | null;
 
   @Column("numeric", {
     name: "BK_EMPAT_LIMA_BKN_TNH_KOSONG",
@@ -47,5 +47,5 @@ export class RefBukuStimulus_2004 {
     precision: 3,
     scale: 0,
   })
-  bkEmpatLimaBknTnhKosong: string | null;
+  bkEmpatLimaBknTnhKosong!: string | null;
 }

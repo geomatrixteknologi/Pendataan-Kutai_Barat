@@ -8,7 +8,7 @@ export class MviewAdvTemp {
     precision: 1000,
     scale: 53,
   })
-  id: string | null;
+  id!: string | null;
 
   @Column("numeric", {
     name: "SEQ#",
@@ -16,8 +16,8 @@ export class MviewAdvTemp {
     precision: 1000,
     scale: 53,
   })
-  seq: string | null;
+  seq!: string | null;
 
   @Column("text", { name: "TEXT", nullable: true })
-  text: string | null;
+  text!: string | null;
 }

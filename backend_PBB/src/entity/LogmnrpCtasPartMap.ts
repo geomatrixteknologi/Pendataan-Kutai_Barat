@@ -3,19 +3,19 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNRP_CTAS_PART_MAP", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrpCtasPartMap {
   @Column("numeric", { name: "LOGMNR_UID", precision: 1000, scale: 53 })
-  logmnrUid: string;
+  logmnrUid!: string;
 
   @Column("numeric", { name: "BASEOBJ#", precision: 1000, scale: 53 })
-  baseobj: string;
+  baseobj!: string;
 
   @Column("numeric", { name: "BASEOBJV#", precision: 1000, scale: 53 })
-  baseobjv: string;
+  baseobjv!: string;
 
   @Column("numeric", { name: "KEYOBJ#", precision: 1000, scale: 53 })
-  keyobj: string;
+  keyobj!: string;
 
   @Column("numeric", { name: "PART#", precision: 1000, scale: 53 })
-  part: string;
+  part!: string;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -23,7 +23,7 @@ export class LogmnrpCtasPartMap {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -31,8 +31,8 @@ export class LogmnrpCtasPartMap {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 1000 })
-  spare3: string | null;
+  spare3!: string | null;
 }

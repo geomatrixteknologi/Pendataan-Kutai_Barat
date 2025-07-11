@@ -3,7 +3,7 @@ import { Column, Entity } from "typeorm";
 @Entity("KELUARAN_PST", { schema: "PBB_KUTAI BARAT" })
 export class KeluaranPst {
   @Column("character", { name: "KD_JNS_PELAYANAN", length: 2 })
-  kdJnsPelayanan: string;
+  kdJnsPelayanan!: string;
 
   @Column("numeric", {
     name: "SPPT_PELAYANAN",
@@ -11,7 +11,7 @@ export class KeluaranPst {
     precision: 1,
     scale: 0,
   })
-  spptPelayanan: string | null;
+  spptPelayanan!: string | null;
 
   @Column("numeric", {
     name: "STTS_PELAYANAN",
@@ -19,7 +19,7 @@ export class KeluaranPst {
     precision: 1,
     scale: 0,
   })
-  sttsPelayanan: string | null;
+  sttsPelayanan!: string | null;
 
   @Column("numeric", {
     name: "DHKP_PELAYANAN",
@@ -27,7 +27,7 @@ export class KeluaranPst {
     precision: 1,
     scale: 0,
   })
-  dhkpPelayanan: string | null;
+  dhkpPelayanan!: string | null;
 
   @Column("numeric", {
     name: "SK_PELAYANAN",
@@ -35,5 +35,5 @@ export class KeluaranPst {
     precision: 1,
     scale: 0,
   })
-  skPelayanan: string | null;
+  skPelayanan!: string | null;
 }

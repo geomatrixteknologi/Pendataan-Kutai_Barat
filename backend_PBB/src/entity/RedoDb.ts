@@ -3,23 +3,23 @@ import { Column, Entity } from "typeorm";
 @Entity("REDO_DB", { schema: "PBB_KUTAI BARAT" })
 export class RedoDb {
   @Column("numeric", { name: "DBID", precision: 1000, scale: 53 })
-  dbid: string;
+  dbid!: string;
 
   @Column("character varying", {
     name: "GLOBAL_DBNAME",
     nullable: true,
     length: 129,
   })
-  globalDbname: string | null;
+  globalDbname!: string | null;
 
   @Column("character varying", { name: "DBUNAME", nullable: true, length: 32 })
-  dbuname: string | null;
+  dbuname!: string | null;
 
   @Column("character varying", { name: "VERSION", nullable: true, length: 32 })
-  version: string | null;
+  version!: string | null;
 
   @Column("numeric", { name: "THREAD#", precision: 1000, scale: 53 })
-  thread: string;
+  thread!: string;
 
   @Column("numeric", {
     name: "RESETLOGS_SCN_BAS",
@@ -27,7 +27,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  resetlogsScnBas: string | null;
+  resetlogsScnBas!: string | null;
 
   @Column("numeric", {
     name: "RESETLOGS_SCN_WRP",
@@ -35,10 +35,10 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  resetlogsScnWrp: string | null;
+  resetlogsScnWrp!: string | null;
 
   @Column("numeric", { name: "RESETLOGS_TIME", precision: 1000, scale: 53 })
-  resetlogsTime: string;
+  resetlogsTime!: string;
 
   @Column("numeric", {
     name: "PRESETLOGS_SCN_BAS",
@@ -46,7 +46,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  presetlogsScnBas: string | null;
+  presetlogsScnBas!: string | null;
 
   @Column("numeric", {
     name: "PRESETLOGS_SCN_WRP",
@@ -54,10 +54,10 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  presetlogsScnWrp: string | null;
+  presetlogsScnWrp!: string | null;
 
   @Column("numeric", { name: "PRESETLOGS_TIME", precision: 1000, scale: 53 })
-  presetlogsTime: string;
+  presetlogsTime!: string;
 
   @Column("numeric", {
     name: "SEQNO_RCV_CUR",
@@ -65,7 +65,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  seqnoRcvCur: string | null;
+  seqnoRcvCur!: string | null;
 
   @Column("numeric", {
     name: "SEQNO_RCV_LO",
@@ -73,7 +73,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  seqnoRcvLo: string | null;
+  seqnoRcvLo!: string | null;
 
   @Column("numeric", {
     name: "SEQNO_RCV_HI",
@@ -81,7 +81,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  seqnoRcvHi: string | null;
+  seqnoRcvHi!: string | null;
 
   @Column("numeric", {
     name: "SEQNO_DONE_CUR",
@@ -89,7 +89,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  seqnoDoneCur: string | null;
+  seqnoDoneCur!: string | null;
 
   @Column("numeric", {
     name: "SEQNO_DONE_LO",
@@ -97,7 +97,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  seqnoDoneLo: string | null;
+  seqnoDoneLo!: string | null;
 
   @Column("numeric", {
     name: "SEQNO_DONE_HI",
@@ -105,7 +105,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  seqnoDoneHi: string | null;
+  seqnoDoneHi!: string | null;
 
   @Column("numeric", {
     name: "GAP_SEQNO",
@@ -113,7 +113,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  gapSeqno: string | null;
+  gapSeqno!: string | null;
 
   @Column("numeric", {
     name: "GAP_RET",
@@ -121,7 +121,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  gapRet: string | null;
+  gapRet!: string | null;
 
   @Column("numeric", {
     name: "GAP_DONE",
@@ -129,7 +129,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  gapDone: string | null;
+  gapDone!: string | null;
 
   @Column("numeric", {
     name: "APPLY_SEQNO",
@@ -137,7 +137,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  applySeqno: string | null;
+  applySeqno!: string | null;
 
   @Column("numeric", {
     name: "APPLY_DONE",
@@ -145,7 +145,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  applyDone: string | null;
+  applyDone!: string | null;
 
   @Column("numeric", {
     name: "PURGE_DONE",
@@ -153,7 +153,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  purgeDone: string | null;
+  purgeDone!: string | null;
 
   @Column("numeric", {
     name: "HAS_CHILD",
@@ -161,7 +161,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  hasChild: string | null;
+  hasChild!: string | null;
 
   @Column("numeric", {
     name: "ERROR1",
@@ -169,7 +169,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  error1: string | null;
+  error1!: string | null;
 
   @Column("numeric", {
     name: "STATUS",
@@ -177,13 +177,13 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  status: string | null;
+  status!: string | null;
 
   @Column("timestamp without time zone", {
     name: "CREATE_DATE",
     nullable: true,
   })
-  createDate: Date | null;
+  createDate!: Date | null;
 
   @Column("numeric", {
     name: "TS1",
@@ -191,7 +191,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  ts1: string | null;
+  ts1!: string | null;
 
   @Column("numeric", {
     name: "TS2",
@@ -199,7 +199,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  ts2: string | null;
+  ts2!: string | null;
 
   @Column("numeric", {
     name: "GAP_NEXT_SCN",
@@ -207,7 +207,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  gapNextScn: string | null;
+  gapNextScn!: string | null;
 
   @Column("numeric", {
     name: "GAP_NEXT_TIME",
@@ -215,7 +215,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  gapNextTime: string | null;
+  gapNextTime!: string | null;
 
   @Column("numeric", {
     name: "CURSCN_TIME",
@@ -223,13 +223,13 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  curscnTime: string | null;
+  curscnTime!: string | null;
 
   @Column("numeric", { name: "RESETLOGS_SCN", precision: 1000, scale: 53 })
-  resetlogsScn: string;
+  resetlogsScn!: string;
 
   @Column("numeric", { name: "PRESETLOGS_SCN", precision: 1000, scale: 53 })
-  presetlogsScn: string;
+  presetlogsScn!: string;
 
   @Column("numeric", {
     name: "GAP_RET2",
@@ -237,7 +237,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  gapRet2: string | null;
+  gapRet2!: string | null;
 
   @Column("numeric", {
     name: "CURLOG",
@@ -245,7 +245,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  curlog: string | null;
+  curlog!: string | null;
 
   @Column("numeric", {
     name: "ENDIAN",
@@ -253,7 +253,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  endian: string | null;
+  endian!: string | null;
 
   @Column("numeric", {
     name: "ENQIDX",
@@ -261,7 +261,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  enqidx: string | null;
+  enqidx!: string | null;
 
   @Column("numeric", {
     name: "SPARE4",
@@ -269,16 +269,16 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  spare4: string | null;
+  spare4!: string | null;
 
   @Column("timestamp without time zone", { name: "SPARE5", nullable: true })
-  spare5: Date | null;
+  spare5!: Date | null;
 
   @Column("character varying", { name: "SPARE6", nullable: true, length: 65 })
-  spare6: string | null;
+  spare6!: string | null;
 
   @Column("character varying", { name: "SPARE7", nullable: true, length: 129 })
-  spare7: string | null;
+  spare7!: string | null;
 
   @Column("numeric", {
     name: "TS3",
@@ -286,7 +286,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  ts3: string | null;
+  ts3!: string | null;
 
   @Column("numeric", {
     name: "CURBLKNO",
@@ -294,7 +294,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  curblkno: string | null;
+  curblkno!: string | null;
 
   @Column("numeric", {
     name: "SPARE8",
@@ -302,7 +302,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  spare8: string | null;
+  spare8!: string | null;
 
   @Column("numeric", {
     name: "SPARE9",
@@ -310,7 +310,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  spare9: string | null;
+  spare9!: string | null;
 
   @Column("numeric", {
     name: "SPARE10",
@@ -318,7 +318,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  spare10: string | null;
+  spare10!: string | null;
 
   @Column("numeric", {
     name: "SPARE11",
@@ -326,7 +326,7 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  spare11: string | null;
+  spare11!: string | null;
 
   @Column("numeric", {
     name: "SPARE12",
@@ -334,5 +334,5 @@ export class RedoDb {
     precision: 1000,
     scale: 53,
   })
-  spare12: string | null;
+  spare12!: string | null;
 }

@@ -8,7 +8,7 @@ export class RollingDirectives {
     precision: 1000,
     scale: 53,
   })
-  directid: string | null;
+  directid!: string | null;
 
   @Column("numeric", {
     name: "PHASE",
@@ -16,7 +16,7 @@ export class RollingDirectives {
     precision: 1000,
     scale: 53,
   })
-  phase: string | null;
+  phase!: string | null;
 
   @Column("numeric", {
     name: "TASKID",
@@ -24,17 +24,17 @@ export class RollingDirectives {
     precision: 1000,
     scale: 53,
   })
-  taskid: string | null;
+  taskid!: string | null;
 
   @Column("character varying", { name: "FEATURE", nullable: true, length: 32 })
-  feature: string | null;
+  feature!: string | null;
 
   @Column("character varying", {
     name: "DESCRIPTION",
     nullable: true,
     length: 256,
   })
-  description: string | null;
+  description!: string | null;
 
   @Column("numeric", {
     name: "TARGET",
@@ -42,10 +42,10 @@ export class RollingDirectives {
     precision: 1000,
     scale: 53,
   })
-  target: string | null;
+  target!: string | null;
 
   @Column("character varying", { name: "FLAGS", nullable: true, length: 64 })
-  flags: string | null;
+  flags!: string | null;
 
   @Column("numeric", {
     name: "OPCODE",
@@ -53,16 +53,16 @@ export class RollingDirectives {
     precision: 1000,
     scale: 53,
   })
-  opcode: string | null;
+  opcode!: string | null;
 
   @Column("character varying", { name: "P1", nullable: true, length: 256 })
-  p1: string | null;
+  p1!: string | null;
 
   @Column("character varying", { name: "P2", nullable: true, length: 256 })
-  p2: string | null;
+  p2!: string | null;
 
   @Column("character varying", { name: "P3", nullable: true, length: 256 })
-  p3: string | null;
+  p3!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -70,7 +70,7 @@ export class RollingDirectives {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -78,8 +78,8 @@ export class RollingDirectives {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 256 })
-  spare3: string | null;
+  spare3!: string | null;
 }

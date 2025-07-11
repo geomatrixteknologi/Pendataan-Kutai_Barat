@@ -3,16 +3,16 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNRC_CON_GG", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrcConGg {
   @Column("numeric", { name: "LOGMNR_UID", precision: 1000, scale: 53 })
-  logmnrUid: string;
+  logmnrUid!: string;
 
   @Column("numeric", { name: "CON#", precision: 1000, scale: 53 })
-  con: string;
+  con!: string;
 
   @Column("character varying", { name: "NAME", length: 384 })
-  name: string;
+  name!: string;
 
   @Column("numeric", { name: "COMMIT_SCN", precision: 1000, scale: 53 })
-  commitScn: string;
+  commitScn!: string;
 
   @Column("numeric", {
     name: "DROP_SCN",
@@ -20,16 +20,16 @@ export class LogmnrcConGg {
     precision: 1000,
     scale: 53,
   })
-  dropScn: string | null;
+  dropScn!: string | null;
 
   @Column("numeric", { name: "BASEOBJ#", precision: 1000, scale: 53 })
-  baseobj: string;
+  baseobj!: string;
 
   @Column("numeric", { name: "BASEOBJV#", precision: 1000, scale: 53 })
-  baseobjv: string;
+  baseobjv!: string;
 
   @Column("numeric", { name: "FLAGS", precision: 1000, scale: 53 })
-  flags: string;
+  flags!: string;
 
   @Column("numeric", {
     name: "INDEXOBJ#",
@@ -37,7 +37,7 @@ export class LogmnrcConGg {
     precision: 1000,
     scale: 53,
   })
-  indexobj: string | null;
+  indexobj!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -45,7 +45,7 @@ export class LogmnrcConGg {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -53,7 +53,7 @@ export class LogmnrcConGg {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", {
     name: "SPARE3",
@@ -61,14 +61,14 @@ export class LogmnrcConGg {
     precision: 1000,
     scale: 53,
   })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("character varying", { name: "SPARE4", nullable: true, length: 4000 })
-  spare4: string | null;
+  spare4!: string | null;
 
   @Column("character varying", { name: "SPARE5", nullable: true, length: 4000 })
-  spare5: string | null;
+  spare5!: string | null;
 
   @Column("character varying", { name: "SPARE6", nullable: true, length: 4000 })
-  spare6: string | null;
+  spare6!: string | null;
 }

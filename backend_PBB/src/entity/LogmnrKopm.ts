@@ -8,13 +8,13 @@ export class LogmnrKopm {
     precision: 1000,
     scale: 53,
   })
-  length: string | null;
+  length!: string | null;
 
   @Column("bytea", { name: "METADATA", nullable: true })
-  metadata: Buffer | null;
+  metadata!: Buffer | null;
 
   @Column("character varying", { name: "NAME", length: 384 })
-  name: string;
+  name!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -22,7 +22,7 @@ export class LogmnrKopm {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -30,5 +30,5 @@ export class LogmnrKopm {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

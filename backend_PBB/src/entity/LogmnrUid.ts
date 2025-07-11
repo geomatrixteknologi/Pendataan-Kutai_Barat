@@ -3,7 +3,7 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_UID$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrUid {
   @Column("numeric", { name: "LOGMNR_UID", precision: 22, scale: 0 })
-  logmnrUid: string;
+  logmnrUid!: string;
 
   @Column("numeric", {
     name: "LOGMNR_DID",
@@ -11,7 +11,7 @@ export class LogmnrUid {
     precision: 1000,
     scale: 53,
   })
-  logmnrDid: string | null;
+  logmnrDid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_MDH",
@@ -19,14 +19,14 @@ export class LogmnrUid {
     precision: 1000,
     scale: 53,
   })
-  logmnrMdh: string | null;
+  logmnrMdh!: string | null;
 
   @Column("character varying", {
     name: "PDB_NAME",
     nullable: true,
     length: 384,
   })
-  pdbName: string | null;
+  pdbName!: string | null;
 
   @Column("numeric", {
     name: "PDB_ID",
@@ -34,7 +34,7 @@ export class LogmnrUid {
     precision: 1000,
     scale: 53,
   })
-  pdbId: string | null;
+  pdbId!: string | null;
 
   @Column("numeric", {
     name: "PDB_UID",
@@ -42,7 +42,7 @@ export class LogmnrUid {
     precision: 1000,
     scale: 53,
   })
-  pdbUid: string | null;
+  pdbUid!: string | null;
 
   @Column("numeric", {
     name: "START_SCN",
@@ -50,7 +50,7 @@ export class LogmnrUid {
     precision: 1000,
     scale: 53,
   })
-  startScn: string | null;
+  startScn!: string | null;
 
   @Column("numeric", {
     name: "END_SCN",
@@ -58,7 +58,7 @@ export class LogmnrUid {
     precision: 1000,
     scale: 53,
   })
-  endScn: string | null;
+  endScn!: string | null;
 
   @Column("numeric", {
     name: "FLAGS",
@@ -66,7 +66,7 @@ export class LogmnrUid {
     precision: 1000,
     scale: 53,
   })
-  flags: string | null;
+  flags!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -74,7 +74,7 @@ export class LogmnrUid {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -82,11 +82,11 @@ export class LogmnrUid {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 4000 })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("timestamp without time zone", { name: "SPARE4", nullable: true })
-  spare4: Date | null;
+  spare4!: Date | null;
 }

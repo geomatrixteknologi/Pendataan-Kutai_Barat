@@ -3,34 +3,34 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGSTDBY$EDS_TABLES", { schema: "PBB_KUTAI BARAT" })
 export class LogstdbyEdsTables {
   @Column("character varying", { name: "OWNER", length: 128 })
-  owner: string;
+  owner!: string;
 
   @Column("character varying", { name: "TABLE_NAME", length: 128 })
-  tableName: string;
+  tableName!: string;
 
   @Column("character varying", {
     name: "SHADOW_TABLE_NAME",
     nullable: true,
     length: 128,
   })
-  shadowTableName: string | null;
+  shadowTableName!: string | null;
 
   @Column("character varying", {
     name: "BASE_TRIGGER_NAME",
     nullable: true,
     length: 128,
   })
-  baseTriggerName: string | null;
+  baseTriggerName!: string | null;
 
   @Column("character varying", {
     name: "SHADOW_TRIGGER_NAME",
     nullable: true,
     length: 128,
   })
-  shadowTriggerName: string | null;
+  shadowTriggerName!: string | null;
 
   @Column("character varying", { name: "DBLINK", nullable: true, length: 255 })
-  dblink: string | null;
+  dblink!: string | null;
 
   @Column("numeric", {
     name: "FLAGS",
@@ -38,10 +38,10 @@ export class LogstdbyEdsTables {
     precision: 1000,
     scale: 53,
   })
-  flags: string | null;
+  flags!: string | null;
 
   @Column("character varying", { name: "STATE", nullable: true, length: 255 })
-  state: string | null;
+  state!: string | null;
 
   @Column("numeric", {
     name: "OBJV",
@@ -49,7 +49,7 @@ export class LogstdbyEdsTables {
     precision: 1000,
     scale: 53,
   })
-  objv: string | null;
+  objv!: string | null;
 
   @Column("numeric", {
     name: "OBJ#",
@@ -57,7 +57,7 @@ export class LogstdbyEdsTables {
     precision: 1000,
     scale: 53,
   })
-  obj: string | null;
+  obj!: string | null;
 
   @Column("numeric", {
     name: "SOBJ#",
@@ -65,10 +65,10 @@ export class LogstdbyEdsTables {
     precision: 1000,
     scale: 53,
   })
-  sobj: string | null;
+  sobj!: string | null;
 
   @Column("timestamp without time zone", { name: "CTIME", nullable: true })
-  ctime: Date | null;
+  ctime!: Date | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -76,10 +76,10 @@ export class LogstdbyEdsTables {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("character varying", { name: "SPARE2", nullable: true, length: 255 })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", {
     name: "SPARE3",
@@ -87,26 +87,26 @@ export class LogstdbyEdsTables {
     precision: 1000,
     scale: 53,
   })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("character varying", {
     name: "MVIEW_NAME",
     nullable: true,
     length: 128,
   })
-  mviewName: string | null;
+  mviewName!: string | null;
 
   @Column("character varying", {
     name: "MVIEW_LOG_NAME",
     nullable: true,
     length: 128,
   })
-  mviewLogName: string | null;
+  mviewLogName!: string | null;
 
   @Column("character varying", {
     name: "MVIEW_TRIGGER_NAME",
     nullable: true,
     length: 128,
   })
-  mviewTriggerName: string | null;
+  mviewTriggerName!: string | null;
 }

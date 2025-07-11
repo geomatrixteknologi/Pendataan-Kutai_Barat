@@ -3,20 +3,20 @@ import { Column, Entity } from "typeorm";
 @Entity("MVIEW$_ADV_WORKLOAD", { schema: "PBB_KUTAI BARAT" })
 export class MviewAdvWorkload {
   @Column("numeric", { name: "QUERYID#", precision: 1000, scale: 53 })
-  queryid: string;
+  queryid!: string;
 
   @Column("numeric", { name: "COLLECTIONID#", precision: 1000, scale: 53 })
-  collectionid: string;
+  collectionid!: string;
 
   @Column("timestamp without time zone", { name: "COLLECTTIME" })
-  collecttime: Date;
+  collecttime!: Date;
 
   @Column("character varying", {
     name: "APPLICATION",
     nullable: true,
     length: 128,
   })
-  application: string | null;
+  application!: string | null;
 
   @Column("numeric", {
     name: "CARDINALITY",
@@ -24,7 +24,7 @@ export class MviewAdvWorkload {
     precision: 1000,
     scale: 53,
   })
-  cardinality: string | null;
+  cardinality!: string | null;
 
   @Column("numeric", {
     name: "RESULTSIZE",
@@ -32,13 +32,13 @@ export class MviewAdvWorkload {
     precision: 1000,
     scale: 53,
   })
-  resultsize: string | null;
+  resultsize!: string | null;
 
   @Column("character varying", { name: "UNAME", length: 128 })
-  uname: string;
+  uname!: string;
 
   @Column("timestamp without time zone", { name: "QDATE", nullable: true })
-  qdate: Date | null;
+  qdate!: Date | null;
 
   @Column("numeric", {
     name: "PRIORITY",
@@ -46,7 +46,7 @@ export class MviewAdvWorkload {
     precision: 1000,
     scale: 53,
   })
-  priority: string | null;
+  priority!: string | null;
 
   @Column("numeric", {
     name: "EXEC_TIME",
@@ -54,13 +54,13 @@ export class MviewAdvWorkload {
     precision: 1000,
     scale: 53,
   })
-  execTime: string | null;
+  execTime!: string | null;
 
   @Column("text", { name: "SQL_TEXT" })
-  sqlText: string;
+  sqlText!: string;
 
   @Column("numeric", { name: "SQL_TEXTLEN", precision: 1000, scale: 53 })
-  sqlTextlen: string;
+  sqlTextlen!: string;
 
   @Column("numeric", {
     name: "SQL_HASH",
@@ -68,10 +68,10 @@ export class MviewAdvWorkload {
     precision: 1000,
     scale: 53,
   })
-  sqlHash: string | null;
+  sqlHash!: string | null;
 
   @Column("bytea", { name: "SQL_ADDR", nullable: true })
-  sqlAddr: Buffer | null;
+  sqlAddr!: Buffer | null;
 
   @Column("numeric", {
     name: "FREQUENCY",
@@ -79,5 +79,5 @@ export class MviewAdvWorkload {
     precision: 1000,
     scale: 53,
   })
-  frequency: string | null;
+  frequency!: string | null;
 }

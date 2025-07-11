@@ -3,10 +3,10 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_TS$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrTs {
   @Column("numeric", { name: "TS#", nullable: true, precision: 22, scale: 0 })
-  ts: string | null;
+  ts!: string | null;
 
   @Column("character varying", { name: "NAME", nullable: true, length: 90 })
-  name: string | null;
+  name!: string | null;
 
   @Column("numeric", {
     name: "OWNER#",
@@ -14,10 +14,10 @@ export class LogmnrTs {
     precision: 22,
     scale: 0,
   })
-  owner: string | null;
+  owner!: string | null;
 
   @Column("numeric", { name: "BLOCKSIZE", precision: 22, scale: 0 })
-  blocksize: string;
+  blocksize!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -25,7 +25,7 @@ export class LogmnrTs {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -33,7 +33,7 @@ export class LogmnrTs {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 
   @Column("numeric", {
     name: "START_SCNBAS",
@@ -41,7 +41,7 @@ export class LogmnrTs {
     precision: 1000,
     scale: 53,
   })
-  startScnbas: string | null;
+  startScnbas!: string | null;
 
   @Column("numeric", {
     name: "START_SCNWRP",
@@ -49,5 +49,5 @@ export class LogmnrTs {
     precision: 1000,
     scale: 53,
   })
-  startScnwrp: string | null;
+  startScnwrp!: string | null;
 }

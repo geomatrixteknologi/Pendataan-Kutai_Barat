@@ -3,10 +3,10 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGSTDBY$PARAMETERS", { schema: "PBB_KUTAI BARAT" })
 export class LogstdbyParameters {
   @Column("character varying", { name: "NAME", nullable: true, length: 30 })
-  name: string | null;
+  name!: string | null;
 
   @Column("character varying", { name: "VALUE", nullable: true, length: 2000 })
-  value: string | null;
+  value!: string | null;
 
   @Column("numeric", {
     name: "TYPE",
@@ -14,7 +14,7 @@ export class LogstdbyParameters {
     precision: 1000,
     scale: 53,
   })
-  type: string | null;
+  type!: string | null;
 
   @Column("numeric", {
     name: "SCN",
@@ -22,7 +22,7 @@ export class LogstdbyParameters {
     precision: 1000,
     scale: 53,
   })
-  scn: string | null;
+  scn!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -30,7 +30,7 @@ export class LogstdbyParameters {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -38,8 +38,8 @@ export class LogstdbyParameters {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 2000 })
-  spare3: string | null;
+  spare3!: string | null;
 }

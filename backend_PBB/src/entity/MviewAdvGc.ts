@@ -3,19 +3,19 @@ import { Column, Entity } from "typeorm";
 @Entity("MVIEW$_ADV_GC", { schema: "PBB_KUTAI BARAT" })
 export class MviewAdvGc {
   @Column("numeric", { name: "GCID#", precision: 1000, scale: 53 })
-  gcid: string;
+  gcid!: string;
 
   @Column("numeric", { name: "FJGID#", precision: 1000, scale: 53 })
-  fjgid: string;
+  fjgid!: string;
 
   @Column("numeric", { name: "GCDESLEN", precision: 1000, scale: 53 })
-  gcdeslen: string;
+  gcdeslen!: string;
 
   @Column("bytea", { name: "GCDES" })
-  gcdes: Buffer;
+  gcdes!: Buffer;
 
   @Column("numeric", { name: "HASHVALUE", precision: 1000, scale: 53 })
-  hashvalue: string;
+  hashvalue!: string;
 
   @Column("numeric", {
     name: "FREQUENCY",
@@ -23,5 +23,5 @@ export class MviewAdvGc {
     precision: 1000,
     scale: 53,
   })
-  frequency: string | null;
+  frequency!: string | null;
 }

@@ -3,13 +3,13 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_PROFILE_PLSQL_STATS$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrProfilePlsqlStats {
   @Column("character varying", { name: "PKGOWNER", length: 384 })
-  pkgowner: string;
+  pkgowner!: string;
 
   @Column("character varying", { name: "PKGNAME", length: 384 })
-  pkgname: string;
+  pkgname!: string;
 
   @Column("numeric", { name: "NAME", precision: 1000, scale: 53 })
-  name: string;
+  name!: string;
 
   @Column("numeric", {
     name: "PRAGMAOP",
@@ -17,7 +17,7 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  pragmaop: string | null;
+  pragmaop!: string | null;
 
   @Column("numeric", {
     name: "OPNUM",
@@ -25,7 +25,7 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  opnum: string | null;
+  opnum!: string | null;
 
   @Column("numeric", {
     name: "TLSBYUNSUPPOPNUM",
@@ -33,7 +33,7 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  tlsbyunsuppopnum: string | null;
+  tlsbyunsuppopnum!: string | null;
 
   @Column("numeric", {
     name: "OGGUNSUPPOPNUM",
@@ -41,7 +41,7 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  oggunsuppopnum: string | null;
+  oggunsuppopnum!: string | null;
 
   @Column("numeric", {
     name: "REDOSIZE",
@@ -49,7 +49,7 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  redosize: string | null;
+  redosize!: string | null;
 
   @Column("numeric", {
     name: "REDORATE",
@@ -57,13 +57,13 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  redorate: string | null;
+  redorate!: string | null;
 
   @Column("character varying", { name: "SPARE1", nullable: true, length: 384 })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("character varying", { name: "SPARE2", nullable: true, length: 384 })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", {
     name: "SPARE3",
@@ -71,7 +71,7 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("numeric", {
     name: "SPARE4",
@@ -79,7 +79,7 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  spare4: string | null;
+  spare4!: string | null;
 
   @Column("numeric", {
     name: "SPARE5",
@@ -87,7 +87,7 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  spare5: string | null;
+  spare5!: string | null;
 
   @Column("numeric", {
     name: "SPARE6",
@@ -95,5 +95,5 @@ export class LogmnrProfilePlsqlStats {
     precision: 1000,
     scale: 53,
   })
-  spare6: string | null;
+  spare6!: string | null;
 }

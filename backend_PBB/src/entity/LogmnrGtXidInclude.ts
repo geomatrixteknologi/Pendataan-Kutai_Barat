@@ -8,7 +8,7 @@ export class LogmnrGtXidInclude {
     precision: 1000,
     scale: 53,
   })
-  xidusn: string | null;
+  xidusn!: string | null;
 
   @Column("numeric", {
     name: "XIDSLT",
@@ -16,7 +16,7 @@ export class LogmnrGtXidInclude {
     precision: 1000,
     scale: 53,
   })
-  xidslt: string | null;
+  xidslt!: string | null;
 
   @Column("numeric", {
     name: "XIDSQN",
@@ -24,7 +24,7 @@ export class LogmnrGtXidInclude {
     precision: 1000,
     scale: 53,
   })
-  xidsqn: string | null;
+  xidsqn!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -32,7 +32,7 @@ export class LogmnrGtXidInclude {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -40,10 +40,10 @@ export class LogmnrGtXidInclude {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 4000 })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("numeric", {
     name: "PDBID",
@@ -51,12 +51,12 @@ export class LogmnrGtXidInclude {
     precision: 1000,
     scale: 53,
   })
-  pdbid: string | null;
+  pdbid!: string | null;
 
   @Column("character varying", {
     name: "PDB_NAME",
     nullable: true,
     length: 390,
   })
-  pdbName: string | null;
+  pdbName!: string | null;
 }

@@ -8,7 +8,7 @@ export class LogmnrIndcompart {
     precision: 1000,
     scale: 53,
   })
-  obj: string | null;
+  obj!: string | null;
 
   @Column("numeric", {
     name: "DATAOBJ#",
@@ -16,7 +16,7 @@ export class LogmnrIndcompart {
     precision: 1000,
     scale: 53,
   })
-  dataobj: string | null;
+  dataobj!: string | null;
 
   @Column("numeric", {
     name: "BO#",
@@ -24,10 +24,10 @@ export class LogmnrIndcompart {
     precision: 1000,
     scale: 53,
   })
-  bo: string | null;
+  bo!: string | null;
 
   @Column("numeric", { name: "PART#", precision: 1000, scale: 53 })
-  part: string;
+  part!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -35,7 +35,7 @@ export class LogmnrIndcompart {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -43,5 +43,5 @@ export class LogmnrIndcompart {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

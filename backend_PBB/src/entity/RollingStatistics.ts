@@ -8,7 +8,7 @@ export class RollingStatistics {
     precision: 1000,
     scale: 53,
   })
-  statid: string | null;
+  statid!: string | null;
 
   @Column("numeric", {
     name: "RDBID",
@@ -16,7 +16,7 @@ export class RollingStatistics {
     precision: 1000,
     scale: 53,
   })
-  rdbid: string | null;
+  rdbid!: string | null;
 
   @Column("numeric", {
     name: "ATTRIBUTES",
@@ -24,7 +24,7 @@ export class RollingStatistics {
     precision: 1000,
     scale: 53,
   })
-  attributes: string | null;
+  attributes!: string | null;
 
   @Column("numeric", {
     name: "TYPE",
@@ -32,17 +32,17 @@ export class RollingStatistics {
     precision: 1000,
     scale: 53,
   })
-  type: string | null;
+  type!: string | null;
 
   @Column("character varying", { name: "NAME", nullable: true, length: 256 })
-  name: string | null;
+  name!: string | null;
 
   @Column("character varying", {
     name: "VALUESTR",
     nullable: true,
     length: 256,
   })
-  valuestr: string | null;
+  valuestr!: string | null;
 
   @Column("numeric", {
     name: "VALUENUM",
@@ -50,19 +50,19 @@ export class RollingStatistics {
     precision: 1000,
     scale: 53,
   })
-  valuenum: string | null;
+  valuenum!: string | null;
 
   @Column("timestamp without time zone", { name: "VALUETS", nullable: true })
-  valuets: Date | null;
+  valuets!: Date | null;
 
   @Column("text", { name: "VALUEINT", nullable: true })
-  valueint: string | null;
+  valueint!: string | null;
 
   @Column("timestamp without time zone", {
     name: "UPDATE_TIME",
     nullable: true,
   })
-  updateTime: Date | null;
+  updateTime!: Date | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -70,7 +70,7 @@ export class RollingStatistics {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -78,8 +78,8 @@ export class RollingStatistics {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 128 })
-  spare3: string | null;
+  spare3!: string | null;
 }

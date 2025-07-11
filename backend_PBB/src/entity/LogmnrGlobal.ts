@@ -8,7 +8,7 @@ export class LogmnrGlobal {
     precision: 1000,
     scale: 53,
   })
-  highRecidForeign: string | null;
+  highRecidForeign!: string | null;
 
   @Column("numeric", {
     name: "HIGH_RECID_DELETED",
@@ -16,7 +16,7 @@ export class LogmnrGlobal {
     precision: 1000,
     scale: 53,
   })
-  highRecidDeleted: string | null;
+  highRecidDeleted!: string | null;
 
   @Column("numeric", {
     name: "LOCAL_RESET_SCN",
@@ -24,7 +24,7 @@ export class LogmnrGlobal {
     precision: 1000,
     scale: 53,
   })
-  localResetScn: string | null;
+  localResetScn!: string | null;
 
   @Column("numeric", {
     name: "LOCAL_RESET_TIMESTAMP",
@@ -32,7 +32,7 @@ export class LogmnrGlobal {
     precision: 1000,
     scale: 53,
   })
-  localResetTimestamp: string | null;
+  localResetTimestamp!: string | null;
 
   @Column("numeric", {
     name: "VERSION_TIMESTAMP",
@@ -40,7 +40,7 @@ export class LogmnrGlobal {
     precision: 1000,
     scale: 53,
   })
-  versionTimestamp: string | null;
+  versionTimestamp!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -48,7 +48,7 @@ export class LogmnrGlobal {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -56,7 +56,7 @@ export class LogmnrGlobal {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", {
     name: "SPARE3",
@@ -64,13 +64,13 @@ export class LogmnrGlobal {
     precision: 1000,
     scale: 53,
   })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("character varying", { name: "SPARE4", nullable: true, length: 2000 })
-  spare4: string | null;
+  spare4!: string | null;
 
   @Column("timestamp without time zone", { name: "SPARE5", nullable: true })
-  spare5: Date | null;
+  spare5!: Date | null;
 
   @Column("numeric", {
     name: "SESSION#",
@@ -78,5 +78,5 @@ export class LogmnrGlobal {
     precision: 1000,
     scale: 53,
   })
-  session: string | null;
+  session!: string | null;
 }

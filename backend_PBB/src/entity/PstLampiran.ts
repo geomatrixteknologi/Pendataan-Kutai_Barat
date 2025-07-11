@@ -3,26 +3,26 @@ import { Column, Entity } from "typeorm";
 @Entity("PST_LAMPIRAN", { schema: "PBB_KUTAI BARAT" })
 export class PstLampiran {
   @Column("character", { name: "KD_KANWIL", length: 2 })
-  kdKanwil: string;
+  kdKanwil!: string;
 
   @Column("character", { name: "KD_KANTOR", nullable: true, length: 2 })
-  kdKantor: string | null;
+  kdKantor!: string | null;
 
   @Column("character", {
     name: "KD_TEMPAT_PELAYANAN",
     nullable: true,
     length: 2,
   })
-  kdTempatPelayanan: string | null;
+  kdTempatPelayanan!: string | null;
 
   @Column("character", { name: "THN_PELAYANAN", length: 4 })
-  thnPelayanan: string;
+  thnPelayanan!: string;
 
   @Column("character", { name: "BUNDEL_PELAYANAN", length: 4 })
-  bundelPelayanan: string;
+  bundelPelayanan!: string;
 
   @Column("character", { name: "NO_URUT_PELAYANAN", length: 3 })
-  noUrutPelayanan: string;
+  noUrutPelayanan!: string;
 
   @Column("numeric", {
     name: "L_PERMOHONAN",
@@ -30,7 +30,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lPermohonan: string | null;
+  lPermohonan!: string | null;
 
   @Column("numeric", {
     name: "L_SURAT_KUASA",
@@ -38,7 +38,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSuratKuasa: string | null;
+  lSuratKuasa!: string | null;
 
   @Column("numeric", {
     name: "L_KTP_WP",
@@ -46,7 +46,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lKtpWp: string | null;
+  lKtpWp!: string | null;
 
   @Column("numeric", {
     name: "L_SERTIFIKAT_TANAH",
@@ -54,13 +54,13 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSertifikatTanah: string | null;
+  lSertifikatTanah!: string | null;
 
   @Column("numeric", { name: "L_SPPT", nullable: true, precision: 1, scale: 0 })
-  lSppt: string | null;
+  lSppt!: string | null;
 
   @Column("numeric", { name: "L_IMB", nullable: true, precision: 1, scale: 0 })
-  lImb: string | null;
+  lImb!: string | null;
 
   @Column("numeric", {
     name: "L_AKTE_JUAL_BELI",
@@ -68,7 +68,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lAkteJualBeli: string | null;
+  lAkteJualBeli!: string | null;
 
   @Column("numeric", {
     name: "L_SK_PENSIUN",
@@ -76,7 +76,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSkPensiun: string | null;
+  lSkPensiun!: string | null;
 
   @Column("numeric", {
     name: "L_SPPT_STTS",
@@ -84,10 +84,10 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSpptStts: string | null;
+  lSpptStts!: string | null;
 
   @Column("numeric", { name: "L_STTS", nullable: true, precision: 1, scale: 0 })
-  lStts: string | null;
+  lStts!: string | null;
 
   @Column("numeric", {
     name: "L_SK_PENGURANGAN",
@@ -95,7 +95,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSkPengurangan: string | null;
+  lSkPengurangan!: string | null;
 
   @Column("numeric", {
     name: "L_SK_KEBERATAN",
@@ -103,7 +103,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSkKeberatan: string | null;
+  lSkKeberatan!: string | null;
 
   @Column("numeric", {
     name: "L_SKKP_PBB",
@@ -111,7 +111,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSkkpPbb: string | null;
+  lSkkpPbb!: string | null;
 
   @Column("numeric", {
     name: "L_SPMKP_PBB",
@@ -119,7 +119,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSpmkpPbb: string | null;
+  lSpmkpPbb!: string | null;
 
   @Column("numeric", {
     name: "L_LAIN_LAIN",
@@ -127,7 +127,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lLainLain: string | null;
+  lLainLain!: string | null;
 
   @Column("numeric", {
     name: "L_SKET_TANAH",
@@ -135,7 +135,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSketTanah: string | null;
+  lSketTanah!: string | null;
 
   @Column("numeric", {
     name: "L_SKET_LURAH",
@@ -143,7 +143,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lSketLurah: string | null;
+  lSketLurah!: string | null;
 
   @Column("numeric", {
     name: "L_NPWPD",
@@ -151,7 +151,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lNpwpd: string | null;
+  lNpwpd!: string | null;
 
   @Column("numeric", {
     name: "L_PENGHASILAN",
@@ -159,7 +159,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lPenghasilan: string | null;
+  lPenghasilan!: string | null;
 
   @Column("numeric", {
     name: "L_CAGAR",
@@ -167,7 +167,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lCagar: string | null;
+  lCagar!: string | null;
 
   @Column("numeric", {
     name: "L_DOK_SPOP",
@@ -175,7 +175,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lDokSpop: string | null;
+  lDokSpop!: string | null;
 
   @Column("numeric", {
     name: "L_DOK_LSPOP",
@@ -183,7 +183,7 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lDokLspop: string | null;
+  lDokLspop!: string | null;
 
   @Column("numeric", {
     name: "L_PENGANTAR_KEL",
@@ -191,15 +191,15 @@ export class PstLampiran {
     precision: 1,
     scale: 0,
   })
-  lPengantarKel: string | null;
+  lPengantarKel!: string | null;
 
   @Column("character varying", {
     name: "NO_SURAT_PENGANTAR_MUTASI",
     nullable: true,
     length: 20,
   })
-  noSuratPengantarMutasi: string | null;
+  noSuratPengantarMutasi!: string | null;
 
   @Column("character", { name: "KD_KPPBB", nullable: true, length: 2 })
-  kdKppbb: string | null;
+  kdKppbb!: string | null;
 }

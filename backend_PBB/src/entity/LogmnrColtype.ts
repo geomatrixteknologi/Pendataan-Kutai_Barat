@@ -8,7 +8,7 @@ export class LogmnrColtype {
     precision: 1000,
     scale: 53,
   })
-  col: string | null;
+  col!: string | null;
 
   @Column("numeric", {
     name: "INTCOL#",
@@ -16,10 +16,10 @@ export class LogmnrColtype {
     precision: 1000,
     scale: 53,
   })
-  intcol: string | null;
+  intcol!: string | null;
 
   @Column("bytea", { name: "TOID", nullable: true })
-  toid: Buffer | null;
+  toid!: Buffer | null;
 
   @Column("numeric", {
     name: "VERSION#",
@@ -27,7 +27,7 @@ export class LogmnrColtype {
     precision: 1000,
     scale: 53,
   })
-  version: string | null;
+  version!: string | null;
 
   @Column("numeric", {
     name: "PACKED",
@@ -35,7 +35,7 @@ export class LogmnrColtype {
     precision: 1000,
     scale: 53,
   })
-  packed: string | null;
+  packed!: string | null;
 
   @Column("numeric", {
     name: "INTCOLS",
@@ -43,10 +43,10 @@ export class LogmnrColtype {
     precision: 1000,
     scale: 53,
   })
-  intcols: string | null;
+  intcols!: string | null;
 
   @Column("bytea", { name: "INTCOL#S", nullable: true })
-  intcolS: Buffer | null;
+  intcolS!: Buffer | null;
 
   @Column("numeric", {
     name: "FLAGS",
@@ -54,7 +54,7 @@ export class LogmnrColtype {
     precision: 1000,
     scale: 53,
   })
-  flags: string | null;
+  flags!: string | null;
 
   @Column("numeric", {
     name: "TYPIDCOL#",
@@ -62,7 +62,7 @@ export class LogmnrColtype {
     precision: 1000,
     scale: 53,
   })
-  typidcol: string | null;
+  typidcol!: string | null;
 
   @Column("numeric", {
     name: "SYNOBJ#",
@@ -70,10 +70,10 @@ export class LogmnrColtype {
     precision: 1000,
     scale: 53,
   })
-  synobj: string | null;
+  synobj!: string | null;
 
   @Column("numeric", { name: "OBJ#", precision: 1000, scale: 53 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -81,7 +81,7 @@ export class LogmnrColtype {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -89,5 +89,5 @@ export class LogmnrColtype {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

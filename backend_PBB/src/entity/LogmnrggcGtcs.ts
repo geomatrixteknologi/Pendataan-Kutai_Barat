@@ -3,25 +3,25 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNRGGC_GTCS", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrggcGtcs {
   @Column("numeric", { name: "LOGMNR_UID", precision: 1000, scale: 53 })
-  logmnrUid: string;
+  logmnrUid!: string;
 
   @Column("numeric", { name: "OBJ#", precision: 1000, scale: 53 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", { name: "OBJV#", precision: 1000, scale: 53 })
-  objv: string;
+  objv!: string;
 
   @Column("numeric", { name: "SEGCOL#", precision: 1000, scale: 53 })
-  segcol: string;
+  segcol!: string;
 
   @Column("numeric", { name: "INTCOL#", precision: 1000, scale: 53 })
-  intcol: string;
+  intcol!: string;
 
   @Column("character varying", { name: "COLNAME", length: 384 })
-  colname: string;
+  colname!: string;
 
   @Column("numeric", { name: "TYPE#", precision: 1000, scale: 53 })
-  type: string;
+  type!: string;
 
   @Column("numeric", {
     name: "LENGTH",
@@ -29,7 +29,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  length: string | null;
+  length!: string | null;
 
   @Column("numeric", {
     name: "PRECISION",
@@ -37,7 +37,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  precision: string | null;
+  precision!: string | null;
 
   @Column("numeric", {
     name: "SCALE",
@@ -45,7 +45,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  scale: string | null;
+  scale!: string | null;
 
   @Column("numeric", {
     name: "INTERVAL_LEADING_PRECISION",
@@ -53,7 +53,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  intervalLeadingPrecision: string | null;
+  intervalLeadingPrecision!: string | null;
 
   @Column("numeric", {
     name: "INTERVAL_TRAILING_PRECISION",
@@ -61,7 +61,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  intervalTrailingPrecision: string | null;
+  intervalTrailingPrecision!: string | null;
 
   @Column("numeric", {
     name: "PROPERTY",
@@ -69,10 +69,10 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  property: string | null;
+  property!: string | null;
 
   @Column("bytea", { name: "TOID", nullable: true })
-  toid: Buffer | null;
+  toid!: Buffer | null;
 
   @Column("numeric", {
     name: "CHARSETID",
@@ -80,7 +80,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  charsetid: string | null;
+  charsetid!: string | null;
 
   @Column("numeric", {
     name: "CHARSETFORM",
@@ -88,21 +88,21 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  charsetform: string | null;
+  charsetform!: string | null;
 
   @Column("character varying", {
     name: "TYPENAME",
     nullable: true,
     length: 384,
   })
-  typename: string | null;
+  typename!: string | null;
 
   @Column("character varying", {
     name: "FQCOLNAME",
     nullable: true,
     length: 4000,
   })
-  fqcolname: string | null;
+  fqcolname!: string | null;
 
   @Column("numeric", {
     name: "NUMINTCOLS",
@@ -110,7 +110,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  numintcols: string | null;
+  numintcols!: string | null;
 
   @Column("numeric", {
     name: "NUMATTRS",
@@ -118,7 +118,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  numattrs: string | null;
+  numattrs!: string | null;
 
   @Column("numeric", {
     name: "ADTORDER",
@@ -126,7 +126,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  adtorder: string | null;
+  adtorder!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_SPARE1",
@@ -134,7 +134,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  logmnrSpare1: string | null;
+  logmnrSpare1!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_SPARE2",
@@ -142,20 +142,20 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  logmnrSpare2: string | null;
+  logmnrSpare2!: string | null;
 
   @Column("character varying", {
     name: "LOGMNR_SPARE3",
     nullable: true,
     length: 1000,
   })
-  logmnrSpare3: string | null;
+  logmnrSpare3!: string | null;
 
   @Column("timestamp without time zone", {
     name: "LOGMNR_SPARE4",
     nullable: true,
   })
-  logmnrSpare4: Date | null;
+  logmnrSpare4!: Date | null;
 
   @Column("numeric", {
     name: "LOGMNR_SPARE5",
@@ -163,7 +163,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  logmnrSpare5: string | null;
+  logmnrSpare5!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_SPARE6",
@@ -171,7 +171,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  logmnrSpare6: string | null;
+  logmnrSpare6!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_SPARE7",
@@ -179,7 +179,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  logmnrSpare7: string | null;
+  logmnrSpare7!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_SPARE8",
@@ -187,7 +187,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  logmnrSpare8: string | null;
+  logmnrSpare8!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_SPARE9",
@@ -195,7 +195,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  logmnrSpare9: string | null;
+  logmnrSpare9!: string | null;
 
   @Column("numeric", {
     name: "COL#",
@@ -203,28 +203,28 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  col: string | null;
+  col!: string | null;
 
   @Column("character varying", {
     name: "XTYPESCHEMANAME",
     nullable: true,
     length: 384,
   })
-  xtypeschemaname: string | null;
+  xtypeschemaname!: string | null;
 
   @Column("character varying", {
     name: "XTYPENAME",
     nullable: true,
     length: 4000,
   })
-  xtypename: string | null;
+  xtypename!: string | null;
 
   @Column("character varying", {
     name: "XFQCOLNAME",
     nullable: true,
     length: 4000,
   })
-  xfqcolname: string | null;
+  xfqcolname!: string | null;
 
   @Column("numeric", {
     name: "XTOPINTCOL",
@@ -232,7 +232,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  xtopintcol: string | null;
+  xtopintcol!: string | null;
 
   @Column("numeric", {
     name: "XREFFEDTABLEOBJN",
@@ -240,7 +240,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  xreffedtableobjn: string | null;
+  xreffedtableobjn!: string | null;
 
   @Column("numeric", {
     name: "XREFFEDTABLEOBJV",
@@ -248,7 +248,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  xreffedtableobjv: string | null;
+  xreffedtableobjv!: string | null;
 
   @Column("numeric", {
     name: "XCOLTYPEFLAGS",
@@ -256,7 +256,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  xcoltypeflags: string | null;
+  xcoltypeflags!: string | null;
 
   @Column("numeric", {
     name: "XOPQTYPETYPE",
@@ -264,7 +264,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  xopqtypetype: string | null;
+  xopqtypetype!: string | null;
 
   @Column("numeric", {
     name: "XOPQTYPEFLAGS",
@@ -272,7 +272,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  xopqtypeflags: string | null;
+  xopqtypeflags!: string | null;
 
   @Column("numeric", {
     name: "XOPQLOBINTCOL",
@@ -280,7 +280,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  xopqlobintcol: string | null;
+  xopqlobintcol!: string | null;
 
   @Column("numeric", {
     name: "XOPQOBJINTCOL",
@@ -288,7 +288,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  xopqobjintcol: string | null;
+  xopqobjintcol!: string | null;
 
   @Column("numeric", {
     name: "XXMLINTCOL",
@@ -296,7 +296,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  xxmlintcol: string | null;
+  xxmlintcol!: string | null;
 
   @Column("numeric", {
     name: "EAOWNER#",
@@ -304,14 +304,14 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  eaowner: string | null;
+  eaowner!: string | null;
 
   @Column("character varying", {
     name: "EAMKEYID",
     nullable: true,
     length: 192,
   })
-  eamkeyid: string | null;
+  eamkeyid!: string | null;
 
   @Column("numeric", {
     name: "EAENCALG",
@@ -319,7 +319,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  eaencalg: string | null;
+  eaencalg!: string | null;
 
   @Column("numeric", {
     name: "EAINTALG",
@@ -327,10 +327,10 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  eaintalg: string | null;
+  eaintalg!: string | null;
 
   @Column("bytea", { name: "EACOLKLC", nullable: true })
-  eacolklc: Buffer | null;
+  eacolklc!: Buffer | null;
 
   @Column("numeric", {
     name: "EAKLCLEN",
@@ -338,7 +338,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  eaklclen: string | null;
+  eaklclen!: string | null;
 
   @Column("numeric", {
     name: "EAFLAGS",
@@ -346,7 +346,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  eaflags: string | null;
+  eaflags!: string | null;
 
   @Column("numeric", {
     name: "LOGMNRDERIVEDFLAGS",
@@ -354,7 +354,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  logmnrderivedflags: string | null;
+  logmnrderivedflags!: string | null;
 
   @Column("numeric", {
     name: "COLLID",
@@ -362,7 +362,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  collid: string | null;
+  collid!: string | null;
 
   @Column("numeric", {
     name: "COLLINTCOL#",
@@ -370,7 +370,7 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  collintcol: string | null;
+  collintcol!: string | null;
 
   @Column("numeric", {
     name: "ACDRRESCOL#",
@@ -378,5 +378,5 @@ export class LogmnrggcGtcs {
     precision: 1000,
     scale: 53,
   })
-  acdrrescol: string | null;
+  acdrrescol!: string | null;
 }

@@ -3,16 +3,16 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNRC_CONCOL_GG", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrcConcolGg {
   @Column("numeric", { name: "LOGMNR_UID", precision: 1000, scale: 53 })
-  logmnrUid: string;
+  logmnrUid!: string;
 
   @Column("numeric", { name: "CON#", precision: 1000, scale: 53 })
-  con: string;
+  con!: string;
 
   @Column("numeric", { name: "COMMIT_SCN", precision: 1000, scale: 53 })
-  commitScn: string;
+  commitScn!: string;
 
   @Column("numeric", { name: "INTCOL#", precision: 1000, scale: 53 })
-  intcol: string;
+  intcol!: string;
 
   @Column("numeric", {
     name: "POS#",
@@ -20,7 +20,7 @@ export class LogmnrcConcolGg {
     precision: 1000,
     scale: 53,
   })
-  pos: string | null;
+  pos!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -28,7 +28,7 @@ export class LogmnrcConcolGg {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -36,8 +36,8 @@ export class LogmnrcConcolGg {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("character varying", { name: "SPARE3", nullable: true, length: 4000 })
-  spare3: string | null;
+  spare3!: string | null;
 }

@@ -8,7 +8,7 @@ export class LogmnrNtab {
     precision: 1000,
     scale: 53,
   })
-  col: string | null;
+  col!: string | null;
 
   @Column("numeric", {
     name: "INTCOL#",
@@ -16,7 +16,7 @@ export class LogmnrNtab {
     precision: 1000,
     scale: 53,
   })
-  intcol: string | null;
+  intcol!: string | null;
 
   @Column("numeric", {
     name: "NTAB#",
@@ -24,13 +24,13 @@ export class LogmnrNtab {
     precision: 1000,
     scale: 53,
   })
-  ntab: string | null;
+  ntab!: string | null;
 
   @Column("character varying", { name: "NAME", nullable: true, length: 4000 })
-  name: string | null;
+  name!: string | null;
 
   @Column("numeric", { name: "OBJ#", precision: 1000, scale: 53 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -38,7 +38,7 @@ export class LogmnrNtab {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -46,5 +46,5 @@ export class LogmnrNtab {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

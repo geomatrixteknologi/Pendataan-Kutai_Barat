@@ -8,7 +8,7 @@ export class LogmnrIcol {
     precision: 1000,
     scale: 53,
   })
-  obj: string | null;
+  obj!: string | null;
 
   @Column("numeric", {
     name: "BO#",
@@ -16,7 +16,7 @@ export class LogmnrIcol {
     precision: 1000,
     scale: 53,
   })
-  bo: string | null;
+  bo!: string | null;
 
   @Column("numeric", {
     name: "COL#",
@@ -24,7 +24,7 @@ export class LogmnrIcol {
     precision: 1000,
     scale: 53,
   })
-  col: string | null;
+  col!: string | null;
 
   @Column("numeric", {
     name: "POS#",
@@ -32,7 +32,7 @@ export class LogmnrIcol {
     precision: 1000,
     scale: 53,
   })
-  pos: string | null;
+  pos!: string | null;
 
   @Column("numeric", {
     name: "SEGCOL#",
@@ -40,10 +40,10 @@ export class LogmnrIcol {
     precision: 1000,
     scale: 53,
   })
-  segcol: string | null;
+  segcol!: string | null;
 
   @Column("numeric", { name: "INTCOL#", precision: 1000, scale: 53 })
-  intcol: string;
+  intcol!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -51,7 +51,7 @@ export class LogmnrIcol {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -59,5 +59,5 @@ export class LogmnrIcol {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

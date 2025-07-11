@@ -3,7 +3,7 @@ import { Column, Entity } from "typeorm";
 @Entity("RANGE_PENYUSUTAN", { schema: "PBB_KUTAI BARAT" })
 export class RangePenyusutan {
   @Column("character", { name: "KD_RANGE_PENYUSUTAN", length: 1 })
-  kdRangePenyusutan: string;
+  kdRangePenyusutan!: string;
 
   @Column("numeric", {
     name: "NILAI_MIN_PENYUSUTAN",
@@ -11,7 +11,7 @@ export class RangePenyusutan {
     precision: 15,
     scale: 0,
   })
-  nilaiMinPenyusutan: string | null;
+  nilaiMinPenyusutan!: string | null;
 
   @Column("numeric", {
     name: "NILAI_MAX_PENYUSUTAN",
@@ -19,5 +19,5 @@ export class RangePenyusutan {
     precision: 15,
     scale: 0,
   })
-  nilaiMaxPenyusutan: string | null;
+  nilaiMaxPenyusutan!: string | null;
 }

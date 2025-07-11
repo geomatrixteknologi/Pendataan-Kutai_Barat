@@ -3,35 +3,35 @@ import { Column, Entity } from "typeorm";
 @Entity("HIS_SKP_KB_OP_BERSAMA", { schema: "PBB_KUTAI BARAT" })
 export class HisSkpKbOpBersama {
   @Column("character", { name: "KD_PROPINSI", length: 2 })
-  kdPropinsi: string;
+  kdPropinsi!: string;
 
   @Column("character", { name: "KD_DATI2", length: 2 })
-  kdDati2: string;
+  kdDati2!: string;
 
   @Column("character", { name: "KD_KECAMATAN", length: 3 })
-  kdKecamatan: string;
+  kdKecamatan!: string;
 
   @Column("character", { name: "KD_KELURAHAN", length: 3 })
-  kdKelurahan: string;
+  kdKelurahan!: string;
 
   @Column("character", { name: "KD_BLOK", length: 3 })
-  kdBlok: string;
+  kdBlok!: string;
 
   @Column("character", { name: "NO_URUT", length: 4 })
-  noUrut: string;
+  noUrut!: string;
 
   @Column("character", { name: "KD_JNS_OP", length: 1 })
-  kdJnsOp: string;
+  kdJnsOp!: string;
 
   @Column("character", { name: "THN_PAJAK_SKP_KB", length: 4 })
-  thnPajakSkpKb: string;
+  thnPajakSkpKb!: string;
 
   @Column("numeric", {
     name: "HIS_INDEKS_PERUBAHAN_SKP_KB",
     precision: 2,
     scale: 0,
   })
-  hisIndeksPerubahanSkpKb: string;
+  hisIndeksPerubahanSkpKb!: string;
 
   @Column("numeric", {
     name: "HIS_LUAS_BUMI_BEBAN_SKP_KB",
@@ -39,7 +39,7 @@ export class HisSkpKbOpBersama {
     precision: 12,
     scale: 0,
   })
-  hisLuasBumiBebanSkpKb: string | null;
+  hisLuasBumiBebanSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_LUAS_BNG_BEBAN_SKP_KB",
@@ -47,7 +47,7 @@ export class HisSkpKbOpBersama {
     precision: 12,
     scale: 0,
   })
-  hisLuasBngBebanSkpKb: string | null;
+  hisLuasBngBebanSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_NJOP_BUMI_BEBAN_SKP_KB",
@@ -55,7 +55,7 @@ export class HisSkpKbOpBersama {
     precision: 15,
     scale: 0,
   })
-  hisNjopBumiBebanSkpKb: string | null;
+  hisNjopBumiBebanSkpKb!: string | null;
 
   @Column("numeric", {
     name: "HIS_NJOP_BNG_BEBAN_SKP_KB",
@@ -63,5 +63,5 @@ export class HisSkpKbOpBersama {
     precision: 15,
     scale: 0,
   })
-  hisNjopBngBebanSkpKb: string | null;
+  hisNjopBngBebanSkpKb!: string | null;
 }

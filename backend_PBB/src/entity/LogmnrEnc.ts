@@ -8,7 +8,7 @@ export class LogmnrEnc {
     precision: 1000,
     scale: 53,
   })
-  obj: string | null;
+  obj!: string | null;
 
   @Column("numeric", {
     name: "OWNER#",
@@ -16,7 +16,7 @@ export class LogmnrEnc {
     precision: 1000,
     scale: 53,
   })
-  owner: string | null;
+  owner!: string | null;
 
   @Column("numeric", {
     name: "ENCALG",
@@ -24,7 +24,7 @@ export class LogmnrEnc {
     precision: 1000,
     scale: 53,
   })
-  encalg: string | null;
+  encalg!: string | null;
 
   @Column("numeric", {
     name: "INTALG",
@@ -32,10 +32,10 @@ export class LogmnrEnc {
     precision: 1000,
     scale: 53,
   })
-  intalg: string | null;
+  intalg!: string | null;
 
   @Column("bytea", { name: "COLKLC", nullable: true })
-  colklc: Buffer | null;
+  colklc!: Buffer | null;
 
   @Column("numeric", {
     name: "KLCLEN",
@@ -43,7 +43,7 @@ export class LogmnrEnc {
     precision: 1000,
     scale: 53,
   })
-  klclen: string | null;
+  klclen!: string | null;
 
   @Column("numeric", {
     name: "FLAG",
@@ -51,10 +51,10 @@ export class LogmnrEnc {
     precision: 1000,
     scale: 53,
   })
-  flag: string | null;
+  flag!: string | null;
 
   @Column("character varying", { name: "MKEYID", length: 192 })
-  mkeyid: string;
+  mkeyid!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -62,7 +62,7 @@ export class LogmnrEnc {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -70,5 +70,5 @@ export class LogmnrEnc {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

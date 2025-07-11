@@ -3,13 +3,13 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_CON$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrCon {
   @Column("numeric", { name: "OWNER#", precision: 1000, scale: 53 })
-  owner: string;
+  owner!: string;
 
   @Column("character varying", { name: "NAME", length: 384 })
-  name: string;
+  name!: string;
 
   @Column("numeric", { name: "CON#", precision: 1000, scale: 53 })
-  con: string;
+  con!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -17,7 +17,7 @@ export class LogmnrCon {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -25,7 +25,7 @@ export class LogmnrCon {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 
   @Column("numeric", {
     name: "START_SCNBAS",
@@ -33,7 +33,7 @@ export class LogmnrCon {
     precision: 1000,
     scale: 53,
   })
-  startScnbas: string | null;
+  startScnbas!: string | null;
 
   @Column("numeric", {
     name: "START_SCNWRP",
@@ -41,5 +41,5 @@ export class LogmnrCon {
     precision: 1000,
     scale: 53,
   })
-  startScnwrp: string | null;
+  startScnwrp!: string | null;
 }

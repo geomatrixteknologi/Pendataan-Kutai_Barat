@@ -3,16 +3,16 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_IDNSEQ$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrIdnseq {
   @Column("numeric", { name: "OBJ#", precision: 1000, scale: 53 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", { name: "INTCOL#", precision: 1000, scale: 53 })
-  intcol: string;
+  intcol!: string;
 
   @Column("numeric", { name: "SEQOBJ#", precision: 1000, scale: 53 })
-  seqobj: string;
+  seqobj!: string;
 
   @Column("numeric", { name: "STARTWITH", precision: 1000, scale: 53 })
-  startwith: string;
+  startwith!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -20,7 +20,7 @@ export class LogmnrIdnseq {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -28,5 +28,5 @@ export class LogmnrIdnseq {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 }

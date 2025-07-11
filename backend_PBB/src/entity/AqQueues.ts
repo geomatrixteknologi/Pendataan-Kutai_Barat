@@ -3,22 +3,22 @@ import { Column, Entity } from "typeorm";
 @Entity("AQ$_QUEUES", { schema: "PBB_KUTAI BARAT" })
 export class AqQueues {
   @Column("bytea", { name: "OID" })
-  oid: Buffer;
+  oid!: Buffer;
 
   @Column("numeric", { name: "EVENTID", precision: 1000, scale: 53 })
-  eventid: string;
+  eventid!: string;
 
   @Column("character varying", { name: "NAME", length: 128 })
-  name: string;
+  name!: string;
 
   @Column("numeric", { name: "TABLE_OBJNO", precision: 1000, scale: 53 })
-  tableObjno: string;
+  tableObjno!: string;
 
   @Column("numeric", { name: "USAGE", precision: 1000, scale: 53 })
-  usage: string;
+  usage!: string;
 
   @Column("numeric", { name: "ENABLE_FLAG", precision: 1000, scale: 53 })
-  enableFlag: string;
+  enableFlag!: string;
 
   @Column("numeric", {
     name: "MAX_RETRIES",
@@ -26,7 +26,7 @@ export class AqQueues {
     precision: 1000,
     scale: 53,
   })
-  maxRetries: string | null;
+  maxRetries!: string | null;
 
   @Column("numeric", {
     name: "RETRY_DELAY",
@@ -34,7 +34,7 @@ export class AqQueues {
     precision: 1000,
     scale: 53,
   })
-  retryDelay: string | null;
+  retryDelay!: string | null;
 
   @Column("numeric", {
     name: "PROPERTIES",
@@ -42,7 +42,7 @@ export class AqQueues {
     precision: 1000,
     scale: 53,
   })
-  properties: string | null;
+  properties!: string | null;
 
   @Column("numeric", {
     name: "RET_TIME",
@@ -50,21 +50,21 @@ export class AqQueues {
     precision: 1000,
     scale: 53,
   })
-  retTime: string | null;
+  retTime!: string | null;
 
   @Column("character varying", {
     name: "QUEUE_COMMENT",
     nullable: true,
     length: 2000,
   })
-  queueComment: string | null;
+  queueComment!: string | null;
 
   @Column("character varying", {
     name: "SUBSCRIBERS",
     nullable: true,
     length: 3752,
   })
-  subscribers: string | null;
+  subscribers!: string | null;
 
   @Column("numeric", {
     name: "MEMORY_THRESHOLD",
@@ -72,24 +72,24 @@ export class AqQueues {
     precision: 1000,
     scale: 53,
   })
-  memoryThreshold: string | null;
+  memoryThreshold!: string | null;
 
   @Column("character varying", {
     name: "SERVICE_NAME",
     nullable: true,
     length: 64,
   })
-  serviceName: string | null;
+  serviceName!: string | null;
 
   @Column("character varying", {
     name: "NETWORK_NAME",
     nullable: true,
     length: 256,
   })
-  networkName: string | null;
+  networkName!: string | null;
 
   @Column("bytea", { name: "SUB_OID", nullable: true })
-  subOid: Buffer | null;
+  subOid!: Buffer | null;
 
   @Column("numeric", {
     name: "SHARDED",
@@ -97,7 +97,7 @@ export class AqQueues {
     precision: 1000,
     scale: 53,
   })
-  sharded: string | null;
+  sharded!: string | null;
 
   @Column("numeric", {
     name: "BASE_QUEUE",
@@ -105,5 +105,5 @@ export class AqQueues {
     precision: 1000,
     scale: 53,
   })
-  baseQueue: string | null;
+  baseQueue!: string | null;
 }

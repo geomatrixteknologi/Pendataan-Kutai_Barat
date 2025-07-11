@@ -3,44 +3,44 @@ import { Column, Entity } from "typeorm";
 @Entity("SKP_SPOP_OP_BERSAMA", { schema: "PBB_KUTAI BARAT" })
 export class SkpSpopOpBersama {
   @Column("character", { name: "KD_PROPINSI", length: 2 })
-  kdPropinsi: string;
+  kdPropinsi!: string;
 
   @Column("character", { name: "KD_DATI2", length: 2 })
-  kdDati2: string;
+  kdDati2!: string;
 
   @Column("character", { name: "KD_KECAMATAN", length: 3 })
-  kdKecamatan: string;
+  kdKecamatan!: string;
 
   @Column("character", { name: "KD_KELURAHAN", length: 3 })
-  kdKelurahan: string;
+  kdKelurahan!: string;
 
   @Column("character", { name: "KD_BLOK", length: 3 })
-  kdBlok: string;
+  kdBlok!: string;
 
   @Column("character", { name: "NO_URUT", length: 4 })
-  noUrut: string;
+  noUrut!: string;
 
   @Column("character", { name: "KD_JNS_OP", length: 1 })
-  kdJnsOp: string;
+  kdJnsOp!: string;
 
   @Column("character", { name: "THN_PAJAK_SKP_SPOP", length: 4 })
-  thnPajakSkpSpop: string;
+  thnPajakSkpSpop!: string;
 
   @Column("character", { name: "KD_KLS_TANAH", nullable: true, length: 3 })
-  kdKlsTanah: string | null;
+  kdKlsTanah!: string | null;
 
   @Column("character", {
     name: "THN_AWAL_KLS_TANAH",
     nullable: true,
     length: 4,
   })
-  thnAwalKlsTanah: string | null;
+  thnAwalKlsTanah!: string | null;
 
   @Column("character", { name: "KD_KLS_BNG", nullable: true, length: 3 })
-  kdKlsBng: string | null;
+  kdKlsBng!: string | null;
 
   @Column("character", { name: "THN_AWAL_KLS_BNG", nullable: true, length: 4 })
-  thnAwalKlsBng: string | null;
+  thnAwalKlsBng!: string | null;
 
   @Column("numeric", {
     name: "LUAS_BUMI_BEBAN_SKP_SPOP",
@@ -48,7 +48,7 @@ export class SkpSpopOpBersama {
     precision: 12,
     scale: 0,
   })
-  luasBumiBebanSkpSpop: string | null;
+  luasBumiBebanSkpSpop!: string | null;
 
   @Column("numeric", {
     name: "LUAS_BNG_BEBAN_SKP_SPOP",
@@ -56,7 +56,7 @@ export class SkpSpopOpBersama {
     precision: 12,
     scale: 0,
   })
-  luasBngBebanSkpSpop: string | null;
+  luasBngBebanSkpSpop!: string | null;
 
   @Column("numeric", {
     name: "NJOP_BUMI_BEBAN_SKP_SPOP",
@@ -64,7 +64,7 @@ export class SkpSpopOpBersama {
     precision: 15,
     scale: 0,
   })
-  njopBumiBebanSkpSpop: string | null;
+  njopBumiBebanSkpSpop!: string | null;
 
   @Column("numeric", {
     name: "NJOP_BNG_BEBAN_SKP_SPOP",
@@ -72,5 +72,5 @@ export class SkpSpopOpBersama {
     precision: 15,
     scale: 0,
   })
-  njopBngBebanSkpSpop: string | null;
+  njopBngBebanSkpSpop!: string | null;
 }

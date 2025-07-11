@@ -8,19 +8,19 @@ export class TempatPelayanan {
     nullable: true,
     length: 2,
   })
-  kdTempatPelayanan: string | null;
+  kdTempatPelayanan!: string | null;
 
   @Column("character varying", {
     name: "NM_TEMPAT_PELAYANAN",
     nullable: true,
     length: 150,
   })
-  nmTempatPelayanan: string | null;
+  nmTempatPelayanan!: string | null;
 
   @Column("character varying", {
     name: "ALAMAT_TEMPAT_PELAYANAN",
     nullable: true,
     length: 150,
   })
-  alamatTempatPelayanan: string | null;
+  alamatTempatPelayanan!: string | null;
 }

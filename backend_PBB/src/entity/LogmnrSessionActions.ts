@@ -8,7 +8,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  flagsruntime: string | null;
+  flagsruntime!: string | null;
 
   @Column("numeric", {
     name: "DROPSCN",
@@ -16,19 +16,19 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  dropscn: string | null;
+  dropscn!: string | null;
 
   @Column("timestamp without time zone", { name: "MODIFYTIME", nullable: true })
-  modifytime: Date | null;
+  modifytime!: Date | null;
 
   @Column("timestamp without time zone", {
     name: "DISPATCHTIME",
     nullable: true,
   })
-  dispatchtime: Date | null;
+  dispatchtime!: Date | null;
 
   @Column("timestamp without time zone", { name: "DROPTIME", nullable: true })
-  droptime: Date | null;
+  droptime!: Date | null;
 
   @Column("numeric", {
     name: "LCRCOUNT",
@@ -36,19 +36,19 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  lcrcount: string | null;
+  lcrcount!: string | null;
 
   @Column("character varying", { name: "ACTIONNAME", length: 30 })
-  actionname: string;
+  actionname!: string;
 
   @Column("numeric", { name: "LOGMNRSESSION#", precision: 1000, scale: 53 })
-  logmnrsession: string;
+  logmnrsession!: string;
 
   @Column("numeric", { name: "PROCESSROLE#", precision: 1000, scale: 53 })
-  processrole: string;
+  processrole!: string;
 
   @Column("numeric", { name: "ACTIONTYPE#", precision: 1000, scale: 53 })
-  actiontype: string;
+  actiontype!: string;
 
   @Column("numeric", {
     name: "FLAGSDEFINETIME",
@@ -56,10 +56,10 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  flagsdefinetime: string | null;
+  flagsdefinetime!: string | null;
 
   @Column("timestamp without time zone", { name: "CREATETIME", nullable: true })
-  createtime: Date | null;
+  createtime!: Date | null;
 
   @Column("numeric", {
     name: "XIDUSN",
@@ -67,7 +67,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  xidusn: string | null;
+  xidusn!: string | null;
 
   @Column("numeric", {
     name: "XIDSLT",
@@ -75,7 +75,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  xidslt: string | null;
+  xidslt!: string | null;
 
   @Column("numeric", {
     name: "XIDSQN",
@@ -83,7 +83,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  xidsqn: string | null;
+  xidsqn!: string | null;
 
   @Column("numeric", {
     name: "THREAD#",
@@ -91,7 +91,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  thread: string | null;
+  thread!: string | null;
 
   @Column("numeric", {
     name: "STARTSCN",
@@ -99,7 +99,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  startscn: string | null;
+  startscn!: string | null;
 
   @Column("numeric", {
     name: "STARTSUBSCN",
@@ -107,7 +107,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  startsubscn: string | null;
+  startsubscn!: string | null;
 
   @Column("numeric", {
     name: "ENDSCN",
@@ -115,7 +115,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  endscn: string | null;
+  endscn!: string | null;
 
   @Column("numeric", {
     name: "ENDSUBSCN",
@@ -123,7 +123,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  endsubscn: string | null;
+  endsubscn!: string | null;
 
   @Column("numeric", {
     name: "RBASQN",
@@ -131,7 +131,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  rbasqn: string | null;
+  rbasqn!: string | null;
 
   @Column("numeric", {
     name: "RBABLK",
@@ -139,7 +139,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  rbablk: string | null;
+  rbablk!: string | null;
 
   @Column("numeric", {
     name: "RBABYTE",
@@ -147,7 +147,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  rbabyte: string | null;
+  rbabyte!: string | null;
 
   @Column("numeric", {
     name: "SESSION#",
@@ -155,7 +155,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  session: string | null;
+  session!: string | null;
 
   @Column("numeric", {
     name: "OBJ#",
@@ -163,7 +163,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  obj: string | null;
+  obj!: string | null;
 
   @Column("numeric", {
     name: "ATTR1",
@@ -171,7 +171,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  attr1: string | null;
+  attr1!: string | null;
 
   @Column("numeric", {
     name: "ATTR2",
@@ -179,7 +179,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  attr2: string | null;
+  attr2!: string | null;
 
   @Column("numeric", {
     name: "ATTR3",
@@ -187,7 +187,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  attr3: string | null;
+  attr3!: string | null;
 
   @Column("numeric", {
     name: "SPARE1",
@@ -195,7 +195,7 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  spare1: string | null;
+  spare1!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -203,13 +203,13 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("timestamp without time zone", { name: "SPARE3", nullable: true })
-  spare3: Date | null;
+  spare3!: Date | null;
 
   @Column("character varying", { name: "SPARE4", nullable: true, length: 2000 })
-  spare4: string | null;
+  spare4!: string | null;
 
   @Column("numeric", {
     name: "PDBID",
@@ -217,12 +217,12 @@ export class LogmnrSessionActions {
     precision: 1000,
     scale: 53,
   })
-  pdbid: string | null;
+  pdbid!: string | null;
 
   @Column("character varying", {
     name: "PDB_NAME",
     nullable: true,
     length: 390,
   })
-  pdbName: string | null;
+  pdbName!: string | null;
 }

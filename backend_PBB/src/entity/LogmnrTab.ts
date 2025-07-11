@@ -3,10 +3,10 @@ import { Column, Entity } from "typeorm";
 @Entity("LOGMNR_TAB$", { schema: "PBB_KUTAI BARAT" })
 export class LogmnrTab {
   @Column("numeric", { name: "TS#", nullable: true, precision: 22, scale: 0 })
-  ts: string | null;
+  ts!: string | null;
 
   @Column("numeric", { name: "COLS", nullable: true, precision: 22, scale: 0 })
-  cols: string | null;
+  cols!: string | null;
 
   @Column("numeric", {
     name: "PROPERTY",
@@ -14,7 +14,7 @@ export class LogmnrTab {
     precision: 1000,
     scale: 53,
   })
-  property: string | null;
+  property!: string | null;
 
   @Column("numeric", {
     name: "INTCOLS",
@@ -22,7 +22,7 @@ export class LogmnrTab {
     precision: 22,
     scale: 0,
   })
-  intcols: string | null;
+  intcols!: string | null;
 
   @Column("numeric", {
     name: "KERNELCOLS",
@@ -30,10 +30,10 @@ export class LogmnrTab {
     precision: 22,
     scale: 0,
   })
-  kernelcols: string | null;
+  kernelcols!: string | null;
 
   @Column("numeric", { name: "BOBJ#", nullable: true, precision: 22, scale: 0 })
-  bobj: string | null;
+  bobj!: string | null;
 
   @Column("numeric", {
     name: "TRIGFLAG",
@@ -41,13 +41,13 @@ export class LogmnrTab {
     precision: 22,
     scale: 0,
   })
-  trigflag: string | null;
+  trigflag!: string | null;
 
   @Column("numeric", { name: "FLAGS", nullable: true, precision: 22, scale: 0 })
-  flags: string | null;
+  flags!: string | null;
 
   @Column("numeric", { name: "OBJ#", precision: 22, scale: 0 })
-  obj: string;
+  obj!: string;
 
   @Column("numeric", {
     name: "LOGMNR_UID",
@@ -55,7 +55,7 @@ export class LogmnrTab {
     precision: 22,
     scale: 0,
   })
-  logmnrUid: string | null;
+  logmnrUid!: string | null;
 
   @Column("numeric", {
     name: "LOGMNR_FLAGS",
@@ -63,7 +63,7 @@ export class LogmnrTab {
     precision: 22,
     scale: 0,
   })
-  logmnrFlags: string | null;
+  logmnrFlags!: string | null;
 
   @Column("numeric", {
     name: "ACDRFLAGS",
@@ -71,7 +71,7 @@ export class LogmnrTab {
     precision: 1000,
     scale: 53,
   })
-  acdrflags: string | null;
+  acdrflags!: string | null;
 
   @Column("numeric", {
     name: "ACDRTSOBJ#",
@@ -79,7 +79,7 @@ export class LogmnrTab {
     precision: 1000,
     scale: 53,
   })
-  acdrtsobj: string | null;
+  acdrtsobj!: string | null;
 
   @Column("numeric", {
     name: "ACDRROWTSINTCOL#",
@@ -87,5 +87,5 @@ export class LogmnrTab {
     precision: 1000,
     scale: 53,
   })
-  acdrrowtsintcol: string | null;
+  acdrrowtsintcol!: string | null;
 }

@@ -3,23 +3,23 @@ import { Column, Entity } from "typeorm";
 @Entity("REDO_LOG", { schema: "PBB_KUTAI BARAT" })
 export class RedoLog {
   @Column("numeric", { name: "DBID", precision: 1000, scale: 53 })
-  dbid: string;
+  dbid!: string;
 
   @Column("character varying", {
     name: "GLOBAL_DBNAME",
     nullable: true,
     length: 129,
   })
-  globalDbname: string | null;
+  globalDbname!: string | null;
 
   @Column("character varying", { name: "DBUNAME", nullable: true, length: 32 })
-  dbuname: string | null;
+  dbuname!: string | null;
 
   @Column("character varying", { name: "VERSION", nullable: true, length: 32 })
-  version: string | null;
+  version!: string | null;
 
   @Column("numeric", { name: "THREAD#", precision: 1000, scale: 53 })
-  thread: string;
+  thread!: string;
 
   @Column("numeric", {
     name: "RESETLOGS_SCN_BAS",
@@ -27,7 +27,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  resetlogsScnBas: string | null;
+  resetlogsScnBas!: string | null;
 
   @Column("numeric", {
     name: "RESETLOGS_SCN_WRP",
@@ -35,10 +35,10 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  resetlogsScnWrp: string | null;
+  resetlogsScnWrp!: string | null;
 
   @Column("numeric", { name: "RESETLOGS_TIME", precision: 1000, scale: 53 })
-  resetlogsTime: string;
+  resetlogsTime!: string;
 
   @Column("numeric", {
     name: "PRESETLOGS_SCN_BAS",
@@ -46,7 +46,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  presetlogsScnBas: string | null;
+  presetlogsScnBas!: string | null;
 
   @Column("numeric", {
     name: "PRESETLOGS_SCN_WRP",
@@ -54,13 +54,13 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  presetlogsScnWrp: string | null;
+  presetlogsScnWrp!: string | null;
 
   @Column("numeric", { name: "PRESETLOGS_TIME", precision: 1000, scale: 53 })
-  presetlogsTime: string;
+  presetlogsTime!: string;
 
   @Column("numeric", { name: "SEQUENCE#", precision: 1000, scale: 53 })
-  sequence: string;
+  sequence!: string;
 
   @Column("numeric", {
     name: "DUPID",
@@ -68,7 +68,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  dupid: string | null;
+  dupid!: string | null;
 
   @Column("numeric", {
     name: "STATUS1",
@@ -76,7 +76,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  status1: string | null;
+  status1!: string | null;
 
   @Column("numeric", {
     name: "STATUS2",
@@ -84,28 +84,28 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  status2: string | null;
+  status2!: string | null;
 
   @Column("character varying", {
     name: "CREATE_TIME",
     nullable: true,
     length: 32,
   })
-  createTime: string | null;
+  createTime!: string | null;
 
   @Column("character varying", {
     name: "CLOSE_TIME",
     nullable: true,
     length: 32,
   })
-  closeTime: string | null;
+  closeTime!: string | null;
 
   @Column("character varying", {
     name: "DONE_TIME",
     nullable: true,
     length: 32,
   })
-  doneTime: string | null;
+  doneTime!: string | null;
 
   @Column("numeric", {
     name: "FIRST_SCN_BAS",
@@ -113,7 +113,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  firstScnBas: string | null;
+  firstScnBas!: string | null;
 
   @Column("numeric", {
     name: "FIRST_SCN_WRP",
@@ -121,7 +121,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  firstScnWrp: string | null;
+  firstScnWrp!: string | null;
 
   @Column("numeric", {
     name: "FIRST_TIME",
@@ -129,7 +129,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  firstTime: string | null;
+  firstTime!: string | null;
 
   @Column("numeric", {
     name: "NEXT_SCN_BAS",
@@ -137,7 +137,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  nextScnBas: string | null;
+  nextScnBas!: string | null;
 
   @Column("numeric", {
     name: "NEXT_SCN_WRP",
@@ -145,7 +145,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  nextScnWrp: string | null;
+  nextScnWrp!: string | null;
 
   @Column("numeric", {
     name: "NEXT_TIME",
@@ -153,7 +153,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  nextTime: string | null;
+  nextTime!: string | null;
 
   @Column("numeric", {
     name: "FIRST_SCN",
@@ -161,7 +161,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  firstScn: string | null;
+  firstScn!: string | null;
 
   @Column("numeric", {
     name: "NEXT_SCN",
@@ -169,10 +169,10 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  nextScn: string | null;
+  nextScn!: string | null;
 
   @Column("numeric", { name: "RESETLOGS_SCN", precision: 1000, scale: 53 })
-  resetlogsScn: string;
+  resetlogsScn!: string;
 
   @Column("numeric", {
     name: "BLOCKS",
@@ -180,7 +180,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  blocks: string | null;
+  blocks!: string | null;
 
   @Column("numeric", {
     name: "BLOCK_SIZE",
@@ -188,7 +188,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  blockSize: string | null;
+  blockSize!: string | null;
 
   @Column("numeric", {
     name: "OLD_BLOCKS",
@@ -196,13 +196,13 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  oldBlocks: string | null;
+  oldBlocks!: string | null;
 
   @Column("timestamp without time zone", {
     name: "CREATE_DATE",
     nullable: true,
   })
-  createDate: Date | null;
+  createDate!: Date | null;
 
   @Column("numeric", {
     name: "ERROR1",
@@ -210,7 +210,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  error1: string | null;
+  error1!: string | null;
 
   @Column("numeric", {
     name: "ERROR2",
@@ -218,14 +218,14 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  error2: string | null;
+  error2!: string | null;
 
   @Column("character varying", {
     name: "FILENAME",
     nullable: true,
     length: 513,
   })
-  filename: string | null;
+  filename!: string | null;
 
   @Column("numeric", {
     name: "TS1",
@@ -233,7 +233,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  ts1: string | null;
+  ts1!: string | null;
 
   @Column("numeric", {
     name: "TS2",
@@ -241,7 +241,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  ts2: string | null;
+  ts2!: string | null;
 
   @Column("numeric", {
     name: "ENDIAN",
@@ -249,7 +249,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  endian: string | null;
+  endian!: string | null;
 
   @Column("numeric", {
     name: "SPARE2",
@@ -257,7 +257,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  spare2: string | null;
+  spare2!: string | null;
 
   @Column("numeric", {
     name: "SPARE3",
@@ -265,7 +265,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  spare3: string | null;
+  spare3!: string | null;
 
   @Column("numeric", {
     name: "SPARE4",
@@ -273,16 +273,16 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  spare4: string | null;
+  spare4!: string | null;
 
   @Column("timestamp without time zone", { name: "SPARE5", nullable: true })
-  spare5: Date | null;
+  spare5!: Date | null;
 
   @Column("character varying", { name: "SPARE6", nullable: true, length: 65 })
-  spare6: string | null;
+  spare6!: string | null;
 
   @Column("character varying", { name: "SPARE7", nullable: true, length: 129 })
-  spare7: string | null;
+  spare7!: string | null;
 
   @Column("numeric", {
     name: "TS3",
@@ -290,10 +290,10 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  ts3: string | null;
+  ts3!: string | null;
 
   @Column("numeric", { name: "PRESETLOGS_SCN", precision: 1000, scale: 53 })
-  presetlogsScn: string;
+  presetlogsScn!: string;
 
   @Column("numeric", {
     name: "SPARE8",
@@ -301,7 +301,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  spare8: string | null;
+  spare8!: string | null;
 
   @Column("numeric", {
     name: "SPARE9",
@@ -309,7 +309,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  spare9: string | null;
+  spare9!: string | null;
 
   @Column("numeric", {
     name: "SPARE10",
@@ -317,7 +317,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  spare10: string | null;
+  spare10!: string | null;
 
   @Column("numeric", {
     name: "OLD_STATUS1",
@@ -325,7 +325,7 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  oldStatus1: string | null;
+  oldStatus1!: string | null;
 
   @Column("numeric", {
     name: "OLD_STATUS2",
@@ -333,12 +333,12 @@ export class RedoLog {
     precision: 1000,
     scale: 53,
   })
-  oldStatus2: string | null;
+  oldStatus2!: string | null;
 
   @Column("character varying", {
     name: "OLD_FILENAME",
     nullable: true,
     length: 513,
   })
-  oldFilename: string | null;
+  oldFilename!: string | null;
 }
