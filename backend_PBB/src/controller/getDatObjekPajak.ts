@@ -12,9 +12,9 @@ import {
   lantaiBangunanOptions,
   statusPekerjaanWpOptions,
 } from "../utils/labelData";
-import { DatSubjekPajak } from "@/entity/DatSubjekPajak";
-import { DatOpBangunan } from "@/entity/DatOpBangunan";
-import { DatOpBumi } from "@/entity/DatOpBumi";
+import { DatSubjekPajak } from "../entity/DatSubjekPajak";
+import { DatOpBangunan } from "../entity/DatOpBangunan";
+import { DatOpBumi } from "../entity/DatOpBumi";
 
 export const getAllDatObjekPajak = async (req: Request, res: Response) => {
   try {
